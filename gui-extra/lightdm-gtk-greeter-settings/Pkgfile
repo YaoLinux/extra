@@ -1,0 +1,18 @@
+# Depends on: lightdm-gtk-greeter python-gobject python-distutils-extra
+
+description="Settings editor for the LightDM GTK+ Greeter"
+url="https://launchpad.net/lightdm-gtk-greeter-settings"                                                                    [16:27 x86_64 4.14.98-NuTyX-lts root@nutyx]
+packager="Dania <Dania@nutyx.org>"
+contributors=""
+
+name=lightdm-gtk-greeter-settings
+version=1.2.2
+
+source=(https://launchpad.net/lightdm-gtk-greeter-settings/${version%.*}/$version/+download/lightdm-gtk-greeter-settings-$version.tar.gz)
+
+build() {
+  cd $name-$version
+  
+  python3 setup.py install --root=$PKG --optimize=1
+
+}
