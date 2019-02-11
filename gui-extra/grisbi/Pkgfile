@@ -2,9 +2,10 @@
 
 description="Personal financial management program"
 url="http://www.grisbi.org"
-packager="sloteur at free dot fr"
+packager="rems at yaolinux dot org"
+contributors="sloteur"
 name=grisbi
-version=1.0.4
+version=1.2.0
 
 source=(https://downloads.sourceforge.net/$name/$name-$version.tar.bz2)
 
