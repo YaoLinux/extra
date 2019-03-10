@@ -8,7 +8,7 @@ contributors="Pierre B"
 run=(startup-notification hunspell)
 
 name=thunderbird
-version=60.5.2
+version=60.5.3
 
 source=(http://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/$version/source/$name-$version.source.tar.xz
 	$name.desktop)
@@ -16,7 +16,6 @@ source=(http://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/$version/sou
 build() {
 export PYTHON="/usr/bin/python2"
 
-cd $SRC
 ARCH=`uname -m`
 
 for lang in da de en-US es-ES fi fr it nb-NO nl pt-PT sv-SE tr
@@ -24,7 +23,7 @@ do
 wget  http://download.cdn.mozilla.net/pub/$name/releases/$version/linux-$ARCH/xpi/$lang.xpi
 done
 
-cd $SRC/$name-$version
+cd $name-$version
 
 cat > mozconfig << "EOF"
 # If you have a multicore machine, the build may be faster if using parallel
