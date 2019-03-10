@@ -1,4 +1,4 @@
-# Depends on: python perl-archive-zip unzip zip icu cups poppler-glib xorg-fontconfig libxslt kerberos gtk2 xorgproto dbus-glib mesa postgresql wget apache-ant apr boost clucene dbus-glib libjpeg-turbo2 xorg-glu gstreamer-plugins-base libatomic-ops lcms2 librsvg libxml2 libxslt mesa neon nss redland unixodbc serf dconf bluez desktop-file-utils doxygen gdb gnutls mariadb kerberos nasm sane valgrind cppunit hunspell hyphen telepathy-glib zenity libcmis xmlsec gpgme libgpg-error libassuan libepoxy libabw llvm
+# Depends on: python perl-archive-zip unzip zip icu cups poppler-glib xorg-fontconfig libxslt kerberos gtk2 xorgproto dbus-glib mesa postgresql wget apache-ant apr boost clucene dbus-glib libjpeg-turbo2 xorg-glu gstreamer-plugins-base libatomic-ops lcms2 librsvg libxml2 libxslt mesa neon nss redland unixodbc serf dconf bluez desktop-file-utils doxygen gdb gnutls kerberos nasm sane valgrind cppunit hunspell hyphen telepathy-glib zenity libcmis xmlsec gpgme libgpg-error libassuan libabw llvm
 
 PKGMK_IGNORE_UNPACK="yes"
 
@@ -10,8 +10,8 @@ contributors="Pierre B, Tnut, Greg"
 run=(shared-mime-info xdg-utils desktop-file-utils) 
 
 name=libreoffice
-version=6.1.5.2
-release=1
+version=6.2.2.1
+release=3
 
 source=(http://download.documentfoundation.org/libreoffice/src/${version%.*}/$name-$version.tar.xz
 	http://download.documentfoundation.org/libreoffice/src/${version%.*}/$name-dictionaries-$version.tar.xz
@@ -31,9 +31,9 @@ prepare() {
 	
         install -dm755 external/tarballs
 
-        ln -sv ../$name-dictionaries-$version.tar.xz  external/tarballs/
-        ln -sv ../$name-help-$version.tar.xz          external/tarballs/
-        ln -sv ../$name-translations-$version.tar.xz  external/tarballs/
+        ln -sv ../../../$name-dictionaries-$version.tar.xz  external/tarballs/
+        ln -sv ../../../$name-help-$version.tar.xz          external/tarballs/
+        ln -sv ../../../$name-translations-$version.tar.xz  external/tarballs/
 
         sed -e "/gzip -f/d"   \
             -e "s|.1.gz|.1|g" \
@@ -52,7 +52,6 @@ cd $name-$version
 	--with-lang="ar es de fr hi it ja pt fi nb nl nn da sv tr ru pl zh-CN"   \
 	--with-myspell-dicts \
 	--with-system-dicts \
-	--with-alloc=system \
 	--enable-release-build=yes \
 	--with-system-apr \
 	--with-system-boost \
@@ -66,8 +65,7 @@ cd $name-$version
 	--with-system-serf          \
 	--with-system-zlib          \
         --with-system-dicts        \
-        --with-system-openldap          \
-	--without-fonts \
+        --with-system-openldap     \
 	--without-junit \
         --without-java \
         --disable-epm \
@@ -88,7 +86,6 @@ cd $name-$version
         --with-system-libcmis \
 	--with-system-xmlsec \
         --with-system-gpgmepp \
-        --with-system-epoxy \
         --with-system-librevenge \
         --with-system-libabw \
         --with-system-hunspell \
@@ -97,23 +94,13 @@ cd $name-$version
         --with-system-clucene \
         --with-system-cppunit \
         --with-help \
-        --disable-gtk3 \
         --disable-debug \
-        --with-system-mariadb \
 	--with-parallelism=$(getconf _NPROCESSORS_ONLN)
 
-CPPFLAGS='-DU_USE_ICU_NAMESPACE=1' make build-nocheck
+make build-nocheck
 
 make DESTDIR=$PKG distro-pack-install
 
-	# Dictionaries installation
-	chown -cR 0:0 dictionaries/ 
-	for lang in en fr_FR es de it_IT pt_PT no nl_NL sv_SE da_DK ru_RU
-	do
-	  mkdir -pv $PKG/usr/lib/$name/share/extensions/dict-$lang
-	  cp -R dictionaries/$lang/* $PKG/usr/lib/$name/share/extensions/dict-$lang
-	done
-        
 	# Nettoyage
 	rm -rf $PKG/gid_Module_*
 }
