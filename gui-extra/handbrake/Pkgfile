@@ -6,11 +6,9 @@ contributors="tnut"
 packager="rems <rems@nutyx.org>"
  
 name=handbrake
-version=1.2.0
+version=1.2.2
 
-
-
-source=(https://download2.handbrake.fr/$version/HandBrake-$version-source.tar.bz2)
+source=(https://download.handbrake.fr/releases/$version/HandBrake-$version-source.tar.bz2)
 
 build() {
 
