@@ -2,13 +2,13 @@
 
 description="QEMU is a processor emulator using dynamic translation to achieve good emulation speed (PC, PowerPC, PowerMac, sun, Mips, ARM etc...)"
 url="http://www.qemu.org"
-packager="rems <rems@nutyx.org>"
-contributors="tnut"
+maintainer="rems <rems@nutyx.org>"
+packager="Yaolinux Team"
 
 description="Processor emulator using dynamic translation to achieve good emulation speed" 
 name=qemu
-version=3.1.0
-release=2
+version=4.1.0
+release=1
 
 source=(http://download.qemu-project.org/qemu-$version.tar.bz2)
 
@@ -21,8 +21,9 @@ cd build
 
 ../configure --prefix=/usr        \
             --sysconfdir=/etc     \
-            --audio-drv-list=alsa,pa \
-            --with-sdlabi=2.0     \
+            --audio-drv-list=alsa,pa,sdl \
+            --enable-sdl \
+            --enable-gtk \
             --enable-gcrypt       \
             --enable-jemalloc     \
             --enable-opengl       \

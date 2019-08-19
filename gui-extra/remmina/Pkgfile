@@ -1,4 +1,4 @@
-# Depends on: gtk3 zlib libjpeg-turbo libssh avahi vte3 libgcrypt xorg-libxdmcp libsecret webkitgtk intltool pkg-config cmake libgnome-keyring xorg-libxkbfile freerdp telepathy-glib libvncserver json-glib spice-gtk spice-protocol
+# Depends on: gtk3 zlib libjpeg-turbo2 libssh avahi vte3 libgcrypt libsodium xorg-libxdmcp libsecret webkitgtk intltool pkg-config cmake libgnome-keyring xorg-libxkbfile freerdp telepathy-glib libvncserver json-glib spice-gtk spice-protocol
 
 description="Remote desktop client written in GTK+"
 url="https://github.com/FreeRDP/Remmina/"
@@ -6,7 +6,7 @@ contributors="tnut"
 packager="rems <rems@nutyx.org>"
  
 name=remmina
-version=1.3.4
+version=1.3.5
 
 PKGMK_KEEP_SOURCES="no"
 
