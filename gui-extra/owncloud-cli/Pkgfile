@@ -6,7 +6,7 @@ packager="remy <remy@nutyx.org>"
 contributors="Pierre, Tnut"
 
 name=owncloud-cli
-version=2.5.3.11470
+version=2.5.4.11654
 
 _name=owncloudclient
 
