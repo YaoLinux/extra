@@ -6,7 +6,7 @@ url="http://numixproject.org/"
 
 name=numix-circle-icon-theme
 version=git
-release=1
+release=2
 
 source=()
 
