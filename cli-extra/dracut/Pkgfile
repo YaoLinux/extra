@@ -1,18 +1,27 @@
+# Depends on: systemd asciidoc
+
 description="Can generate a customized initrams image which contains only whatever is necessary to boot"
 url="https://www.kernel.org/pub/linux/utils/boot/dracut/dracut.html"
 contributors="Tnut, Greg"
 packager="tnut <tnut@nutyx.org>"
 
 name=dracut
-version=048
+version=049
 
-source=(http://kernel.org/pub/linux/utils/boot/dracut/$name-$version.tar.xz)
+PKGMK_KEEP_SOURCE="no"
+
+source=(https://github.com/dracutdevs/dracut/archive/$version.tar.gz)
 
 build() {
 
 	cd $name-$version
-	./configure --prefix=/usr
+
+	./configure --prefix=/usr \
+                    --sysconfdir=/etc \
+                    --systemdsystemunitdir=/lib/systemd/system
+
 	make
+
 	make DESTDIR=$PKG install
   
 }
