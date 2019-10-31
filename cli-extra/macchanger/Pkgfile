@@ -1,13 +1,13 @@
-# Depends on:
-
 description="Utility for viewing/manipulating the MAC address of network interfaces"
 url="http://www.gnu.org/software/macchanger"
-packager="greg<greg@nutyx.org>"
-contributors=""
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=macchanger
 version=1.7.0
-release=1
+
+PKGMK_KEEP_SOURCES="no"
 
 source=(https://github.com/alobbs/macchanger/archive/$version.tar.gz)
 
@@ -22,12 +22,10 @@ build () {
               --infodir=/usr/share/info
 
   make
-
 }
 
 package() {
 
   cd $name-$version
   make DESTDIR=$PKG install
- 
 }
