@@ -1,12 +1,13 @@
-# Depends on: popt gzip acl systemd
+makedepends=(popt gzip acl systemd)
 
 description="Rotates system logs automatically"
 url="https://github.com/logrotate/logrotate"
-packager="remy <remy@nutyx.org>"
-contributors="greg"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=logrotate
-version=3.15.0
+version=3.15.1
 
 source=(https://github.com/logrotate/logrotate/releases/download/$version/$name-$version.tar.xz
         logrotate.conf)
@@ -14,14 +15,13 @@ source=(https://github.com/logrotate/logrotate/releases/download/$version/$name-
 build() {
 cd $name-$version
 
-./configure \
---prefix=/usr \
---sbindir=/usr/bin \
---mandir=/usr/share/man \
---with-compress-command=/usr/bin/gzip \
---with-uncompress-command=/usr/bin/gunzip \
---with-default-mail-command=/usr/bin/mail \
---with-acl
+./configure --prefix=/usr \
+            --sbindir=/usr/bin \
+            --mandir=/usr/share/man \
+            --with-compress-command=/usr/bin/gzip \
+            --with-uncompress-command=/usr/bin/gunzip \
+            --with-default-mail-command=/usr/bin/mail \
+            --with-acl
 
 make
 }
