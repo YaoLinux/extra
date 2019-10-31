@@ -1,13 +1,14 @@
 description="The ISC DHCP package contains both the client and server programs for DHCP."
 url="ftp://ftp.isc.org/isc/dhcp"
-contributors="berlius, tnut, greg"
-packager="tnut <tnut@nutyx.org>"
+
+maintainer="rems"
+packager="Yaolinux Team"
 
 name=dhcp
 version=4.4.1
-nutyx_version=10.92.3
+yaolinux_version=10.92.3
 
-source=(http://downloads.tuxfamily.org/nutyx/files/nutyx-${nutyx_version}.tar.xz
+source=(http://downloads.yaolinux.org/yaolinux/files/yaolinux-${yaolinux_version}.tar.xz
 	ftp://ftp.isc.org/isc/dhcp/$version/dhcp-$version.tar.gz
 	dhclient.conf dhcpd.conf )
 
@@ -35,13 +36,13 @@ build() {
 	mv -v $PKG/usr/sbin/dhclient $PKG/sbin
 	install -v -m755 client/scripts/linux $PKG/sbin/dhclient-script
 
-	cp -v $SRC/dhclient.conf $PKG/etc/dhcp/dhclient.conf
+	cp -v ../dhclient.conf $PKG/etc/dhcp/dhclient.conf
 
 	install -v -dm 755 $PKG/var/lib/dhclient
 	install -v -dm 755 $PKG/etc/sysconfig
 
 	# Service
-	cd $SRC/nutyx-${nutyx_version}
+	cd ../yaolinux-${yaolinux_version}
 	make DESTDIR=$PKG install-dhclient
 	install -v -dm 755 $PKG/var/lib/dhcpd
 
