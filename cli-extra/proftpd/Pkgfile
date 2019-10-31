@@ -1,37 +1,38 @@
-# Depends on: libcap pam mariadb openssl pcre postgresql 
+makedepends=(libcap pam mariadb openssl pcre postgresql )
 
 description="A secure and highly configurable FTP daemon for serving large file archives over a network"
 url="ftp://ftp.proftpd.org/distrib/source/proftpd-1.3.6.tar.gz"
-contributors="Berlius, Greg"
-packager="tnut <tnut@nutyx.org>"
 
+maintainer="rems"
+packager="Yaolinux Team"
 
 name=proftpd
-version=1.3.6
-release=3
-nutyx_version=9.92
+version=1.3.6a
+yaolinux_version=10.0-RC1
 
-source=(http://downloads.nutyx.org/files/nutyx-${nutyx_version}.tar.xz
+source=(http://downloads.yaolinux.org/files/yaolinux-${yaolinux_version}.tar.xz
 	ftp://ftp.proftpd.org/distrib/source/$name-$version.tar.gz
 	proftpd.conf)
 
 build() {
 	
- cd $SRC/$name-$version
+ cd $name-$version
 
  ./configure --prefix=/usr \
- --sysconfdir=/etc \
- --localstatedir=/var/run 
+             --sysconfdir=/etc/proftpd \
+             --localstatedir=/var/run 
  make	
 }
+
 package() {
- cd $SRC/$name-$version
+ cd $name-$version
 
  make DESTDIR=$PKG install
- install -v -m755 -d $PKG/etc 
- cp -v $SRC/proftpd.conf $PKG/etc
+
+ install -v -m755 -d $PKG/etc/proftpd
+ cp -v ../proftpd.conf $PKG/etc/proftpd
 
  # Service
- cd $SRC/nutyx-${nutyx_version}
+ cd ../yaolinux-${yaolinux_version}
  make DESTDIR=$PKG install-proftpd
 }
