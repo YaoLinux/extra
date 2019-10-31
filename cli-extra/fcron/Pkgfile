@@ -1,9 +1,10 @@
-# Depends on: vim pam systemd
+makedepends=(vim pam systemd)
 
 description="Feature-rich cron implementation"
 url="http://fcron.free.fr"
-contributors="Pierre, Greg"
-packager="tnut<tnut@nutyx.org>"
+
+maintainer="rems"
+packager="Yaolinux Team"
 
 name=fcron
 version=3.2.1
@@ -22,18 +23,18 @@ build() {
 	cd $name-$version
 
 	./configure --prefix=/usr \
-                    --sysconfdir=/etc/fcron \
-                    --without-sendmail \
-                    --localstatedir=/var \
+                --sysconfdir=/etc/fcron \
+                --without-sendmail \
+                --localstatedir=/var \
 	            --with-boot-install=no \
-                    --mandir=/usr/share/man \
-		    --infodir=/usr/share/info \
-		    --with-systemdsystemunitdir=/lib/systemd/system \
-                    --with-piddir=/run \
-                    --with-editor=/usr/bin/vim \
-		    --with-answer-all=no
+                --mandir=/usr/share/man \
+                --infodir=/usr/share/info \
+                --with-systemdsystemunitdir=/lib/systemd/system \
+                --with-piddir=/run \
+                --with-editor=/usr/bin/vim \
+                --with-answer-all=no
 	make
-        make DESTDIR=$PKG install
+    make DESTDIR=$PKG install
 
 mkdir -p $PKG/etc/pam.d
 
@@ -48,5 +49,4 @@ for j in daily hourly monthly weekly
 do
 install -d -m755 $PKG/etc/cron.$j
 done
-
 }
