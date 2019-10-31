@@ -1,9 +1,10 @@
-# Depends on: wget unzip
+makedepends=(wget unzip)
 
 description="Wrapper library for 3GPP Adaptive Multi-Rate Narrowband Floating-point Speech Codec"
 url="http://www.penguin.cz/~utx/amr"
-packager="greg<greg@nutyx.org>"
-contributors=""
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=amrnb
 version=11.0.0.0
