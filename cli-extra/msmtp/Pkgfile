@@ -1,17 +1,23 @@
-# Depends on: gnutls
+makedepends=(gnutls)
 description="A mini smtp client"
-packager="Rocket"
 url="https://marlam.de/msmtp/"
+
+packager="Yaolinux Team"
+maintainer="rems"
+
 name=msmtp
-version=1.8.1
+version=1.8.6
+
 source=(https://marlam.de/$name/releases/$name-$version.tar.xz)
 
 build() {
 cd $name-$version
+
    ./configure --prefix=/usr \
                --sysconfdir=/etc \
                --with-libgsasl \
                --with-tls=gnutls
+
 make
 make DESTDIR="$PKG" install
 }
