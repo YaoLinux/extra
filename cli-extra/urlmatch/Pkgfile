@@ -1,6 +1,7 @@
 description="A fast URL matcher library"
 url="https://github.com/clbr/"
-packager="tnut <tnut@nutyx.org>"
+
+packager="Yaolinux Team"
 contributors="Greg"
 
 name=urlmatch
@@ -15,7 +16,7 @@ source=(https://github.com/clbr/urlmatch/archive/v$version.tar.gz)
 build() {
 
 cd urlmatch-$version
+
 make
 make install DESTDIR=$PKG
-
 }
