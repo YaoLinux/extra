@@ -1,16 +1,16 @@
-# Depends on: ncurses pcre
+makedepends=(ncurses pcre)
 
 description="Robust and modular log colorizer with many plugins"
 url="http://freshmeat.net/projects/ccze/"
-packager="greg<greg@nutyx.org>"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=ccze
 version=0.2.1
-release=1
 
 source=(ftp://ftp.debian.org/debian/pool/main/c/$name/${name}_${version}.orig.tar.gz 
 		$name-fix-segfault.diff)
-
 
 build() {
 
@@ -32,5 +32,4 @@ package() {
   cd $name-$version
 
   make DESTDIR=$PKG install
-  
 }
