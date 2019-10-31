@@ -1,9 +1,10 @@
 description="Firmwares for wifi IPW2100 Intel Centrino"
 url="http://ipw2100.sourceforge.net/"
-contributors="pierre"
-packager="greg<greg@nutyx.org>"
 
-# Depends on: 
+maintainer="rems"
+packager="Yaolinux Team"
+
+makedepends=()
 
 name=ipw2100-fw
 version=1.3
@@ -19,5 +20,4 @@ build() {
 	done
 	# Install firmware licence
  	install -D -m 644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
- 	
 }
