@@ -1,9 +1,10 @@
-# Depends on: gnutls hicolor-icon-theme perl 
+makedepends=(gnutls hicolor-icon-theme perl)
 
 description="lftp is a sophisticated ftp/http client."
 url="http://lftp.yar.ru"
-packager="tnut <tnut@nutyx.org>"
-contributors="alienus, tnut, Greg"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=lftp
 version=4.8.4
@@ -15,12 +16,11 @@ build() {
 cd $name-$version
 
 ./configure --prefix=/usr \
---with-gnutls \
---without-openssl \
---without-included-regex \
---disable-static
+            --with-gnutls \
+            --without-openssl \
+            --without-included-regex \
+            --disable-static
 
 make
 make DESTDIR=$PKG install
-
 }
