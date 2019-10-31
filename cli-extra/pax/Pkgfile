@@ -1,13 +1,11 @@
 description="copies files to and from archives in several formats."
 url="http://downloads.sourceforge.net/heirloom"
-contributors="berlius"
-packager="greg<greg@nutyx.org>"
 
-# Depends on:
+maintainer="rems"
+packager="Yaolinux Team"
 
 name=pax
-version=070715	
-release=1
+version=20190825
 
 source=(http://downloads.sourceforge.net/heirloom/heirloom-070715.tar.bz2)
  
@@ -26,5 +24,4 @@ make -C libuxre
 
 install -v -dm 755 $PKG/usr/bin	
 install -v -dm 755 $PKG/usr/share/man/man1	
-
 }
