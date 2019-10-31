@@ -1,9 +1,10 @@
-# Depends on: fuse2
+makedepends=(fuse2)
 
 description="An automounter implemented with FUSE."
 url="https://github.com/pcarrier/afuse/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Greg"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=afuse
 version=0.4.1
@@ -15,13 +16,12 @@ source=(https://github.com/pcarrier/afuse/archive/v$version.tar.gz)
 
 build() {
 cd $name-$version
+
 ./autogen.sh
+
 ./configure --prefix=/usr
+
 make
 make DESTDIR=$PKG install
 
-}
-
-uptodate() {
-echo "Fonction  vide, normal..." 
 }
