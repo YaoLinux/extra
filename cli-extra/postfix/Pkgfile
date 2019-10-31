@@ -1,16 +1,16 @@
-# Depends on: libnsl db cyrus-sasl openssl icu mariadb openldap pcre postgresql sqlite
+makedepends=(libnsl db cyrus-sasl openssl icu mariadb openldap pcre postgresql sqlite)
 
 description="Mail Transport Agent (MTA) for sending email to other users of your host machine"
 url="http://www.postfix.org"
-contributors="Berlius, Fanch, Tnut, Greg"
-packager="tnut <tnut@nutyx.org>"
 
+maintainer="rems"
+packager="Yaolinux Team"
 
 name=postfix
-version=3.3.2
-nutyx_version=10.4
+version=3.4.7
+yaolinux_version=1.0-RC1
 
-source=(http://downloads.tuxfamily.org/nutyx/files/nutyx-${nutyx_version}.tar.xz
+source=(http://downloads.yaolinux.org/yaolinux/files/yaolinux-${yaolinux_version}.tar.xz
 	ftp://ftp.porcupine.org/mirrors/postfix-release/official/$name-$version.tar.gz)
 
 build() {
@@ -33,6 +33,6 @@ build() {
 	html_directory=$PKG/usr/share/doc/postfix-$version/html \
 	readme_directory=$PKG/usr/share/doc/postfix-$version/readme
 
-	cd ../nutyx-${nutyx_version}
+	cd ../yaolinux-${yaolinux_version}
 	make DESTDIR=$PKG install-postfix
 }
