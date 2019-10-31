@@ -1,34 +1,33 @@
-# Depends on: glib openssl perl
+makedepends=(glib openssl perl)
+
 description="Irssi is a terminal based IRC client for UNIX systems."
 url="http://irssi.org/"
-packager="remy <remy@nutyx.org>"
-contributors="pierre, greg"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 run=(perl)
 
 name=irssi
-version=1.1.1
+version=1.2.2
 
 source=(https://github.com/$name/$name/releases/download/$version/$name-$version.tar.xz)
 
 build() {
 
   cd $name-$version
-  ./configure \
-    --prefix=/usr \
-    --sysconfdir=/etc/irssi \
-    --with-proxy \
-    --with-perl-lib=vendor
-    
+  ./configure --prefix=/usr \
+              --sysconfdir=/etc/irssi \
+              --with-proxy \
+              --with-perl-lib=vendor
+
   make
-  
 }
 
 package() {
 
   cd $name-$version
 	make DESTDIR=$PKG install
-	
 }
 
 uptodate() {
