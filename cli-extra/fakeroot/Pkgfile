@@ -1,13 +1,11 @@
-# Depends on:
-
 description="Gives a fake root environment."
 url="http://packages.debian.org/fakeroot"
-contributors="alienus, greg"
-packager="tnut <tnut@nutyx.org>"
+
+maintainer="rems"
+packager="Yaolinux Team"
 
 name=fakeroot
-version=1.23
-release=2
+version=1.24
 
 source=(http://ftp.debian.org/debian/pool/main/f/$name/${name}_${version}.orig.tar.xz
 		silence-dlerror.patch)
@@ -17,9 +15,9 @@ build() {
 	patch -Np1 -i ../silence-dlerror.patch
 
 	./configure --prefix=/usr \
-	--disable-static \
-        --libdir=/usr/lib/libfakeroot \
-	--with-ipc=sysv
+                --disable-static \
+                --libdir=/usr/lib/libfakeroot \
+                --with-ipc=sysv
 
 	make
 	make DESTDIR=$PKG install
