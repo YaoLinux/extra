@@ -1,9 +1,10 @@
-# Depends on: systemd asciidoc
+makedepends=(systemd asciidoc)
 
 description="Can generate a customized initrams image which contains only whatever is necessary to boot"
 url="https://www.kernel.org/pub/linux/utils/boot/dracut/dracut.html"
-contributors="Tnut, Greg"
-packager="tnut <tnut@nutyx.org>"
+
+maintainer="rems"
+packager="Yaolinux Team"
 
 name=dracut
 version=049
@@ -21,7 +22,5 @@ build() {
                     --systemdsystemunitdir=/lib/systemd/system
 
 	make
-
 	make DESTDIR=$PKG install
-  
 }
