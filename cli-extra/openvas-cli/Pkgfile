@@ -1,38 +1,32 @@
-# Depends on: openvas-libraries cmake xmltoman doxygen
+makedepends=(openvas-libraries cmake xmltoman doxygen)
 
 description="The OpenVAS Command-Line Interface"
 url="http://www.openvas.org/"
-packager="greg<greg@nutyx.org>"
-contributors=""
 
-run=()
-
-
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=openvas-cli
 version=1.4.5
-release=1
 
 source=(http://wald.intevation.org/frs/download.php/2397/$name-$version.tar.gz
-http://wald.intevation.org/frs/download.php/2398/$name-$version.tar.gz
-)
-
-prepare() {
-echo "Fonction prepare sans objet"
-}
+        http://wald.intevation.org/frs/download.php/2398/$name-$version.tar.gz)
 
 build() {
-cd $name-$version
-cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr \
--DSYSCONFDIR=/etc -DLOCALSTATEDIR=/var .
+
+mkdir -v build && cd build
+
+cmake -DCMAKE_BUILD_TYPE=Release \
+      -DCMAKE_INSTALL_PREFIX=/usr \
+      -DSYSCONFDIR=/etc \
+      -DLOCALSTATEDIR=/var ../$name-$version
+
 make
 }
 
 package() {
-cd $name-$version
-make DESTDIR=$PKG/ install
-}
 
-uptodate() {
-echo "Fonction uptodate sans objet"
+cd $name-$version
+
+make DESTDIR=$PKG install
 }
