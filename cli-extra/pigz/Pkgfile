@@ -1,23 +1,21 @@
-# Depends on: zlib
+makedepends=(zlib)
 
 description="Parallel implementation of the gzip file compressor"
 url="http://www.zlib.net/pigz/"
-packager="remy <remy@nutyx.org>"
-contributors="greg"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=pigz
 version=2.4
-release=1
 
 source=(http://www.zlib.net/$name/$name-$version.tar.gz)
-
 
 build() {
 
   cd $name-$version
 
   make
-  
 }
 
 package() {
@@ -36,6 +34,5 @@ package() {
   install -Dm644 $name.pdf \
     $PKG/usr/share/doc/$name/$name.pdf
   install -Dm644 README \
-    $PKG/usr/share/licenses/$name/README
-    
+    $PKG/usr/share/licenses/$name/README    
 }
