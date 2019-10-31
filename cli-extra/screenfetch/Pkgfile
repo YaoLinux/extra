@@ -1,11 +1,11 @@
 description="Fetches system/theme information in terminal for Linux desktop screenshots."
 url="https://github.com/KittyKatt/screenFetch"
-packager="tnut <tnut@nutyx.org>"
-contributors="greg"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=screenfetch
-version=3.8.0
-release=2
+version=3.9.0
 
 PKGMK_KEEP_SOURCES="no"
 
@@ -19,12 +19,10 @@ prepare() {
 
 }
 
-
 build() {
 
 	cd screenFetch-$version
 
 	install -Dm755 $name-dev $PKG/usr/bin/$name
 	install -Dm644 $name.1   $PKG/usr/share/man/man1/$name.1 
-	
 }
