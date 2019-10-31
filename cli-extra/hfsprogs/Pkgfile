@@ -1,21 +1,18 @@
 description="HFS/HFS+ user space utils"
 url="http://www.opensource.apple.com/"
-contributors="fanch"
-packager="greg<greg@nutyx.org>"
 
-# Depends on: libbsd openssl
+maintainer="rems"
+packager="Yaolinux Team"
+
+makedepends=(libbsd openssl)
 
 name=hfsprogs
-version=332.25
-release=1
-
+version=540.1.linux3
 
 source=(http://ftp.de.debian.org/debian/pool/main/h/hfsprogs/${name}_${version}.orig.tar.gz
         http://ftp.de.debian.org/debian/pool/main/h/hfsprogs/${name}_${version}-11.debian.tar.gz
         license
         makefile.patch)
-        
-        
 
 build() {
 
@@ -41,6 +38,5 @@ build() {
   
   install -m 644 newfs_hfs.tproj/newfs_hfs.8 ${PKG}/usr/share/man/man8/mkfs.hfsplus.8
   install -m 644 fsck_hfs.tproj/fsck_hfs.8 ${PKG}/usr/share/man/man8/fsck.hfsplus.8
-  
 }
 
