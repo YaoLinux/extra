@@ -1,30 +1,25 @@
 description="Encrypt arbitrary TCP connections inside SSL so you can communicate over secure channels"
 url="http://www.stunnel.org"
-contributors="Berlius, Fanch, Tnut, Greg"
-packager="tnut <tnut@nutyx.org>"
 
+maintainer="rems"
+packager="Yaolinux Team"
 
 name=stunnel
-version=5.42
-release=2
-nutyx_version=9.92
+version=5.55
 
-source=(http://downloads.nutyx.org/files/nutyx-${nutyx_version}.tar.xz
-	ftp://ftp.stunnel.org/stunnel/archive/5.x/$name-$version.tar.gz
-	stunnel.conf)
+source=(http://downloads.yaolinux.org/files/yaolinux-${yaolinux_version}.tar.xz
+        ftp://ftp.stunnel.org/stunnel/archive/5.x/$name-$version.tar.gz
+        stunnel.conf)
 
 build () {
  
 cd $name-$version
 ./configure --prefix=/usr \
-	--sysconfdir=/etc \
-	--localstatedir=/var \
-	--disable-systemd 
+            --sysconfdir=/etc \
+            --localstatedir=/var \
+ 
 make
-
-
 }
-
 
 package () {
 
@@ -33,10 +28,6 @@ make DESTDIR=$PKG install
 
 sed -i 's@$2/bin/openssl@/bin/openssl@g' tools/makecert.sh
 
-cd ../nutyx-${nutyx_version}
-make DESTDIR=$PKG install-stunnel
-
 install -v -m750 -d $PKG/etc/stunnel
 cp -v $SRC/stunnel.conf $PKG/etc/stunnel/stunnel.conf
-
 }
