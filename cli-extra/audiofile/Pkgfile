@@ -1,13 +1,13 @@
-# Depends on: alsa-lib flac
+makedepends=(alsa-lib flac)
 
 description="Silicon Graphics Audio File Library"
 url="https://audiofile.68k.org/"
-contributors="Pierre B."
-packager="greg<greg@nutyx.org>"
+
+maintainer="rems"
+packager="Yaolinux Team"
 
 name=audiofile
 version=0.3.6
-release=1
 
 source=(https://audiofile.68k.org/$name-$version.tar.gz
 		01_gcc6.patch
