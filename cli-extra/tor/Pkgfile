@@ -1,20 +1,21 @@
-# Depends on: systemd libevent openssl zlib
+makedepends=(systemd libevent openssl zlib)
 
 description="Tor is a anonymous network and proxy."
 url="http://www.torproject.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Greg"
+
+packager="Yaolinux Team"
+contributors="rems"
 
 name=tor
-version=0.3.2.10
+version=0.4.1.6
 
 source=(https://www.torproject.org/dist/tor-$version.tar.gz
-	tor.rc
-	tor-config.patch)
+        tor.rc
+        tor-config.patch)
 
 prepare() {
 	cd $name-$version
-	patch -p 1 -i $SRC/tor-config.patch
+	patch -p 1 -i ../tor-config.patch
 
 	# fix for find: The relative path `~/bin' is included in the PATH
 	# environment variable, which is insecure in combination with the
@@ -24,23 +25,24 @@ prepare() {
 
 build() {
 	cd $name-$version
-	./configure \
-		--prefix=/usr \
-		--mandir=/usr/man \
-		--sysconfdir=/etc
+	./configure --prefix=/usr \
+                --mandir=/usr/man \
+                --sysconfdir=/etc
 
 	make
 	make DESTDIR=$PKG install
 	
 	install -d $PKG/usr/var/lib/tor
+
 	chown root:root $PKG/usr/var/lib/tor
-	touch \
-		$PKG/usr/var/lib/tor/cached-certs \
-		$PKG/usr/var/lib/tor/cached-consensus \
-		$PKG/usr/var/lib/tor/cached-descriptors \
-		$PKG/usr/var/lib/tor/cached-descriptors.new \
-		$PKG/usr/var/lib/tor/cached-routers.new \
-		$PKG/usr/var/lib/tor/state
+
+	touch $PKG/usr/var/lib/tor/cached-certs \
+          $PKG/usr/var/lib/tor/cached-consensus \
+          $PKG/usr/var/lib/tor/cached-descriptors \
+          $PKG/usr/var/lib/tor/cached-descriptors.new \
+          $PKG/usr/var/lib/tor/cached-routers.new \
+          $PKG/usr/var/lib/tor/state
+
 	find $PKG/usr/var/lib/tor/ -type f -execdir chown root:root {} \; -execdir chmod 0600 {} \;
 
 	mv $PKG/etc/tor/torrc.sample $PKG/etc/tor/torrc
