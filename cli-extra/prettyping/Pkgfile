@@ -1,6 +1,8 @@
-# Depends on : gawk
+makedepends=(gawk)
 
-packager="Greg"
+packager="Yaolinux Team"
+maintainer="rems"
+
 description="A wrapper around the standard ping tool."
 url="https://github.com/denilsonsa/prettyping"
 
