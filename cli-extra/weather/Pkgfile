@@ -1,13 +1,13 @@
 description="CLI tool which shows weather forecasts from METAR data"
 url="http://fungi.yuggoth.org/weather/"
-contributors="Chris Farrell timcowchip"
-packager="greg<greg@nutyx.org>"
 
-# Depends on: python2
+maintainer="rems"
+packager="Yaolinux Team"
+
+makedepends=(python2)
 
 name=weather
 version=2.3
-release=1
 
 source=(http://fungi.yuggoth.org/weather/src/$name-$version.tar.gz)
 
