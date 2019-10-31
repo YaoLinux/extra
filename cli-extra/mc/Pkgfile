@@ -1,25 +1,26 @@
-# Depends on: pcre glib gpm slang cdrtools gawk p7zip perl zip 
+makedepends=(pcre glib gpm slang cdrtools gawk p7zip perl zip )
 
 description="Midnight Commander is a text based filemanager/shell that emulates Norton Commander"
 url="https://www.midnight-commander.org/"
-contributors="pierre, Greg"
-packager="tnut<tnut@nutyx.org>"
+
+maintainer="rems"
+packager="Yaolinux Team"
 
 name=mc
-version=4.8.21
+version=4.8.23
 
 source=(${url}downloads/$name-$version.tar.xz)
 
 build() {
 
 	cd $name-$version
+
 	./configure --prefix=/usr \
-		--enable-charset  \
-		--disable-static  \
-		--sysconfdir=/etc/mc \
-		--with-screen=slang
+                --enable-charset  \
+                --disable-static  \
+                --sysconfdir=/etc/mc \
+                --with-screen=slang
+
 	make
-
 	make DESTDIR=$PKG install
-
 }
