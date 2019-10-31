@@ -1,16 +1,17 @@
 description="Daemon that generates an unpredictable stream of random numbers and feeds the /dev/random"
 url="http://www.issihosts.com/haveged/"
-contributors="Berlius, Greg"
-packager="tnut<tnut@nutyx.org>"
+
+maintainer="rems"
+packager="Yaolinux Team"
 
 name=haveged
 version=1.9.4
-nutyx_version=10.92.3
+yaolinux_version=1.0-RC1
 
 PKGMK_KEEP_SOURCES="no"
 
-source=(http://download.tuxfamily.org/nutyx/files/nutyx-${nutyx_version}.tar.xz
-	https://github.com/jirka-h/$name/archive/$version.tar.gz)
+source=(http://download.yaolinux.org/yaolinux/files/yaolinux-${yaolinux_version}.tar.xz
+        https://github.com/jirka-h/$name/archive/$version.tar.gz)
 
 build () {
 
@@ -24,6 +25,6 @@ build () {
 	cp -v README $PKG/usr/share/doc/haveged-$version
 	
 	# Service
-	cd ../nutyx-${nutyx_version}
+	cd ../yaolinux-${yaolinux_version}
 	make DESTDIR=$PKG install-haveged
 }
