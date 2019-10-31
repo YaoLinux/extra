@@ -1,8 +1,10 @@
-# Depends on: gpm
+makedepends=(gpm)
+
 description="Joe's own editor"
 url="http://joe-editor.sourceforge.net/"
-contributors="Berlius, Tnut, Greg"
-packager="tnut <tnut@nutyx.org>"
+
+contributors="rems"
+packager="Yaolinux Team"
 
 name=joe
 version=4.6
@@ -14,9 +16,10 @@ build() {
   cd $name-$version
 
   ./configure --prefix=/usr \
-	--sysconfdir=/etc/joe \
-	--mandir=/usr/share/man \
-	--docdir=/usr/share/doc/$name-$version
+              --sysconfdir=/etc/joe \
+              --mandir=/usr/share/man \
+              --docdir=/usr/share/doc/$name-$version
+
   make
   make DESTDIR=$PKG install
 
