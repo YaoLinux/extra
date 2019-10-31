@@ -1,12 +1,11 @@
 description="Show a scrolling 'Matrix' like screen in Linux."
 url="http://www.asty.org/cmatrix/"
-packager="greg<greg@nutyx.org>"
 
-# Depends on:
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=cmatrix
-version=1.2a
-release=1
+version=2.0
 
 source=(http://www.asty.org/cmatrix/dist/cmatrix-$version.tar.gz)
 
