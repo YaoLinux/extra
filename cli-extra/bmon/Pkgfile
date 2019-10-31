@@ -1,10 +1,10 @@
-# Depends on: confuse libnl
-
+makedepends=(confuse libnl)
 
 description="Portable bandwidth monitor and rate estimator"
 url="http://github.com/tgraf/bmon/"
-contributors="Berlius, Greg"
-packager="tnut <tnut@nutyx.org>"
+
+maintainer="rems"
+packager="Yaolinux Team"
 
 name=bmon
 version=4.0
