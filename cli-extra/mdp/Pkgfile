@@ -1,19 +1,21 @@
-# Depends on: git
+makedepends=(git)
 
 description="A command-line based markdown presentation tool."
 url="https://github.com/visit1985/mdp"
-packager="Graknu wgraknu@tuxfamily.org>"
-contributors=""
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=mdp
 version=1.0.15
 
+PKGMK_KEEP_SOURCES="no"
 
 source=(https://github.com/visit1985/$name/archive/$version.tar.gz)
 
-
 build() {
 	cd $name-$version
+
 	make
 	make DESTDIR=$PKG install
 }
