@@ -1,13 +1,13 @@
 description="Platform independent library for real-time MIDI input/output"
 url="http://portmedia.sourceforge.net"
-contributors="pierre"
-packager="greg<greg@nutyx.org>"
 
-# Depends on: cmake glib alsa-lib openjdk
+maintainer="rems"
+packager="Yaolinux Team"
+
+makedepends=(cmake glib alsa-lib openjdk)
 
 name=portmidi
 version=217
-release=1
 
 source=(http://downloads.sourceforge.net/project/portmedia/$name/$version/$name-src-$version.zip \
         portmidi-217-build-fix.patch)
@@ -20,7 +20,7 @@ build() {
 	sed -i "s#/usr/local#/usr#" */CMakeLists.txt pm_python/setup.py
 
 	mkdir -p pm_java/Release
-	patch -p1 -i $SRC/portmidi-217-build-fix.patch
+	patch -p1 -i ../portmidi-217-build-fix.patch
 
 	cmake . -DCMAKE_INSTALL_PREFIX=/usr \
 			-DCMAKE_ARCHIVE_OUTPUT_DIRECTORY=Release \
@@ -28,9 +28,7 @@ build() {
 			-DCMAKE_RUNTIME_OUTPUT_DIRECTORY=Release
 
 make
-
 }
-
 
 package () {
 
@@ -40,5 +38,4 @@ package () {
 
 # Fix missing symlink for libporttime.so (FS#21528)
 	ln -s libportmidi.so $PKG/usr/lib/libporttime.so
-
 }
