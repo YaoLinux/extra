@@ -1,9 +1,8 @@
 description="Firmware for wifi IPW2200 Intel Centrino"
 url="http://ipw2200.sourceforge.net/"
-contributors="pierre"
-packager="greg<greg@nutyx.org>"
 
-# Depends on: 
+maintainer="rems"
+packager="Yaolinux Team"
 
 name=ipw2200-fw
 version=3.1
