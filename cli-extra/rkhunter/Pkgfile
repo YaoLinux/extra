@@ -1,18 +1,19 @@
 description="Checks machines for the presence of rootkits and other unwanted tools."
 url="http://rkhunter.sourceforge.net/"
-packager="greg<greg@nutyx.org>"
 
-# Depends on: bash perl wget unhide
+packager="Yaolinux Team"
+maintainer="rems"
+
+makedepends=(bash perl wget unhide)
 
 name=rkhunter
-version=1.4.4
-release=1
+version=1.4.6
 
 source=(http://downloads.sourceforge.net/sourceforge/$name/$name-$version.tar.gz)
 
 build () {
 
-  cd $SRC/$name-$version
+  cd $name-$version
 
   # fix installer for x86_64
   sed -i -e "s/lib64/lib/g" installer.sh
