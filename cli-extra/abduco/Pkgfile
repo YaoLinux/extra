@@ -1,9 +1,8 @@
-# Depends on: 
-
 description="Session management in a clean and simple way."
 url="http://brain-dump.org/projects/abduco/"
-packager="remy<remy@nutyx.org>"
-contributors="Greg"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=abduco
 version=0.6
@@ -27,8 +26,3 @@ cd $name-$version
 make DESTDIR=$PKG PREFIX=/usr install
  
 }
-
-uptodate() {
-echo "Fonction  vide, normal..." 
-}
-
