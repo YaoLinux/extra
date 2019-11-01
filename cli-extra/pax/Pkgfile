@@ -1,5 +1,5 @@
-description="copies files to and from archives in several formats."
-url="http://downloads.sourceforge.net/heirloom"
+description="Portable Archive Interchange - the POSIX standard archive tool for cpio and tar formats"
+url="https://www.mirbsd.org/pax.htm"
 
 maintainer="rems"
 packager="Yaolinux Team"
@@ -7,21 +7,16 @@ packager="Yaolinux Team"
 name=pax
 version=20190825
 
-source=(http://downloads.sourceforge.net/heirloom/heirloom-070715.tar.bz2)
+source=(https://www.mirbsd.org/MirOS/dist/mir/cpio/paxmirabilis-${version}.cpio.gz)
  
 build() {
 
-cd heirloom-$version
+cd $name-$version/build
 
-sed -i build/mk.config                   \
-    -e '/LIBZ/s@ -Wl[^ ]*@@g'            \
-    -e '/LIBBZ2/{s@^#@@;s@ -Wl[^ ]*@@g}' \
-    -e '/BZLIB/s@0@1@'                   
-	
-make makefiles                           
-make -C libcommon                        
-make -C libuxre                          
+sh ../Build.sh -r -tpax
 
-install -v -dm 755 $PKG/usr/bin	
-install -v -dm 755 $PKG/usr/share/man/man1	
+# executables
+    install -D -m755 "pax" -t "${PKG}/usr/bin"
+    ln -s pax "${PKG}/usr/bin/paxcpio"
+    ln -s pax "${PKG}/usr/bin/paxtar"
 }
