@@ -26,10 +26,12 @@ prepare() {
 
 build() {
 
-   cd build
+   cd $name-$version
 
-   cmake -DCMAKE_INSTALL_PREFIX=/usr \
-         ../$name-$version
+   autoreconf -fiv
+
+   ./configure --prefix=/usr
+               --disable-static
 
    make
    make DESTDIR=$PKG install
