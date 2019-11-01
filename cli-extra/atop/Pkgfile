@@ -9,7 +9,7 @@ maintainer="rems"
 name=atop
 version=2.4.0
 
-source=(https://rems.techozor.fr/sources/development/$name-$version.tar.gz)
+source=(http://rems.techozor.fr/sources/development/$name-$version.tar.gz)
 
 build() {
   cd $name-$version
