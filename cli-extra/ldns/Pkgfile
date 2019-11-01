@@ -9,14 +9,7 @@ packager="Yaolinux Team"
 name=ldns
 version=1.7.1
 
-source=(https://www.nlnetlabs.nl/downloads/$name/$name-$version.tar.gz
-		pc.patch)
-
-prepare() {
-
-	cd $name-$version
-	patch -p1 -i ../pc.patch
-}
+source=(https://www.nlnetlabs.nl/downloads/$name/$name-$version.tar.gz)
 
 build() {
 
