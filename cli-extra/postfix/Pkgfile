@@ -35,7 +35,7 @@ build() {
 	html_directory=$PKG/usr/share/doc/postfix-$version/html \
 	readme_directory=$PKG/usr/share/doc/postfix-$version/readme
 
-    mkdir -pv $PKG/etc/aliases
+    mkdir -pv $PKG/etc/
     cat >> $PKG/etc/aliases << "EOF"
 # Begin /etc/aliases
 
