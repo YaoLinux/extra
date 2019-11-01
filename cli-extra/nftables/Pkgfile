@@ -1,4 +1,4 @@
-makedepends=(docbook2x libmnl libnftnl jansson)
+makedepends=(docbook2x libmnl libnftnl jansson asciidoc)
 
 description="Netfilter nftables userspace tools"
 url="http://netfilter.org/projects/nftables/"
