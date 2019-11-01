@@ -1,4 +1,4 @@
-makedepends=(libedit pcre python-docutils python-sphinx)
+makedepends=(libedit pcre python-docutils python-sphinx asciidoc)
 
 description="Varnish is a web application accelerator."
 url="http://www.varnish-cache.org/"
