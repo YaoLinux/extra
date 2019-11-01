@@ -17,11 +17,13 @@ source=(http://cavan.codon.org.uk/~mjg59/diskdev_cmds/diskdev_cmds-${version}.ta
 build() {
 
  cd diskdev_cmds-${version}
-  for patch in ../*.patch
+  for patch in ../hfs*.patch
   do
     patch -Np1 -i ${patch}
   done
   
+  patch -p0 -i "../ldflags_relro.patch"
+
   make -f Makefile
   
   install -m 755 -d ${PKG}/usr/bin
