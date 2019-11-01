@@ -9,27 +9,24 @@ makedepends=(libbsd openssl)
 name=hfsprogs
 version=540.1.linux3
 
-source=(http://ftp.de.debian.org/debian/pool/main/h/hfsprogs/${name}_${version}.orig.tar.gz
-        http://ftp.de.debian.org/debian/pool/main/h/hfsprogs/${name}_${version}-11.debian.tar.gz
-        license
-        makefile.patch)
+source=(http://cavan.codon.org.uk/~mjg59/diskdev_cmds/diskdev_cmds-${version}.tar.gz
+        https://src.fedoraproject.org/rpms/hfsplus-tools/raw/master/f/hfsplus-tools-no-blocks.patch
+        https://src.fedoraproject.org/rpms/hfsplus-tools/raw/master/f/hfsplus-tools-learn-to-stdarg.patch
+        ldflags_relro.patch)
 
 build() {
 
  cd diskdev_cmds-${version}
-  for patch in ../debian/patches/*.patch ../makefile.patch
+  for patch in ../*.patch
   do
     patch -Np1 -i ${patch}
   done
   
-  make -f Makefile.lnx
+  make -f Makefile
   
   install -m 755 -d ${PKG}/usr/bin
-  install -m 755 -d ${PKG}/usr/share/licenses/${name}
   install -m 755 -d ${PKG}/usr/share/${name}
   install -m 755 -d ${PKG}/usr/share/man/man8/
-  
-  install -m 644 ../license ${PKG}/usr/share/licenses/${name}/APSL
   
   install -m 755 newfs_hfs.tproj/newfs_hfs ${PKG}/usr/bin/mkfs.hfsplus
   install -m 755 fsck_hfs.tproj/fsck_hfs ${PKG}/usr/bin/fsck.hfsplus
