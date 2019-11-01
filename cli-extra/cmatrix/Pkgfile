@@ -7,18 +7,33 @@ maintainer="rems"
 name=cmatrix
 version=2.0
 
-source=(http://www.asty.org/cmatrix/dist/cmatrix-$version.tar.gz)
+PKGMK_KEEP_SOURCES="no"
 
-build() {
+source=(https://github.com/abishekvashok/cmatrix/archive/v$version.tar.gz)
+
+prepare() {
 
    cd $name-$version
 
-   ./configure \
-      --prefix=/usr \
-      --disable-nls
+   sed -i 's|/usr/bin/mkfontdir|/usr/bin/true|' CMakeLists.txt
+   sed -i 's|"share/fonts/X11/misc"|"share/fonts/misc"|' CMakeLists.txt
+   sed -i 's|"share/consolefonts"|"share/kbd/consolefonts"|' CMakeLists.txt
+
+   sed -i 's|defined(HAVE_SETFONT)|1|' cmatrix.c
+
+   mkdir ../build
+}
+
+build() {
+
+   cd build
+
+   cmake -DCMAKE_INSTALL_PREFIX=/usr \
+         ../$name-$version
 
    make
-   install -D -m755 -groot -oroot cmatrix $PKG/usr/bin/cmatrix
-   install -D -m644 -groot -oroot cmatrix.1 $PKG/usr/man/man1/cmatrix.1
-   
+   make DESTDIR=$PKG install
+
+   # manually install stuff that cmake is being annoying about
+  rm -f "$PKG/usr/share/fonts/misc/fonts.dir"
 }
