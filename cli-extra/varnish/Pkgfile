@@ -9,7 +9,7 @@ packager="Yaolinux Team"
 name=varnish
 version=6.3.1
 
-source=(https://varnish-cache.org/downloads/$name-$version.tgz
+source=(https://varnish-cache.org/_downloads/$name-$version.tgz
 		varnish.service)
 
 build(){
