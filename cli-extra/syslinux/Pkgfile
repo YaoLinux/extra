@@ -12,7 +12,7 @@ name=syslinux
 version=6.03
 release=3
 
-source=(http://downloads.tuxfamily.org/nutyx/files/splash-10.2.png
+source=(http://downloads.tuxfamily.org/nutyx/files/splash-11.0.png
         http://www.kernel.org/pub/linux/utils/boot/syslinux/$name-$version.tar.xz
         0012-ldlinux-Fix-return-pointer-to-local-data.patch
         0013-extlinux-pull-in-sys_sysmacros.h-for-major_minor_makedev.patch)
