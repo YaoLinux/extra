@@ -26,7 +26,5 @@ make
 
 package() {
 
-cd $name-$version
-
-make DESTDIR=$PKG install
+make -C build DESTDIR=$PKG install
 }
