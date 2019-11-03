@@ -1,9 +1,9 @@
-# Depends on:  intltool python2 yasm zlib libnotify gstreamer-plugins-base gtk3 dbus-glib libass lame libxml2 opus libvorbis libtheora libsamplerate x264 speex jansson librsvg libgudev x265
+makedepends=( intltool python2 yasm zlib libnotify gstreamer-plugins-base gtk3 dbus-glib libass lame libxml2 opus libvorbis libtheora libsamplerate x264 speex jansson librsvg libgudev x265)
 
 description="Multithreaded video transcoder"
 url="https://handbrake.fr"
-contributors="tnut"
-packager="rems <rems@nutyx.org>"
+maintainer="rems"
+packager="Yaolinux Team"
  
 name=handbrake
 version=1.2.2
