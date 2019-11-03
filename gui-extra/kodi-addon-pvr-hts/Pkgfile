@@ -1,9 +1,9 @@
-# Depends on: kodi-platform git
+makedepends=(kodi-platform git)
 
 description="Tvheadend HTSP PVR client addon for Kodi"
 url="https://github.com/kodi-pvr/"
-contributors=""
-packager="remy <remy@nutyx.org>"
+maintainer="rems"
+packager="Yaolinux Team"
  
 name=kodi-addon-pvr-hts
 version=4.4.18-Leia
