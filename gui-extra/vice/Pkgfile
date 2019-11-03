@@ -1,12 +1,12 @@
-#Depends on: gtkglext pulseaudio giflib xorg-bdftopcf xorg-mkfontdir libpcap xorg-libxaw ffmpeg xa
+makedepends=(gtkglext pulseaudio giflib xorg-bdftopcf xorg-mkfontdir libpcap xorg-libxaw ffmpeg xa)
 
 description="The Versatile Commodore 8-bit Emulator"
 url="http://vice-emu.sourceforge.net/"
-packager="Greg"
-contributors=""
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=vice
-version=3.2
+version=3.3
 
 source=(http://downloads.sourceforge.net/project/vice-emu/releases/$name-$version.tar.gz 
         disable-fc-cache.patch)
