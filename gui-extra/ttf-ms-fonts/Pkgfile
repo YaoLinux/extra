@@ -1,9 +1,9 @@
-# Depends on: xorg-libx11 xorg-fontconfig libarchive p7zip 
+makedepends=(xorg-libx11 xorg-fontconfig libarchive p7zip )
 
 description="Core TTF Fonts from Microsoft"
 url="http://corefonts.sourceforge.net"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 _sfpath="http://downloads.sourceforge.net/corefonts"
 
