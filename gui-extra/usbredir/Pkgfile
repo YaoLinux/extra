@@ -1,11 +1,13 @@
-# Description: USB traffic redirection protocol
-# URL: http://spice-space.org/page/UsbRedir
-# Packager: fanch at nutyx dot org
+description="USB traffic redirection protocol"
+url="http://spice-space.org/page/UsbRedir"
+
+packager="Yaolinux Team"
+maintainer="rems"
+
 makedepends=(libusb)
 
 name=usbredir
 version=0.8.0
-release=1
 
 source=(http://spice-space.org/download/usbredir/$name-$version.tar.bz2)
 build() {
@@ -14,4 +16,3 @@ build() {
 	make
 	make DESTDIR=$PKG install
 }
-  
