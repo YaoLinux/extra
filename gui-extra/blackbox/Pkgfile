@@ -1,12 +1,12 @@
-# Depends on: xorg-server
+makedepends=(xorg-server)
 
 description="A window manager for X11"
 url="http://blackboxwm.sourceforge.net"
-packager="tnut <tnut@nutyx.org>"
-contributors="Berlius, Tnut"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=blackbox
-version=0.73
+version=0.75
 
 PKGMK_KEEP_SOURCE="no"
 
