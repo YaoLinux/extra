@@ -1,9 +1,9 @@
-# Depends on: kodi-platform kodi p8-platform rapidxml
+makedepends=(kodi-platform kodi p8-platform rapidxml)
 
 description="IPTV Simple PVR client addon for Kodi"
 url="https://github.com/kodi-pvr/pvr.iptvsimple"
-contributors=""
-packager="rems <rems@nutyx.org>"
+maintainer="rems"
+packager="Yaolinux Team"
 
 name=kodi-addon-pvr-iptvsimple
 version=3.5.7
