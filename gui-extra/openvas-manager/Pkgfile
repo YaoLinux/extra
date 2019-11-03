@@ -1,16 +1,16 @@
-# Depends on: libxslt openvas-libraries rsync sqlite cmake doxygen xmltoman python2
+makedepends=(libxslt openvas-libraries rsync sqlite cmake doxygen xmltoman python2)
 
 description="A layer between the OpenVAS Scanner and various client applications"
 url="http://www.openvas.org/"
-packager="greg<greg@nutyx.org>"
-contributors=""
+packager="Yaolinux Team"
+maintainer="rems"
 
 run=()
 
 
 
 name=openvas-manager
-version=7.0.2
+version=7.0.3
 release=1
 
 source=(http://wald.intevation.org/frs/download.php/2448/$name-${version}.tar.gz
