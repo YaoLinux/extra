@@ -1,9 +1,9 @@
-# Depends on: pcre enchant gtk2 desktop-file-utils
+makedepends=(pcre enchant gtk2 desktop-file-utils)
 
 description="A powerful HTML editor for experienced web designers and programmers"
 url="http://bluefish.openoffice.nl/"
-packager="greg <greg@nutyx.org>"
-contributors="tnut"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=bluefish
 version=2.2.10
