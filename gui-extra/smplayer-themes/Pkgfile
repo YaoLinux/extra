@@ -1,9 +1,9 @@
-# Depends on: smplayer libpng optipng
+makedepends=(smplayer libpng optipng)
 
 description="Themes for SMPlayer"
 url="http://smplayer.sourceforge.net/"
-packager="rems<rems@nutyx.org>"
-contributors="Greg"
+packager="Yaolinux Team"
+maintainer="rems"
 
 run=(optipng)
 
