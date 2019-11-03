@@ -2,7 +2,7 @@
 # URL: https://bitbucket.org/blackjack/pysensors/
 # Packager: Chris Farrell, timcowchip at gmail dot com
 # Maintainer: Chris Farrell, timcowchip at gmail dot com
-# Depends on: python2 python2-setuptools lm-sensors
+makedepends=(python2 python2-setuptools lm-sensors)
 # Nice to have: hddtemp
 
 
