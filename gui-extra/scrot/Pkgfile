@@ -13,6 +13,8 @@ source=(https://github.com/resurrecting-open-source-projects/scrot/archive/${ver
 build() {
   cd $name-$version
   
+  autoreconf -fiv
+  
   ./configure --prefix=/usr \
               --mandir=/usr/share/man
   
