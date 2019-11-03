@@ -1,9 +1,9 @@
-# Depends on: git cmake kodi
+makedepends=(git cmake kodi)
 
 description="Platform library for external kodi addons"
 url="https://github.com/xbmc/kodi-platform"
-contributors=""
-packager="remy <remy@nutyx.org>"
+maintainer="rems"
+packager="Yaolinux Team"
  
 name=kodi-platform
 version=git
