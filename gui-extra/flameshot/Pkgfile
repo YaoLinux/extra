@@ -1,9 +1,9 @@
-# Depends on: qtsvg hicolor-icon-theme make qttools
+makedepends=(qtsvg hicolor-icon-theme make qttools)
 
 description="Powerful yet simple to use screenshot software"
 url="https://github.com/lupoDharkael/flameshot"
-packager="Greg"
-contributors="Graknu"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=flameshot
 version=0.6.0
