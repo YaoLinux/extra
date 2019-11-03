@@ -1,9 +1,9 @@
-# Depends on: mono-addins gtksharp2 intltool
+makedepends=(mono-addins gtksharp2 intltool)
 
 description="Drawing/editing program in C sharp"
 url="https://pinta-project.com/"
-contributors=""
-packager="rems <rems@nutyx.org>"
+maintainer="rems"
+packager="Yaolinux Team"
  
 name=pinta
 version=1.6
