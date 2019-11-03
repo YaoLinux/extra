@@ -9,7 +9,8 @@ name=gftp
 version=2.0.19
 release=3
 
-source=(http://www.gftp.org/$name-$version.tar.bz2)
+source=(http://www.gftp.org/$name-$version.tar.bz2
+        https://src.fedoraproject.org/rpms/gftp/raw/master/f/gftp-stropts.patch)
 
 prepare() {
 
@@ -17,4 +18,6 @@ cd $name-$version
 
 # openssl 1.1 compatibility
    sed -e 's|SSL_library_init|SSL_CTX_new|g' -i configure
+   
+   patch -Np1 -i ../gftp-stropts.patch
 }
