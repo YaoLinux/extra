@@ -1,7 +1,7 @@
-# Description:  Lightweight and highly configurable tiling window manager for X
-# URL: http://wmfs.info/
-# Packager: Chris Farrell, timcowchip at gmail dot com
-# Maintainer: Chris Farrell, timcowchip at gmail dot com
+description=" Lightweight and highly configurable tiling window manager for X"
+url="http://wmfs.info/"
+packager="Yaolinux Team"
+maintainer="rems"
 makedepends=(git xorg-libxft, xorg-libx11, imlib2, )
 
 name=wmfs2
