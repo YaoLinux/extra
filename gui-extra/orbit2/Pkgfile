@@ -1,6 +1,6 @@
-# Description: High-Performance CORBA Object Request Broker.
-# URL: http://www.gnome.org/
-# Packager: fanch at nutyx dor org
+description="High-Performance CORBA Object Request Broker."
+url="http://www.gnome.org/"
+packager="Yaolinux Team"
 makedepends=(glib libidl)
 
 name=orbit2
