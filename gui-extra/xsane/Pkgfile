@@ -11,7 +11,7 @@ name=xsane
 version=0.999
 release=3
 
-source=(http://www.xsane.org/download/xsane-$version.tar.gz)
+source=(http://http.debian.net/debian/pool/main/x/$name/${name}_$version.orig.tar.gz)
 
 build() {
 cd xsane-$version
