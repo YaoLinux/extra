@@ -1,12 +1,12 @@
-# Depends on: xorg-libx11
+makedepends=(xorg-libx11)
 
 description="Allows access the terminal windows"
 url="http://www.rdesktop.org/"
-packager="Jayce <jayce.net@gmail.com>"
-contributors="Pierre"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=rdesktop
-version=1.8.3
+version=1.8.6
 release=2
 
 source=(http://downloads.sourceforge.net/$name/$name-$version.tar.gz
