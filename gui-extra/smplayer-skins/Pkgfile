@@ -1,8 +1,8 @@
-# Depends on: smplayer
+makedepends=(smplayer)
 
 description="Skins for SMPlayer"
 url="http://smplayer.sourceforge.net/"
-packager="greg<greg@nutyx.org>"
+packager="Yaolinux Team"
 
 name=smplayer-skins
 version=15.2.0
