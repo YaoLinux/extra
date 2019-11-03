@@ -1,8 +1,8 @@
-# Depends on: gtk-update-icon-cache hicolor-icon-theme
+makedepends=(gtk-update-icon-cache hicolor-icon-theme)
 
 description="Arc icon theme"
-packager="greg <greg@nutyx.org>"
-contributors="jayce"
+packager="Yaolinux Team"
+maintainer="rems"
 url="https://github.com/horst3180/arc-icon-theme"
 
 name=arc-icon-theme
