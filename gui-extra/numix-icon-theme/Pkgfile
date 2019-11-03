@@ -1,7 +1,7 @@
- # Depends on: 	gtk-update-icon-cache git 
+ makedepends=(	gtk-update-icon-cache git )
 
 description="Base icon theme from the Numix project"
-packager="rems"
+packager="Yaolinux Team"
 url="http://numixproject.org/"
 
 name=numix-icon-theme
