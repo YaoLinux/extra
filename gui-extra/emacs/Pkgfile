@@ -1,12 +1,12 @@
-# Depends on: gtk3 desktop-file-utils libjpeg-turbo giflib libpng librsvg libtiff dbus alsa-lib gnutls gsettings-desktop-schemas xorg-libxpm
+makedepends=(gtk3 desktop-file-utils libjpeg-turbo giflib libpng librsvg libtiff dbus alsa-lib gnutls gsettings-desktop-schemas xorg-libxpm)
 
 description="An extensible, customizable, self-documenting real-time display editor."
 url="https://www.gnu.org/software/emacs/"
-contributors="Berlius, Tnut, Greg"
-packager="tnut <tnut@nutyx.org>"
+maintainer="rems"
+packager="Yaolinux Team"
 
 name=emacs
-version=26.1
+version=26.3
 
 source=(https://ftp.gnu.org/pub/gnu/emacs/$name-$version.tar.xz)
 
