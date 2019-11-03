@@ -1,4 +1,4 @@
-# Depends on: asciidoc python libreoffice
+makedepends=(asciidoc python libreoffice)
 
 description="Libreoffice-based document converter"
 url="http://dag.wiee.rs/home-made/unoconv"
@@ -6,7 +6,7 @@ packager="Yaolinux Team"
 maintainer="rems <rems@yaolinux.org>"
  
 name=unoconv
-version=0.8.2
+version=0.9
 release=2
 
 PKGMK_KEEP_SOURCES="no"
