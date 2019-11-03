@@ -1,6 +1,6 @@
-# Description: A notepad clone for GTK+ 2.0
-# URL: http://tarot.freeshell.org/leafpad/
-# Packager: fanch at nutyx dot org
+description="A notepad clone for GTK+ 2.0"
+url="http://tarot.freeshell.org/leafpad/"
+packager="Yaolinux Team"
 makedepends=(gtk2 desktop-file-utils)
 
 name=leafpad
