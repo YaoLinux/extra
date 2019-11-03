@@ -1,9 +1,9 @@
-# Depends on: bzr cairo cmake curl dbus-glib xorg-glu gtk3
+makedepends=(bzr cairo cmake curl dbus-glib xorg-glu gtk3)
 
 description="Light eye-candy fully themable animated dock"
 url="http://glx-dock.org/"
-packager="dania <dania@nutyx.org>"
-contributors="Tnut"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=cairo-dock
 version=3.4.1
