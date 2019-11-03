@@ -1,9 +1,9 @@
-# Depends on: crypto++ util-linux wxgtk
+makedepends=(crypto++ util-linux wxgtk)
 
 description=" An all-platform Edonkey client."
 url="http://www.amule.org"
-packager="tnut <tnut@nutyx.org>"
-contributors="Greg"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=amule
 version=2.3.2
