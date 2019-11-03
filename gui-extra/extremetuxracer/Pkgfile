@@ -1,8 +1,8 @@
-# Depends on: sdl sdl-image sdl-mixer mesa xorg-glu freetype sfml csfml
+makedepends=(sdl sdl-image sdl-mixer mesa xorg-glu freetype sfml csfml)
 
 description="High speed arctic racing game based on Tux Racer."
 url="http://sourceforge.net/projects/extremetuxracer/"
-packager="berlius at nutyx dot com, tnut at nutyx dot org"
+packager="Yaolinux Team"
 name=extremetuxracer
 version=0.7.5
 
