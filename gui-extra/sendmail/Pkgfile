@@ -1,8 +1,8 @@
-# Depends on: ghostscript cyrus-sasl openssl procmail openldap 
+makedepends=(ghostscript cyrus-sasl openssl procmail openldap )
 description="The sendmail package contains a Mail Transport Agent (MTA)."
 url="ftp://ftp.sendmail.org/pub/sendmail/"
-packager="tnut <tnut@nutyx.org>"
-contributors="berlius"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=sendmail
 version=8.15.2
