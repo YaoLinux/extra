@@ -1,9 +1,9 @@
-# Depends on: hicolor-icon-theme libmediainfo qtbase qttools qttranslations
+makedepends=(hicolor-icon-theme libmediainfo qtbase qttools qttranslations)
 
 description="A small and user friendly opensource video library with great potential"
 url="http://melnik.solutions/project/alexandra"
-contributors=""
-packager="rems <rems@nutyx.org>"
+maintainer="rems"
+packager="Yaolinux Team"
  
 name=alexandra
 version=1.5.1
