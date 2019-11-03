@@ -1,9 +1,9 @@
-# Depends on: gsettings-desktop-schemas keybinder3 libnotify python2-cairo dbus-python python2-psutil python2-gobject vte3 xdg-utils
+makedepends=(gsettings-desktop-schemas keybinder3 libnotify python2-cairo dbus-python python2-psutil python2-gobject vte3 xdg-utils)
 
 description="Terminal emulator that supports tabs and grids"
 url="https://gnometerminator.blogspot.com/p/introduction.html"
-contributors=""
-packager="rems <rems@nutyx.org>"
+maintainer="rems"
+packager="Yaolinux Team"
 run=(python2-cairo dbus-python python2-psutil python2-gobject keybinder3 vte3 xdg-utils gsettings-desktop-schemas) 
 name=terminator
 version=1.91
