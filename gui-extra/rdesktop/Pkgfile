@@ -1,4 +1,4 @@
-makedepends=(xorg-libx11 xorg-libxrandr xorg-libxcursor)
+makedepends=(xorg-libx11 xorg-libxrandr xorg-libxcursor libtasn1)
 
 description="Allows access the terminal windows"
 url="http://www.rdesktop.org/"
