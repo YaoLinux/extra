@@ -6,20 +6,18 @@ url="https://www.torproject.org/projects/torbrowser.html.en"
 packager="Yaolinux Team"
 maintainer="rems"
 
-run=()
-
 PKGMK_IGNORE_UNPACK="yes"
 
 _language='fr'
 name=tor-browser-fr
-version=7.5
-release=1
+version=9.0
 
-source=(https://dist.torproject.org/torbrowser/${version}/tor-browser-linux64-${version}_${_language}.tar.xz tor-browser-fr.desktop tor-browser-fr.png tor-browser-fr.sh)
+source=(https://dist.torproject.org/torbrowser/${version}/tor-browser-linux64-${version}_${_language}.tar.xz 
+        tor-browser-fr.desktop
+        tor-browser-fr.png
+        tor-browser-fr.sh)
 
 build(){
-
-   cd "${SRC}"
 
    sed -i "s/REPL_NAME/${name}/g"       ${name}.sh
    sed -i "s/REPL_VERSION/${version}/g"	    ${name}.sh
