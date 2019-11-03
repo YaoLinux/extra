@@ -2,6 +2,7 @@ makedepends=(gtk-update-icon-cache)
 
 description="Icons xquisite for xfce"
 url="http://xfce-look.org/content/show.php/Xquisite?content=69735"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -11,7 +12,7 @@ release=2
 
 run=(gtk-update-icon-cache)
 
-source=(http://downloads.nutyx.org/files/$name-$version.tar.gz)
+source=(http://download2146.mediafire.com/w18544rcl85g/lozb6ec3no9a233/Xquisite.tbz)
 
 build() {
 mkdir -p $PKG//usr/share/icons/
