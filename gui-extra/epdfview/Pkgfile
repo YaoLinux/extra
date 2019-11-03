@@ -1,7 +1,7 @@
-# Depends on: poppler-glib gtk2 desktop-file-utils hicolor-icon-theme
+makedepends=(poppler-glib gtk2 desktop-file-utils hicolor-icon-theme)
 
 url="http://freecode.com/projects/epdfview"
-packager="Sipo"
+packager="Yaolinux Team"
 description="Lightweight PDF document viewer"
 name=epdfview
 alias=(ePDFView)
