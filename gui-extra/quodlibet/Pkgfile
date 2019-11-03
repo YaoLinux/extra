@@ -1,12 +1,12 @@
-# Depends on: gtk3 python-gobject dbus-python python-cairo python-mutagen dbus-glib gstreamer-plugins-base gstreamer-plugins-good gstreamer-plugins-libav gstreamer-plugins-ugly gstreamer-plugins-bad python-feedparser intltool
+makedepends=(gtk3 python-gobject dbus-python python-cairo python-mutagen dbus-glib gstreamer-plugins-base gstreamer-plugins-good gstreamer-plugins-libav gstreamer-plugins-ugly gstreamer-plugins-bad python-feedparser intltool)
 
 description="A python audio library tagger, manager and player"
 url="https://github.com/quodlibet/quodlibet"
-packager="tnut <tnut@nutyx.org>"
-contributors="Remy"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=quodlibet
-version=4.2.0
+version=4.2.1
 
 PKGMK_KEEP_SOURCES="no"
 
