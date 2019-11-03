@@ -9,6 +9,8 @@ maintainer="rems"
 name=openvas-manager
 version=7.0.0
 
+PKGMK_KEEP_SOURCES="no"
+
 source=(https://github.com/greenbone/openvas/archive/v${version}.tar.gz)
 
 build() {
@@ -18,7 +20,7 @@ cmake -DCMAKE_BUILD_TYPE=Release \
       -DSBINDIR=/usr/bin \
       -DCMAKE_INSTALL_PREFIX=/usr \
       -DSYSCONFDIR=/etc \
-      -DLOCALSTATEDIR=/var ../$name-$version
+      -DLOCALSTATEDIR=/var ../openvas-$version
 make
 }
 
