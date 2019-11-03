@@ -1,12 +1,12 @@
-# Depends on:
+makedepends=()
 
 description="An open source, high performance library for simulating rigid body dynamics"
 url="https://bitbucket.org/odedevs/ode/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Greg"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=ode
-version=0.15.2
+version=0.16
 
 source=(https://bitbucket.org/odedevs/${name}/downloads/${name}-${version}.tar.gz)
 
