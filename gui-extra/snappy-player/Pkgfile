@@ -1,9 +1,9 @@
-# Depends on: gstreamer-plugins-libav gstreamer-plugins-base gstreamer-plugins-good gstreamer-plugins-bad gstreamer-plugins-ugly clutter-gst clutter-gtk
+makedepends=(gstreamer-plugins-libav gstreamer-plugins-base gstreamer-plugins-good gstreamer-plugins-bad gstreamer-plugins-ugly clutter-gst clutter-gtk)
 
 description="Powerful media player with a minimalistic interface"
 url="https://wiki.gnome.org/Apps/Snappy"
-contributors=""
-packager="rems <rems@nutyx.org>"
+maintainer="rems"
+packager="Yaolinux Team"
  
 name=snappy-player
 version=1.0
