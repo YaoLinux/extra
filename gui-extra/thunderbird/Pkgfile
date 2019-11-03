@@ -1,14 +1,14 @@
-# Depends on: autoconf2-13 icu alsa-lib gtk2 zip unzip libevent libvpx nspr nss yasm dbus-glib doxygen libnotify openjdk startup-notification hunspell sqlite wireless-tools xorg-libx11 xorg-libxt xorg-libxrandr desktop-file-utils hicolor-icon-theme shared-mime-info pulseaudio
+makedepends=(autoconf2-13 icu alsa-lib gtk2 zip unzip libevent libvpx nspr nss yasm dbus-glib doxygen libnotify openjdk startup-notification hunspell sqlite wireless-tools xorg-libx11 xorg-libxt xorg-libxrandr desktop-file-utils hicolor-icon-theme shared-mime-info pulseaudio)
 
 description="Stand-alone mail/news client based on the Mozilla codebase."
 url="http://www.mozilla.org/thunderbird"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 run=(startup-notification hunspell)
 
 name=thunderbird
-version=60.8.0
+version=68.2.0
 
 source=(http://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/$version/source/$name-$version.source.tar.xz
 	$name.desktop
