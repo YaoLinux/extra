@@ -7,18 +7,16 @@ version=1.5.12
 
 run=(dbus-python python-gobject python-cairo python-cups python-curl python-smbc desktop-file-utils)
 
-source=(0001-Fix-constructing-the-auth-dialog.patch
-	https://github.com/zdohnal/$name/releases/download/$version/$name-$version.tar.xz)
+source=(https://github.com/OpenPrinting/$name/releases/download/$version/$name-${version}.tar.xz)
 
 build() {
 
 cd $name-$version
 
-patch -Np1 -i ../0001-Fix-constructing-the-auth-dialog.patch
-
 ./configure --prefix=/usr \
---sbindir=/usr/bin --sysconfdir=/etc \
---with-udev-rules 
+            --sbindir=/usr/bin \
+	    --sysconfdir=/etc \
+            --with-udev-rules 
 
 make
 
@@ -29,4 +27,11 @@ make DESTDIR=$PKG install
 # Compile *.pyo
 # find $PKG -name '*.py' -exec python -O -mpy_compile {} +
 
+# new cups 2.0.0 service naming
+  sed -i "s|cups.socket|org.cups.cupsd.socket|g" "$PKG"/lib/systemd/system/configure-printer@.service
+  
+# fix dbus policy location - --with-dbusdir doens't work
+  install -dm755 "$PKG"/usr/share/dbus-1/system.d
+  mv "$PKG"/etc/dbus-1/system.d/* "$PKG"/usr/share/dbus-1/system.d
+  rm -rf "$PKG"/etc/dbus-1
 }
