@@ -1,9 +1,9 @@
-# Depends on: git fltk
+makedepends=(git fltk)
 
 description="Fast Light Window Manager"
 url="http://flwm.sourceforge.net/"
-contributors="timcowchip, tnut"
-packager="greg <greg@nutyx.org>"
+maintainer="rems"
+packager="Yaolinux Team"
 
 name=flwm
 version=git
