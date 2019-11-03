@@ -1,13 +1,13 @@
-# Depends on: ijs gtk2 cups foomatic-db-engine ghostscript cups-filters
+makedepends=(ijs gtk2 cups foomatic-db-engine ghostscript cups-filters)
 
 description="Top quality printer drivers for POSIX systems"
 url="http://gimp-print.sourceforge.net"
-contributors="Pierre B., tnut"
-packager="greg <greg@nutyx.org>"
+maintainer="rems"
+packager="Yaolinux Team"
 
 
 name=gutenprint
-version=5.3.1
+version=5.3.3
 
 source=(https://downloads.sourceforge.net/gimp-print/$name-$version.tar.xz)
 
