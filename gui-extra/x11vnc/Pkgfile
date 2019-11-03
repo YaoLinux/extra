@@ -1,12 +1,12 @@
-# Depends on: libjpeg-turbo xorg-libxdamage xorg-libxinerama xorg-libxrandr xorg-libxtst libvncserver
+makedepends=(libjpeg-turbo xorg-libxdamage xorg-libxinerama xorg-libxrandr xorg-libxtst libvncserver)
 
 description="VNC server for real X displays"
 url="https://github.com/LibVNC/x11vnc"
-packager="tnut <tnut@nutyx.org"
-contributors="Greg"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=x11vnc
-version=0.9.15
+version=0.9.16
 
 PKGMK_KEEP_SOURCES="no"
 
