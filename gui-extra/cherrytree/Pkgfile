@@ -1,9 +1,9 @@
-# Depends on: python2-gtksourceview2 dbus-python p7zip python2 python2-gtk 
+makedepends=(python2-gtksourceview2 dbus-python p7zip python2 python2-gtk )
 
 description="Prise de note" 
 url="https://www.giuspen.com/cherrytree/" 
-packager="tnut <tnut@nutyx.org>"
-contributors="indoo"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=cherrytree 
 version=0.38.7
