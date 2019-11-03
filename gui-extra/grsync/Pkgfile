@@ -1,9 +1,9 @@
-# Depends on: gtk3 rsync intltool 
+makedepends=(gtk3 rsync intltool )
 
 description="GUI for rsync"
 url="https://github.com/FreeRDP/Remmina/"
-packager="remy <remy@nutyx.org>"
-contributors=""
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=grsync
 version=1.2.6
