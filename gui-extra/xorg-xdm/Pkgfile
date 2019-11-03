@@ -1,12 +1,12 @@
-# Depends on: pam xorg-libxaw xorg-libxinerama xorg-xinit xorg-libxft
+makedepends=(pam xorg-libxaw xorg-libxinerama xorg-xinit xorg-libxft)
 
 description="X display Manager"
 url="https://xorg.freedesktop.org/"
-packager="greg <greg@nutyx.org>"
-contributors="tnut"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=xorg-xdm
-version=1.1.11
+version=1.1.12
 release=4
 
 run=(xorg-xinit)
