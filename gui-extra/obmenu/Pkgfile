@@ -1,7 +1,7 @@
-# Depends on: python2-gtk
+makedepends=(python2-gtk)
 description="tool of configuration for openbox"
 url="http://obmenu.sourceforge.net"
-packager="geantbrun at gmail dot com"
+packager="Yaolinux Team"
 name=obmenu
 version=1.0
 release=2
