@@ -1,7 +1,7 @@
-# Depends on: openjdk
+makedepends=(openjdk)
 
 description="Syncro SVN Client is a simple svn client."
-packager="liberodark"
+packager="Yaolinux Team"
 url="http://www.syncrosvnclient.com/"
 
 name=syncrosvn
