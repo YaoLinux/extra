@@ -1,4 +1,4 @@
-makedepends=(xorg-libx11 xorg-libxrandr xorg-libxcursor libtasn1)
+makedepends=(xorg-libx11 xorg-libxrandr xorg-libxcursor libtasn1 nettle)
 
 description="Allows access the terminal windows"
 url="http://www.rdesktop.org/"
