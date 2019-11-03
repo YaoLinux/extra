@@ -1,11 +1,11 @@
-# Depends on: python perl-archive-zip unzip zip icu cups poppler-glib xorg-fontconfig libxslt kerberos gtk2 xorgproto dbus-glib mesa postgresql wget apache-ant apr boost clucene dbus-glib libjpeg-turbo2 xorg-glu gstreamer-plugins-base libatomic-ops lcms2 librsvg libxml2 libxslt mesa neon nss redland unixodbc serf dconf bluez desktop-file-utils doxygen gdb gnutls kerberos nasm sane valgrind cppunit hunspell hyphen telepathy-glib zenity libcmis xmlsec gpgme libgpg-error libassuan libabw llvm
+makedepends=(python perl-archive-zip unzip zip icu cups poppler-glib xorg-fontconfig libxslt kerberos gtk2 xorgproto dbus-glib mesa postgresql wget apache-ant apr boost clucene dbus-glib libjpeg-turbo2 xorg-glu gstreamer-plugins-base libatomic-ops lcms2 librsvg libxml2 libxslt mesa neon nss redland unixodbc serf dconf bluez desktop-file-utils doxygen gdb gnutls kerberos nasm sane valgrind cppunit hunspell hyphen telepathy-glib zenity libcmis xmlsec gpgme libgpg-error libassuan libabw llvm)
 
 PKGMK_IGNORE_UNPACK="yes"
 
 description="Office suite. It is largely compatible with Microsoft Office (fork from OpenOffice.org)."
 url="http://www.libreoffice.org"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B, Tnut, Greg"
+packager="Yaolinux Team"
+maintainer="rems"
 
 run=(shared-mime-info xdg-utils desktop-file-utils) 
 
