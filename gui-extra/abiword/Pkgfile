@@ -1,9 +1,9 @@
-# Depends on: icu boost cairo aspell fribidi enchant wv librsvg gtk2 redland rasqal desktop-file-utils gtk3
+makedepends=(icu boost cairo aspell fribidi enchant wv librsvg gtk2 redland rasqal desktop-file-utils gtk3)
 
 description="Word processing similar to MS® Word, suitable for a wide variety of word processing tasks"
 url="http://www.abisource.com/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B., Tnut, Greg"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=abiword
 version=3.0.2
