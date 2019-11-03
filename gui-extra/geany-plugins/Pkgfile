@@ -1,12 +1,12 @@
-# Depends on: geany
+makedepends=(geany)
 
 description="Many plugins for geany"
 url="http://plugins.geany.org/"
-contributors="tnut, Greg"
-packager="tnut <tnut@nutyx.org>"
+maintainer="rems"
+packager="Yaolinux Team"
 
 
 name=geany-plugins
-version=1.33
+version=1.36
 
 source=(http://plugins.geany.org/geany-plugins/$name-$version.tar.bz2)
