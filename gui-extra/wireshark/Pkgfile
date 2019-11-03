@@ -1,12 +1,12 @@
-# Depends on: shared-mime-info gtk3 libpcap pcre hicolor-icon-theme
+makedepends=(shared-mime-info gtk3 libpcap pcre hicolor-icon-theme)
 
 description="Network Sniffer with nice GTK3 UI"
 url="http://www.wireshark.org"
-packager="tnut <tnut@nutyx.org>"
-contributors="fanch,tnut,Greg,Rémy"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=wireshark
-version=2.6.3
+version=3.0.6
 
 run=(shared-mime-info)
 
