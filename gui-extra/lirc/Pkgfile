@@ -1,9 +1,9 @@
-# Depends on: alsa-lib xorg-libx11 libftdi libusb-compat help2man alsa-lib xorg-libx11 libxslt python
+makedepends=(alsa-lib xorg-libx11 libftdi libusb-compat help2man alsa-lib xorg-libx11 libxslt python)
 
 description="Linux Infrared Remote Control utilities"
 url="http://www.lirc.org/"
-packager="greg<greg@nutyx.org>"
-contributors=""
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=lirc
 version=0.10.1
