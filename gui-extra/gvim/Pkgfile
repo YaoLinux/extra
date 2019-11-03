@@ -1,9 +1,9 @@
-# Depends on:  vim gtk3 xorg-libxt gpm
+makedepends=( vim gtk3 xorg-libxt gpm)
 
 description="GTK version of the vim editor"
 url="http://www.vim.org/"
-contributors="fanch, tnut, greg"
-packager="tnut <tnut@nutyx.org"
+maintainer="rems"
+packager="Yaolinux Team"
 
 name=gvim
 version=8.1
