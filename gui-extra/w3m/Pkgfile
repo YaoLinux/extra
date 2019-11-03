@@ -1,11 +1,11 @@
-# Depends on: openssl gc ncurses gpm git imlib2
+makedepends=(openssl gc ncurses gpm git imlib2)
 
 description="Text-based Web browser as well as pager"
 url="https://salsa.debian.org/debian/w3m"
-packager="greg"
+packager="Yaolinux Team"
 
 name=w3m
-version=0.5.3.git20180125
+version=0.5.3.git20190105
 release=1
 
 source=()
