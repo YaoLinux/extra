@@ -1,9 +1,9 @@
-# Depends on: taglib alsa-lib curl vte3
+makedepends=(taglib alsa-lib curl vte3)
 
 description="X Convert File Audio"
 url="http://www.xcfa.tuxfamily.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Greg"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=xcfa
 version=5.0.2
