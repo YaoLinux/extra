@@ -1,9 +1,9 @@
-# Depends on: ninja meson iso-codes glib gtk2 lua dbus libnotify libcanberra openssl pciutils python desktop-file-utils shared-mime-info
+makedepends=(ninja meson iso-codes glib gtk2 lua dbus libnotify libcanberra openssl pciutils python desktop-file-utils shared-mime-info)
 
 url="https://dl.hexchat.net/hexchat"
 description="IRC chat program. It allows you to join multiple IRC channels at the sametime"
-contributors="Berlius, Greg, Tnut"
-packager="tnut <tnut@nutyx.org"
+maintainer="rems"
+packager="Yaolinux Team"
 
 name=hexchat
 version=2.14.2
