@@ -1,14 +1,14 @@
-# Depends on : desktop-file-utils ffmpeg lcms2 libcdio-paranoia libglade xorg-libxscrnsaver xorg-libxinerama xorg-libxv libxkbcommon libva wayland libcaca desktop-file-utils hicolor-icon-theme xdg-utils lua samba libdvdnav xorg-libxrandr jack rubberband uchardet mesa python2-docutils ladspa
+makedepends=(desktop-file-utils ffmpeg lcms2 libcdio-paranoia libglade xorg-libxscrnsaver xorg-libxinerama xorg-libxv libxkbcommon libva wayland libcaca desktop-file-utils hicolor-icon-theme xdg-utils lua samba libdvdnav xorg-libxrandr jack rubberband uchardet mesa python2-docutils ladspa)
 
 
 description="a free, open source, and cross-platform media player"
 url="https://mpv.io/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Tnut, Greg"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=mpv
 _waf_version=2.0.9
-version=0.29.1
+version=0.30.0
 
 PKGMK_KEEP_SOURCES="no"
 
