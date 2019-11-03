@@ -1,9 +1,9 @@
-# Depends on: lightdm-gtk-greeter python-gobject python-distutils-extra
+makedepends=(lightdm-gtk-greeter python-gobject python-distutils-extra)
 
 description="Settings editor for the LightDM GTK+ Greeter"
 url="https://launchpad.net/lightdm-gtk-greeter-settings"                                                                    [16:27 x86_64 4.14.98-NuTyX-lts root@nutyx]
-packager="Dania <Dania@nutyx.org>"
-contributors=""
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=lightdm-gtk-greeter-settings
 version=1.2.2
