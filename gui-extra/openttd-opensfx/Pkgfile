@@ -1,9 +1,9 @@
-# Depends on: 
+makedepends=()
 
 description="Free sound set for openttd"
 url="http://www.openttd.org"
-contributors="tsgeek"
-packager="greg<greg@nutyx.org>"
+maintainer="rems"
+packager="Yaolinux Team"
 
 name=openttd-opensfx
 version=0.2.3
