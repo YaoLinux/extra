@@ -1,7 +1,7 @@
- # Depends on: gdk-pixbuf ruby-bundler
+ makedepends=(gdk-pixbuf ruby-bundler)
 
 description="A flat and light theme with a modern look"
-packager="Rems"
+packager="Yaolinux Team"
 url="http://numixproject.org/"
 
 name=numix-gtk-theme
