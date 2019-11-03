@@ -1,9 +1,9 @@
-# Depends on: gtk3 
+makedepends=(gtk3 )
 
 description="GTK+ based scientific calculator"
 url="http://galculator.sourceforge.net/"
-contributors="pierre at nutyx dot org"
-packager="greg <greg@nutyx.org>"
+maintainer="rems"
+packager="Yaolinux Team"
  
 name=galculator
 version=2.1.4
