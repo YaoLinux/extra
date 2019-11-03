@@ -1,7 +1,7 @@
 # Description: An unicode capable rxvt clone (urxvt). rxvt-unicode is an enhanced version of the rxvt terminal emulator.
 # URL: http://software.schmorp.de/pkg/rxvt-unicode.html
 # Packager: alienus at nutyx dot org
-# Depends on: gdk-pixbuf xorg-libxft startup-notification
+makedepends=(gdk-pixbuf xorg-libxft startup-notification)
 
 description="An enhanced unicode capable version of the rxvt terminal emulator."
 name=rxvt-unicode
