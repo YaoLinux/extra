@@ -1,14 +1,14 @@
-# Depends on: efl xcb-util-keysyms
+makedepends=(efl xcb-util-keysyms)
 
 description="Enlightenment window manager"
 url="http://www.enlightenment.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Berlius, Sh4d0w"
+packager="Yaolinux Team"
+maintainer="rems"
 
 run=(efl)
 
 name=enlightenment
-version=0.22.4
+version=0.23.1
 
 source=(https://download.enlightenment.org/rel/apps/enlightenment/$name-$version.tar.xz)
 
