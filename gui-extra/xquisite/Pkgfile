@@ -12,7 +12,7 @@ release=2
 
 run=(gtk-update-icon-cache)
 
-source=(http://download2146.mediafire.com/w18544rcl85g/lozb6ec3no9a233/Xquisite.tbz)
+source=(http://download1654.mediafire.com/bcf6q5193heg/lozb6ec3no9a233/Xquisite.tbz)
 
 prepare() {
 
