@@ -1,7 +1,7 @@
-# Depends on: gnupg tree
+makedepends=(gnupg tree)
 
 description="Stores, retrives, generates, and synchronizes passwords securely"
-packager="Rocket"
+packager="Yaolinux Team"
 url="http://passwordstore.org"
 
 name=pass
