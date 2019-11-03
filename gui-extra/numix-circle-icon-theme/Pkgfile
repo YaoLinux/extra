@@ -1,7 +1,7 @@
- # Depends on: numix-icon-theme git
+ makedepends=(numix-icon-theme git)
 
 description="Circle icon theme from the Numix project"
-packager="rems"
+packager="Yaolinux Team"
 url="http://numixproject.org/"
 
 name=numix-circle-icon-theme
