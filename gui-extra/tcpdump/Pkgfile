@@ -1,12 +1,12 @@
-# Depends on: libpcap libcap-ng openssl
+makedepends=(libpcap libcap-ng openssl)
 
 description="Powerful command-line packet analyzer"
 url="http://www.tcpdump.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="greg"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=tcpdump
-version=4.9.2
+version=4.9.3
 release=2
 
 source=(https://sources.archlinux.org/other/packages/tcpdump/${name}-${version}.tar.gz)
