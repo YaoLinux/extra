@@ -1,9 +1,9 @@
-# Depends on: efl
+makedepends=(efl)
 
 description="Audio Video player for enlightenment"
 url="http://www.enlightenment.org"
-packager="tnut <tnut@nutyx.org>"
-contributors="Berlius"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=rage
 version=0.2.1
