@@ -1,13 +1,13 @@
-makedepends=(python xorg-server xorg-fontconfig xorg-font-util xorg-mkfontdir xorg-font-alias xorg-encodings xorg-bdftopcf)
+makedepends=(python xorg-server xorg-fontconfig xorg-font-util xorg-mkfontscale xorg-font-alias xorg-encodings xorg-bdftopcf)
 
 description="Monospace bitmap font (for X11 and console)"
 url="http://sourceforge.net/projects/terminus-font/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=terminus-font
 version=4.48
-release=1
 
 source=(http://downloads.sourceforge.net/project/$name/$name-$version/$name-$version.tar.gz)
 
@@ -22,7 +22,8 @@ build() {
     --prefix=/usr \
     --x11dir=/usr/share/fonts/misc \
     --psfdir=/usr/share/kbd/consolefonts
-  make
+
+make
 }
 
 package() {
