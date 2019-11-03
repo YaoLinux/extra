@@ -1,9 +1,9 @@
-# Depends on: git, fltk, libburn, libisoburn
+makedepends=(git, fltk, libburn, libisoburn)
 
 description="CD/DVD burning application"
 url="http://sourceforge.net/projects/gnomebaker/"
-contributors="timcowchip, tnut"
-packager="greg <greg@nutyx.org>"
+maintainer="rems"
+packager="Yaolinux Team"
 
 name=flburn
 version=git
