@@ -1,9 +1,9 @@
-# Depends on: git fltk poppler lzo
+makedepends=(git fltk poppler lzo)
 
 description="A simple FLTK PDF viewer"
 url="https://github.com/clbr/flaxpdf"
-contributors="timcowchip, tnut, Greg"
-packager="tnut <tnut@nutyx.org>"
+maintainer="rems"
+packager="Yaolinux Team"
 
 name=flaxpdf
 version=git
