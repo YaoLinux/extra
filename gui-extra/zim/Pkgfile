@@ -1,14 +1,14 @@
-# Depends on: python2-gtk dejavu-ttf desktop-file-utils
+makedepends=(python2-gtk dejavu-ttf desktop-file-utils)
 
 description="A WYSIWYG text editor that aims at bringing the concept of a wiki to the desktop."
 url="http://zim-wiki.org/"
-contributors="Alienus, Tnut, Greg"
-packager="tnut <tnut@nutyx.org>"
+maintainer="rems"
+packager="Yaolinux Team"
 
 run=(python2-gtk dejavu-ttf desktop-file-utils shared-mime-info)
 
 name=zim
-version=0.68
+version=0.72.0
 
 source=(
 http://www.zim-wiki.org/downloads/$name-$version.tar.gz)
