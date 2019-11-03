@@ -1,9 +1,9 @@
-# Depends on: python2-gtk recordmydesktop
+makedepends=(python2-gtk recordmydesktop)
 
 description="Graphical frontend to recordmydesktop."
 url="http://recordmydesktop.sourceforge.net/"
-packager="greg <greg@nutyx.org>"
-contributors="fanch at nutyx dot com"
+packager="Yaolinux Team"
+maintainer="rems"
 
 run=(python2-gtk recordmydesktop)
 
