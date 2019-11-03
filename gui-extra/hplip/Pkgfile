@@ -1,12 +1,12 @@
-# Depends on: avahi python2 ghostscript foomatic-db foomatic-db-engine usbutils sane cups cups-filters cups-pk-helper libusb net-snmp dbus-python python2-qt openssl python-reportlab python2-gobject polkit
+makedepends=(avahi python2 ghostscript foomatic-db foomatic-db-engine usbutils sane cups cups-filters cups-pk-helper libusb net-snmp dbus-python python2-qt openssl python-reportlab python2-gobject polkit)
 
 description="Drivers for HP DeskJet, OfficeJet, Photosmart, Business Inkjet and some LaserJet"
 url="http://hplipopensource.com"
-contributors="tnut, Greg"
-packager="rems <rems@nutyx.org>"
+maintainer="rems"
+packager="Yaolinux Team"
 
 name=hplip
-version=3.19.1
+version=3.19.10
 release=1
 
 run=(dbus-python python2-qt openssl python-reportlab python2-gobject)
