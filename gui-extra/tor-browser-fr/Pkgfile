@@ -1,10 +1,10 @@
-# Depends on : gtk2 xorg-libxt startup-notification dbus-glib alsa-lib desktop-file-utils hicolor-icon-theme libvpx icu libevent nss hunspell sqlite 
+makedepends=(gtk2 xorg-libxt startup-notification dbus-glib alsa-lib desktop-file-utils hicolor-icon-theme libvpx icu libevent nss hunspell sqlite )
 
 
 description="Tor Browser Bundle: Anonymous browsing using firefox and tor"
 url="https://www.torproject.org/projects/torbrowser.html.en"
-packager="sipo@<sipo@linuxnutyx.fr>"
-contributors="Sipo"
+packager="Yaolinux Team"
+maintainer="rems"
 
 run=()
 
