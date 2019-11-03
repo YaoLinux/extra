@@ -1,11 +1,11 @@
-# Depends on: xorg-server xorg-fontconfig gdk-pixbuf fribidi
+makedepends=(xorg-server xorg-fontconfig gdk-pixbuf fribidi)
 
-packager="tnut <tnut@nutyx.org>"
+packager="Yaolinux Team"
 url="www.icewm.org"
 description="IceWM is a window manager with the goals of speed, simplicity"
 
 name=icewm
-version=1.4.2
+version=1.6.2
 
 source=(http://github.com/bbidulock/$name/releases/download/$version/$name-$version.tar.bz2)
  
