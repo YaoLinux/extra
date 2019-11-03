@@ -1,12 +1,12 @@
-# Depends on: cmake qtbase qtlocation qtmultimedia qtscript qttools qtserialport 
+makedepends=(cmake qtbase qtlocation qtmultimedia qtscript qttools qtserialport )
 
 description="Open source planetarium"
 URL="http://stellarium.org"
-packager="Dania <Dania@nutyx.org>"
+packager="Yaolinux Team"
 contributor="tnut"
 
 name=stellarium
-version=0.18.1
+version=0.19.2
 
 source=(https://github.com/Stellarium/stellarium/releases/download/v"$version"/$name-$version.tar.gz)
 
