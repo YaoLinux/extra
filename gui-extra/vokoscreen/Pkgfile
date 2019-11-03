@@ -1,9 +1,9 @@
-# Depends on: ffmpeg lame pulseaudio lsof qtbase qttools qtmultimedia qtx11extras xorg-libxrandr xdg-utils
+makedepends=(ffmpeg lame pulseaudio lsof qtbase qttools qtmultimedia qtx11extras xorg-libxrandr xdg-utils)
 
 url="http://www.kohaupt-online.de/hp/"
 description="An easy to use screencast creator"
-packager="rems <rems@nutyx.org>"
-contributors="tnut"
+packager="Yaolinux Team"
+maintainer="rems"
 name=vokoscreen
 version=2.5.8
 _version=beta
