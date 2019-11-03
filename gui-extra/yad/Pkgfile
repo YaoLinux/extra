@@ -1,11 +1,11 @@
-# Depends on: gtk3 webkitgtk
+makedepends=(gtk3 webkitgtk)
 
 description="A fork of zenity - display graphical dialogs from shell scripts or command line"
 url="http://sourceforge.net/projects/yad-dialog"
-packager="greg<greg@nutyx.org"
+packager="Yaolinux Team"
 
 name=yad
-version=0.39.0
+version=5.0
 release=1
 
 run=()
