@@ -1,8 +1,8 @@
-# Depends on: gtk2 gtkmm2 hicolor-icon-theme librsvg
+makedepends=(gtk2 gtkmm2 hicolor-icon-theme librsvg)
 
 description="Background browser and setter for X windows"
 url="http://projects.l3ib.org/nitrogen/"
-packager="SipoMatadorduCosmos"
+packager="Yaolinux Team"
 
 name=nitrogen
 version=1.6.1
