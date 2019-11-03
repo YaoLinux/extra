@@ -14,6 +14,11 @@ run=(gtk-update-icon-cache)
 
 source=(http://download2146.mediafire.com/w18544rcl85g/lozb6ec3no9a233/Xquisite.tbz)
 
+prepare() {
+
+bsdtar xf Xquisite.tbz
+}
+
 build() {
 mkdir -p $PKG//usr/share/icons/
 mv Xquisite $PKG//usr/share/icons/
