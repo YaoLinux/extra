@@ -1,9 +1,9 @@
-# Depends on: gtk3 json-c python2 python2-cairo python-gobject python-numpy scons swig
+makedepends=(gtk3 json-c python2 python2-cairo python-gobject python-numpy scons swig)
 
 description="A fast and easy painting application for digital painters, with brush dynamics"
 url="http://mypaint.intilinux.com/"
-packager="remy <remy@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=mypaint
 version=1.2.1
