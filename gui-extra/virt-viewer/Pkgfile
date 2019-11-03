@@ -1,12 +1,12 @@
-# Depends on: intltool gtk-vnc spice-gtk spice-protocol desktop-file-utils
+makedepends=(intltool gtk-vnc spice-gtk spice-protocol desktop-file-utils)
 
 description="A lightweight interface for interacting with the graphical display of virtualized guest OS."
 url="http://virt-manager.org/"
-contributors=""
-packager="rems <rems@nutyx.org>"
+maintainer="rems"
+packager="Yaolinux Team"
  
 name=virt-viewer
-version=7.0
+version=8.0
 
 source=(https://virt-manager.org/download/sources/$name/$name-$version.tar.gz)
 
