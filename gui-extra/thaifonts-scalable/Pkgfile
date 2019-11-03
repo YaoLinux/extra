@@ -1,9 +1,9 @@
-# Depends on: fontforge xorg-server
+makedepends=(fontforge xorg-server)
 
 description="Thai fonts set"
 url="http://linux.thai.net/projects/thaifonts-scalable/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=thaifonts-scalable
 version=0.4.17
