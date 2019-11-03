@@ -1,12 +1,12 @@
-# Depends on: perl-extutils-pkgconfig xorg-server perl xorg-util-macros xorg-font-util 
+makedepends=(perl-extutils-pkgconfig xorg-server perl xorg-util-macros xorg-font-util )
 
 description="X.Org imake program and related utilities"
 url="https://xorg.freedesktop.org/"
-packager="greg <greg@nutyx.org>"
-contributors=""
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=imake
-version=1.0.7
+version=1.0.8
 release=1
 
 source=(https://xorg.freedesktop.org/releases/individual/util/imake-${version}.tar.bz2
