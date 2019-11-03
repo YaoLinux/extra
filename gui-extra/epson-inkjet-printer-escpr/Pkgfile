@@ -6,13 +6,17 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=epson-inkjet-printer-escpr
-version=1.6.38
-release=2
+version=1.7.5
 
-source=(https://download3.ebz.epson.net/dsc/f/03/00/04/54/27/b73564748bfde7b7ce625e20d4a3257d447bec79/epson-inkjet-printer-escpr-$version-1lsb3.2.tar.gz)
+source=(https://download3.ebz.epson.net/dsc/f/03/00/10/29/40/898523640509d296a9988eee753a7299f518ceb0/epson-inkjet-printer-escpr-$version-1lsb3.2.tar.gz
+        bug_x86_64.patch)
 
 build() {
   cd $name-$version
+
+  patch -p1 < ../bug_x86_64.patch
+  
+  autoreconf -fiv
 
   ./configure --prefix=/usr \
               --with-cupsfilterdir=/usr/lib/cups/filter \
