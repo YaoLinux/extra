@@ -1,9 +1,9 @@
-# Depends on: libao avahi git
+makedepends=(libao avahi git)
 
 description="Apple airplay and raop protocol server"
 url="https://github.com/juhovh/shairplay"
-contributors=""
-packager="remy <remy@nutyx.org>"
+maintainer="rems"
+packager="Yaolinux Team"
 
 name=shairplay
 version=20160101
