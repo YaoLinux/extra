@@ -1,7 +1,7 @@
-# Depends on: v4l-utils libdv libjpeg-turbo sdl gtk2
+makedepends=(v4l-utils libdv libjpeg-turbo sdl gtk2)
 
 url="http://mjpeg.sourceforge.net/"
-packager="tnut <tnut@nutyx.org>"
+packager="Yaolinux Team"
 description="Set of tools that can do recording of videos and playback, simple cut-and-paste editing"
 
 name=mjpegtools
