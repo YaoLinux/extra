@@ -1,12 +1,12 @@
-# Depends on: python ffmpeg
+makedepends=(python ffmpeg)
 
 description="A small command-line program to download videos from YouTube."
 url="http://youtube-dl.org"
-packager="rems@nutyx.org>"
-contributors="Fanch,tnut,greg"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=youtube-dl
-version=2019.08.13
+version=2019.10.29
 
 run=(python)
 
