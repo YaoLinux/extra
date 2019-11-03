@@ -1,9 +1,9 @@
-# Depends on: id3lib libid3tag flac libvorbis speex gtk3 itstool
+makedepends=(id3lib libid3tag flac libvorbis speex gtk3 itstool)
 
 description="Utility for viewing and editing tags for most audio formats"
 url="http://projects.gnome.org/easytag/"
-contributors="pierre, tnut"
-packager="greg <greg@nutyx.org>"
+maintainer="rems"
+packager="Yaolinux Team"
 
 name=easytag
 version=2.4.3
