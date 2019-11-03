@@ -1,9 +1,9 @@
-# Depends on: xorg-server xorg-libxt xorg-libxft xorg-libxmu mesa libpng libjpeg-turbo cairo librsvg
+makedepends=(xorg-server xorg-libxt xorg-libxft xorg-libxmu mesa libpng libjpeg-turbo cairo librsvg)
 
 description="A lightweight window manager for the X11 Window System"
 url="http://joewing.net/projects/jwm/"
-packager="greg<greg@nutyx.org>"
-contributors="timcowchip, tnut"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=jwm
 version=2.3.7
