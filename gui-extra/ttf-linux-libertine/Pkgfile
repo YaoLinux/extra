@@ -1,9 +1,9 @@
-# Depends on: xorg-libx11 xorg-fontconfig 
+makedepends=(xorg-libx11 xorg-fontconfig )
 
 description="Serif (Libertine) and Sans Serif (Biolinum) OpenType fonts with large Unicode coverage"
 url="http://linuxlibertine.sourceforge.net/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 _reldate=2012_07_02
 
