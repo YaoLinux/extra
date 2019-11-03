@@ -1,10 +1,10 @@
 # Description: USB traffic redirection protocol
 # URL: http://spice-space.org/page/UsbRedir
 # Packager: fanch at nutyx dot org
-# Depends on: libusb
+makedepends=(libusb)
 
 name=usbredir
-version=0.7.1
+version=0.8.0
 release=1
 
 source=(http://spice-space.org/download/usbredir/$name-$version.tar.bz2)
