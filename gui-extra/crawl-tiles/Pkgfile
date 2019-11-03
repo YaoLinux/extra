@@ -1,9 +1,9 @@
-# Depends on:  git xorg-glu sdl2 sdl2-image sdl2-mixer freetype zlib libpng pcre mesa glew dejavu-ttf
+makedepends=( git xorg-glu sdl2 sdl2-image sdl2-mixer freetype zlib libpng pcre mesa glew dejavu-ttf)
 
 description="Dungeon Crawl Stone Soup is a singleplayer roguelike game - Tiles version"
 url="http://crawl.develz.org/"
-packager="remy <remy@nutyx.org>"
-contributors="berlius at nutyx dot com, tnut at nutyx dot org"
+packager="Yaolinux Team"
+maintainer="rems"
 name=crawl-tiles
 version=0.21.1
 release=1
