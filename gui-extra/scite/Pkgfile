@@ -1,8 +1,8 @@
-# Depends on: setconf gtk3
+makedepends=(setconf gtk3)
 
 description="A free source code editing component for Win32, GTK+, and OS X"
-packager="greg <greg@nutyx.org>"
-contributors="Renaud Chenard"
+packager="Yaolinux Team"
+maintainer="rems"
 url="http://scintilla.org/"
 
 name=scite
