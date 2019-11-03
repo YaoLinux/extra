@@ -23,7 +23,4 @@ build() {
     make --debug=v world.opt
 
     make PREFIX=$PKG/usr MANDIR=$PKG/usr/share/man install
-    
-    local f
-    for f in $PKG/usr/bin/*.opt; do mv $f ${f%%.opt}; done
 }
