@@ -2,6 +2,7 @@ makedepends=(xorg-server)
 
 description="A window manager for X11"
 url="http://blackboxwm.sourceforge.net"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -10,15 +11,18 @@ version=0.75
 
 PKGMK_KEEP_SOURCE="no"
 
-source=(https://github.com/bbidulock/blackboxwm/archive/0.73.tar.gz)
+source=(https://github.com/bbidulock/blackboxwm/archive/$version.tar.gz)
 
 build () {
 
-    cd $SRC/blackboxwm-$version
+    cd blackboxwm-$version
+    
     sed -e '/AC_DISABLE_SHARED/d' -i configure.ac # Build shared library
+    
     ./autogen.sh
 
     ./configure --prefix=/usr --mandir=/usr/share/man
+    
     make
     make DESTDIR=$PKG install	
 }
