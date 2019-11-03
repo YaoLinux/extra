@@ -1,9 +1,9 @@
-# Depends on: xorg-libxtst qt4 shared-mime-info
+makedepends=(xorg-libxtst qt4 shared-mime-info)
 
 description="Password manager"
 url="http://www.keepassx.org"
-packager="greg<greg@nutyx.org>"
-contributors=""
+packager="Yaolinux Team"
+maintainer="rems"
 
 run=(shared-mime-info)
 
