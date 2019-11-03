@@ -1,8 +1,8 @@
-# Depends on: xorg-libxext xorg-libxft 
+makedepends=(xorg-libxext xorg-libxft )
 
 description="st is a simple terminal implementation for X"
 url="http://st.suckless.org/"
-contributors="alienus, tnut"
+maintainer="rems"
 
 name=st
 version=0.8.1
