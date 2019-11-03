@@ -1,14 +1,14 @@
-# Depends on: libpng sdl icu xorg-fontconfig lzo hicolor-icon-theme desktop-file-utils xz openttd-opengfx openttd-opensfx
+makedepends=(libpng sdl icu xorg-fontconfig lzo hicolor-icon-theme desktop-file-utils xz openttd-opengfx openttd-opensfx)
 
 
 description="An engine for running Transport Tycoon Deluxe."
 url="http://www.openttd.org"
-contributors="tsgeek at mailoo dot org"
-packager="remy<remy@nutyx.org>"
+maintainer="rems"
+packager="Yaolinux Team"
 
 
 name=openttd
-version=1.8.0
+version=1.9.3
 
 source=(http://binaries.openttd.org/releases/${version}/${name}-${version}-source.tar.xz
 )
