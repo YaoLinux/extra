@@ -1,0 +1,33 @@
+makedepends=(xorg-libxtst qttools qtsvg qtx11extras shared-mime-info libgcrypt hicolor-icon-theme libsodium)
+
+description="Password manager"
+url="http://www.keepassx.org"
+
+packager="Yaolinux Team"
+maintainer="rems"
+
+run=(shared-mime-info)
+
+name=keepassxc
+version=2.5.0
+
+source=(https://github.com/keepassxreboot/keepassxc/releases/download/$version/keepassxc-$version-src.tar.xz)
+
+build() {
+
+mkdir build && cd build
+
+cmake ../$name-$version \
+		-DCMAKE_BUILD_TYPE=Release \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_INSTALL_LIBDIR=lib \
+		-DWITH_XC_ALL=ON
+
+make
+}
+
+package() {
+cd $name-$version
+
+make DESTDIR=$PKG install
+}
