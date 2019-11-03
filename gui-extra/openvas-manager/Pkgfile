@@ -2,40 +2,27 @@ makedepends=(libxslt openvas-libraries rsync sqlite cmake doxygen xmltoman pytho
 
 description="A layer between the OpenVAS Scanner and various client applications"
 url="http://www.openvas.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
-run=()
-
-
-
 name=openvas-manager
-version=7.0.3
-release=1
+version=7.0.0
 
-source=(http://wald.intevation.org/frs/download.php/2448/$name-${version}.tar.gz
-http://wald.intevation.org/frs/download.php/2449/$name-${version}.tar.gz
-)
-
-prepare() {
-cd $name-$version
-sed -i '1c#!/usr/bin/python2' tools/extra/xml_split
-}
+source=(https://github.com/greenbone/openvas/archive/v${version}.tar.gz)
 
 build() {
-cd $name-$version
-cmake -DCMAKE_BUILD_TYPE=Release -DSBINDIR=/usr/bin \
--DCMAKE_INSTALL_PREFIX=/usr -DSYSCONFDIR=/etc -DLOCALSTATEDIR=/var .
+mkdir -v build && cd build
+
+cmake -DCMAKE_BUILD_TYPE=Release \
+      -DSBINDIR=/usr/bin \
+      -DCMAKE_INSTALL_PREFIX=/usr \
+      -DSYSCONFDIR=/etc \
+      -DLOCALSTATEDIR=/var ../$name-$version
 make
 }
 
 package() {
-cd $name-$version
-make DESTDIR=$PKG install
+
+make -C build DESTDIR=$PKG install
 }
-
-uptodate() {
-echo "Fonction uptodate sans objet"
-}
-
-
