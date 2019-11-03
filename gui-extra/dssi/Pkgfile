@@ -1,9 +1,9 @@
-# Depends on: liblo qt4 jack ladspa
+makedepends=(liblo qt4 jack ladspa)
 
 description="An API for audio processing plugins & softsynths with UIs"
 url="http://dssi.sourceforge.net/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Greg"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=dssi
 version=1.1.1
