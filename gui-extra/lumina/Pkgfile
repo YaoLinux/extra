@@ -1,9 +1,9 @@
-# Depends on: qtbase fluxbox kwindowsystem oxygen-icons5 xscreensaver poppler-qt qtx11extras qtmultimedia xorg-xbacklight alsa-utils acpid numlockx fluxmod-styles network-manager-applet xorg-term qtsvg qttools
+makedepends=(qtbase fluxbox kwindowsystem oxygen-icons5 xscreensaver poppler-qt qtx11extras qtmultimedia xorg-xbacklight alsa-utils acpid numlockx fluxmod-styles network-manager-applet xorg-term qtsvg qttools)
 
 description="A Lightweight QT5 Desktop for FreeBSD"
 url="https://github.com/pcbsd/lumina"
-packager="tnut <tnut@nutyx.org>"
-contributors="Chris F, Remy"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=lumina
 version=1.4.0p1
