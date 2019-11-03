@@ -1,9 +1,9 @@
-# Depends on: icu shared-mime-info gstreamer-plugins-base itstool libcanberra libnotify gobject-introspection libburn libisofs tracker gvfs dvd+rw-tools libdvdcss cdrdao json-glib
+makedepends=(icu shared-mime-info gstreamer-plugins-base itstool libcanberra libnotify gobject-introspection libburn libisofs tracker gvfs dvd+rw-tools libdvdcss cdrdao json-glib)
 
 description="Brasero is an application used to burn CD/DVD on the GNOME Desktop"
 url="https://www.gnome.org"
-packager="jayce <jayce.net@gmail.com>"
-contributors="Tnut"
+packager="Yaolinux Team"
+maintainer="rems"
 
 run=(shared-mime-info)
 
