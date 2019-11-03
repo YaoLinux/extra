@@ -1,4 +1,4 @@
-makedepends=(aspell aspell-dict cyrus-sasl gdb gnupg gpgme libidn kerberos postfix slang openssl gnutls db libxslt lynx )
+makedepends=(aspell aspell-dict cyrus-sasl gdb gnupg gpgme libidn kerberos slang openssl gnutls db libxslt lynx )
 
 url="http://www.mutt.org/"
 packager="Yaolinux Team"
