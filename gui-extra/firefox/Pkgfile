@@ -1,13 +1,13 @@
-# Depends on: node cbindgen icu libvpx libwebp nspr nss libevent rustc dbus-glib autoconf2-13 pulseaudio gconf libnotify yasm sqlite nss alsa-lib gtk2 gtk3 zip unzip gstreamer gstreamer-plugins-base gstreamer-plugins-good gstreamer-plugins-libav shared-mime-info
+makedepends=(node cbindgen icu libvpx libwebp nspr nss libevent rustc dbus-glib autoconf2-13 pulseaudio gconf libnotify yasm sqlite nss alsa-lib gtk2 gtk3 zip unzip gstreamer gstreamer-plugins-base gstreamer-plugins-good gstreamer-plugins-libav shared-mime-info)
 
 description="Standalone web browser from mozilla.org"
 url="http://www.mozilla.com/firefox/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B, tnut, Remy"
+packager="Yaolinux Team"
+maintainer="rems"
 
 run=(shared-mime-info icu libevent pulseaudio gconf sqlite libvpx nss alsa-lib gtk2 gtk3 zip unzip gstreamer gstreamer-plugins-base gstreamer-plugins-good gstreamer-plugins-libav)
 name=firefox
-version=68.0.2
+version=70.0.1
 release=1
 
 source=(firefox.desktop
