@@ -1,12 +1,12 @@
-# Depends on: exiv2 lcms2 lensfun desktop-file-utils curl libsecret libgphoto2 openexr sqlite libxslt libsoup gtk3 pugixml json-glib lua colord colord-gtk graphicsmagick intltool cmake librsvg flickcurl
+makedepends=(exiv2 lcms2 lensfun desktop-file-utils curl libsecret libgphoto2 openexr sqlite libxslt libsoup gtk3 pugixml json-glib lua colord colord-gtk graphicsmagick intltool cmake librsvg flickcurl)
 
 description="Utility to organize and develop raw images"
 url="http://darktable.sf.net/"
-packager="tnut tnut@nutyx.org>"
-contributors="Tnut, Greg, Rémy"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=darktable
-version=2.4.4
+version=2.6.3
 
 source=(https://github.com/darktable-org/darktable/releases/download/release-${version}/darktable-${version/rc/.rc}.tar.xz)
 
