@@ -1,9 +1,9 @@
-# Depends on: fltk openssl10
+makedepends=(fltk openssl10)
 
 description="A small, fast graphical web browser built on FLTK"
 url="http://www.dillo.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=dillo
 version=3.0.5
