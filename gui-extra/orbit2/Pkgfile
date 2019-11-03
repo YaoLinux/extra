@@ -1,7 +1,7 @@
 # Description: High-Performance CORBA Object Request Broker.
 # URL: http://www.gnome.org/
 # Packager: fanch at nutyx dor org
-# Depends on: glib libidl
+makedepends=(glib libidl)
 
 name=orbit2
 version=2.14.19
