@@ -1,9 +1,9 @@
-# Depends on: libxcb git xorg-libxinerama
+makedepends=(libxcb git xorg-libxinerama)
 
 description="A featherweight, lemon-scented, bar based on xcb."
 url="https://github.com/LemonBoy/bar"
-packager="greg <greg@nutyx.org>"
-contributors="Tnut"
+packager="Yaolinux Team"
+maintainer="rems"
 
 PKGMK_KEEP_SOURCES="no"
 
