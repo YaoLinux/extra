@@ -1,8 +1,8 @@
-# Depends on: xorg-libxtst xorg-libxinerama libxkbcommon
+makedepends=(xorg-libxtst xorg-libxinerama libxkbcommon)
 
 description="Command-line X11 automation tool"
 url="http://www.semicomplete.com/projects/xdotool/"
-packager="greg<greg@nutyx.org"
+packager="Yaolinux Team"
 
 name=xdotool
 version=3.20160805.1
