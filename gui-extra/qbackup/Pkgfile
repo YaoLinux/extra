@@ -1,7 +1,7 @@
-# Depends on: openjdk
+makedepends=(openjdk)
 
 description="Cross-platform file backup"
-packager="liberodark"
+packager="Yaolinux Team"
 url="https://www.qualeed.com/en/qbackup/"
 
 name=qbackup
