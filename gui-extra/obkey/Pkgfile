@@ -1,9 +1,9 @@
-# Depends on: python2 python2-gtk git
+makedepends=(python2 python2-gtk git)
 
 description="Openbox Key Editor"
 url="http://code.google.com/p/obkey"
-packager="greg<greg@nutyx.org>"
-contributors=""
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=obkey
 version=1.0.11
