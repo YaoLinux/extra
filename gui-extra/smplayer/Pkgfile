@@ -1,12 +1,12 @@
-# Depends on: qtscript mpv hicolor-icon-theme qttools xorg-libx11 zlib
+makedepends=(qtscript mpv hicolor-icon-theme qttools xorg-libx11 zlib)
 
 description="Media player that can play virtually all video and audio formats"
 url="http://smplayer.info/"
-packager="greg<greg@nutyx.org>"
-contributors="remy"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=smplayer
-version=18.10.0
+version=19.10.0
 
 source=(https://downloads.sourceforge.net/${name}/${name}-${version}.tar.bz2)
 
