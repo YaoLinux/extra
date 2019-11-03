@@ -1,10 +1,10 @@
-# Depends on: glib gtk3 meson
+makedepends=(glib gtk3 meson)
 
 description="User interface library focused on simplicity and minimalism"
-packager="Rocket"
+packager="Yaolinux Team"
 url="http://pwmt.org/projects/girara"
 name=girara
-version=0.3.2
+version=0.3.3
 
 source=("https://github.com/pwmt/${name}/archive/${version}.tar.gz")
 
