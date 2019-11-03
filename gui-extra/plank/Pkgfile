@@ -1,12 +1,12 @@
-# Depends on: atk cairo gdk-pixbuf glib gtk3 libgee libwnck xorg-libx11 xorg-libxfixes xorg-libxi pango bamf
+makedepends=(atk cairo gdk-pixbuf glib gtk3 libgee libwnck xorg-libx11 xorg-libxfixes xorg-libxi pango bamf)
 
 description="Elegant, simple, clean dock"
 url="https://launchpad.net/plank"
 
-packager="tnut <tnut@nutyx.org>"
+packager="Yaolinux Team"
 
 name=plank
-version=0.11.4
+version=0.11.89
 
 source=(https://launchpad.net/plank/1.0/$version/+download/plank-$version.tar.xz)
 
