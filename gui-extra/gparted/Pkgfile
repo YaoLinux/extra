@@ -1,4 +1,4 @@
-# Depends on: ssh-askpass gnome-doc-utils gtk2 parted gtkmm libsigc++ ntfs-3g lvm2 docbook-xsl jfsutils btrfs-progs reiserfsprogs xfsprogs polkit mtools intltool perl-xml-parser
+makedepends=(ssh-askpass gnome-doc-utils gtk2 parted gtkmm libsigc++ ntfs-3g lvm2 docbook-xsl jfsutils btrfs-progs reiserfsprogs xfsprogs polkit mtools intltool perl-xml-parser)
 
 description="Gparted is the Gnome Partition Editor, a Gtk 2 GUI that can create, reorganise or delete disk partitions."
 url="http://gparted.sourceforge.net/"
