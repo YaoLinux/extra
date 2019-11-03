@@ -1,12 +1,12 @@
-# Depends on: python-sip-qt5 python-pillow python-zmq python-requests qtbase qtx11extras qtwebkit qttools qtsvg mlt sdl sdl-image librsvg mplayer sox ladspa python-qt libopenshot
+makedepends=(python-sip-qt5 python-pillow python-zmq python-requests qtbase qtx11extras qtwebkit qttools qtsvg mlt sdl sdl-image librsvg mplayer sox ladspa python-qt libopenshot)
 
 description="an open-source, non-linear video editor for Linux based on MLT framework"
 url="http://www.openshotvideo.com"
-packager="rems <rems@nutyx.org>"
-contributors="tnut"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=openshot
-version=2.4.3
+version=2.4.4
 release=2
 
 run=(python python-qt python-sip python-sip-qt5 python-pillow python-zmq python-requests libopenshot)
