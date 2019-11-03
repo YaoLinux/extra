@@ -1,9 +1,9 @@
-# Depends on: gsettings-desktop-schemas desktop-file-utils gtk-update-icon-cache  gtk3 libcryptui dbus-glib gnome-keyring gconf gnupg gpgme nautilus libnotify seahorse
+makedepends=(gsettings-desktop-schemas desktop-file-utils gtk-update-icon-cache  gtk3 libcryptui dbus-glib gnome-keyring gconf gnupg gpgme nautilus libnotify seahorse)
 
 description="PGP encryption and signing for nautilus"
 url="http://www.gnome.org/"
-packager="jayce <jayce.net@gmail.com>"
-contributors="Tnut"
+packager="Yaolinux Team"
+maintainer="rems"
 run=(gsettings-desktop-schemas desktop-file-utils gtk-update-icon-cache)
 
 name=seahorse-nautilus
