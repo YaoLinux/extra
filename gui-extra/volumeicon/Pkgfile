@@ -1,8 +1,8 @@
-# Depends on: gtk3 alsa-lib libnotify
+makedepends=(gtk3 alsa-lib libnotify)
 
 description="Volume control for your system tray"
 url="http://softwarebakery.com/maato/volumeicon.html"
-packager="SipoMatadorduCosmos"
+packager="Yaolinux Team"
 
 name=volumeicon
 version=0.5.1
