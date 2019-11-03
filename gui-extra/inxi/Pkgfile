@@ -1,9 +1,9 @@
-# Depends on: coreutils gawk grep pciutils procps-ng sed file iproute2 kmod sudo usbutils kmod xorg-xdpyinfo xorg-xprop xorg-xrandr lm-sensors
+makedepends=(coreutils gawk grep pciutils procps-ng sed file iproute2 kmod sudo usbutils kmod xorg-xdpyinfo xorg-xprop xorg-xrandr lm-sensors)
 
 description="script to get system information"
 url="http://inxi.org"
-packager="remy <remy@nutyx.org>"
-contributors="Greg, Tnut"
+packager="Yaolinux Team"
+maintainer="rems"
 
 run=(gawk pciutils usbutils xorg-xdpyinfo xorg-xprop xorg-xrandr lm-sensors)
 
