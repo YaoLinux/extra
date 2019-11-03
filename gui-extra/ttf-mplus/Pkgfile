@@ -1,6 +1,6 @@
-packager="Greg"
+packager="Yaolinux Team"
 
-# Depends on: xorg-fontconfig 
+makedepends=(xorg-fontconfig )
 
 
 description="M+ Japanese outline fonts"
