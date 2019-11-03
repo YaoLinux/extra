@@ -1,9 +1,9 @@
-# Depends on: sdl-mixer sdl-image
+makedepends=(sdl-mixer sdl-image)
 
 description="A clone of Atomic Bomberman."
 url="http://www.bomberclone.de/"
-packager="greg <greg@nutyx.org>"
-contributors="berlius"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=bomberclone
 version=0.11.9
