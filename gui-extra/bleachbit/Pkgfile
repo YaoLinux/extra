@@ -1,4 +1,4 @@
-makedepends=(python2 python2-gtk desktop-file-utils gtk-update-icon-cache hicolor-icon-theme)
+makedepends=(python2-gobject gtk3)
 
 description="Deletes unneeded files to free disk space and maintain privacy"
 url="http://bleachbit.sourceforge.net/"
@@ -11,19 +11,13 @@ version=3.0
 
 PKGMK_KEEP_SOURCES="no"
 
-source=(https://github.com/bleachbit/bleachbit/archive/v$version.tar.gz)
+source=(https://download.bleachbit.org/$name-$version.tar.bz2)
 
 build() {
 
     cd $name-$version
     
-	for file in $(find . -name '*.py' -print); do
-        sed -i -e 's_^#!.*/usr/bin/python_#!/usr/bin/python2_' \
-               -e 's_^#!.*/usr/bin/env.*python_#!/usr/bin/env python2_' "$file"
-    done
-    
-    sed -i 's/python/python2/g' Makefile
+    sed -e 's/python/python2/g' -i bleachbit/CLI.py
 
     make prefix=/usr DESTDIR=$PKG PYTHON=python2 install
-    
 }
