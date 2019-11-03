@@ -1,12 +1,12 @@
-# Depends on: aspell aspell-dict cyrus-sasl gdb gnupg gpgme libidn kerberos sendmail slang openssl gnutls db libxslt lynx 
+makedepends=(aspell aspell-dict cyrus-sasl gdb gnupg gpgme libidn kerberos sendmail slang openssl gnutls db libxslt lynx )
 
 url="http://www.mutt.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Berlius, Tnut, Greg"
+packager="Yaolinux Team"
+maintainer="rems"
 
 description="MailUserAgent, useful for reading, writing, replying to, saving, and deleting your email."
 name=mutt
-version=1.11.1
+version=1.12.2
 
 source=(ftp://ftp.mutt.org/pub/mutt/$name-$version.tar.gz)
  
