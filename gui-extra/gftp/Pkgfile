@@ -16,9 +16,6 @@ source=(http://www.gftp.org/$name-$version.tar.bz2
 build() {
 
 cd $name-$version
-
-# openssl 1.1 compatibility
-   sed -e 's|SSL_library_init|SSL_CTX_new|g' -i configure
    
    patch -Np1 -i ../gftp-stropts.patch
    patch -Np1 -i ../fix-configure.in.patch
