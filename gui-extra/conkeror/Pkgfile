@@ -2,7 +2,7 @@
 # URL: http://conkeror.mozdev.org/
 # Packager: Chris Farrell, timcowchip at gmail dot com
 # Maintainer: Chris Farrell, timcowchip at gmail dot com
-# Depends on: git xulrunner desktop-file-utils
+makedepends=(git xulrunner desktop-file-utils)
 
 name=conkeror
 version=git
