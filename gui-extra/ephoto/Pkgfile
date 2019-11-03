@@ -1,9 +1,9 @@
-# Depends on: efl
+makedepends=(efl)
 
 description="Image viewer/editor/manipulator/slideshow creator for enlightenment"
 url="http://www.enlightenment.org"
-packager="tnut <tnut@nutyx.org>"
-contributors="Berlius"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=ephoto
 version=1.5
