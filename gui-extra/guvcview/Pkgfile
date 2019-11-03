@@ -1,4 +1,4 @@
-# Depends on: ffmpeg gsl gtk3 intltool libusb portaudio v4l-utils 
+makedepends=(ffmpeg gsl gtk3 intltool libusb portaudio v4l-utils )
 
 description="GTK based program to capture from webcams"
 url="http://guvcview.berlios.de/"
