@@ -6,23 +6,16 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=rdesktop
-version=1.8.6
-release=2
+version=1.9.0
 
-source=(http://downloads.sourceforge.net/$name/$name-$version.tar.gz
-	rdesktop-send_physical_buttons.diff
-	openssl.patch
-	openssl-crash.patch
-)
+source=(https://github.com/rdesktop/rdesktop/releases/download/v$version/rdesktop-$version.tar.gz)
 
 build() {
 	cd $name-$version
- 	patch -i $SRC/rdesktop-send_physical_buttons.diff 
-	patch -Np1 -i $SRC/openssl.patch 
-	patch -Np1 -i $SRC/openssl-crash.patch
+	
         ./configure --prefix=/usr \
-		--disable-credssp \
-		--disable-smartcard
+	            --disable-credssp \
+                    --disable-smartcard
 	make
 	make DESTDIR=$PKG install
 }
