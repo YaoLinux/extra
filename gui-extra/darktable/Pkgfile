@@ -32,7 +32,7 @@ build() {
 
 package() {
 
-  cd $name-${version/rc/~rc}/build
+  cd build
 
   make DESTDIR=$PKG install
   ln -s darktable/libdarktable.so $PKG/usr/lib/libdarktable.so
