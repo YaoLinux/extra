@@ -5,9 +5,9 @@ url="www.icewm.org"
 description="IceWM is a window manager with the goals of speed, simplicity"
 
 name=icewm
-version=1.4.2
+version=1.6.2
 
-source=(https://github.com/bbidulock/$name/releases/download/$version/$name-$version.tar.lz)
+source=(https://github.com/ice-wm/icewm/releases/download/$version/icewm-$version.tar.lz)
  
 build() {
 
