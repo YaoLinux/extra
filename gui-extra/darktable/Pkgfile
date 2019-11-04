@@ -1,4 +1,4 @@
-makedepends=(exiv2 lcms2 lensfun desktop-file-utils curl libsecret libgphoto2 openexr sqlite libxslt libsoup gtk3 pugixml json-glib lua colord colord-gtk graphicsmagick intltool cmake librsvg flickcurl)
+makedepends=(exiv2 iso-codes libwebp llvm lcms2 lensfun desktop-file-utils curl libsecret libgphoto2 openexr sqlite libxslt libsoup gtk3 pugixml json-glib lua colord colord-gtk graphicsmagick intltool cmake librsvg flickcurl)
 
 description="Utility to organize and develop raw images"
 url="http://darktable.sf.net/"
@@ -13,10 +13,8 @@ source=(https://github.com/darktable-org/darktable/releases/download/release-${v
 
 build() {
 
-cd $SRC/$name-${version/rc/~rc}
-  mkdir -p build
-  cd build
-  CXXFLAGS+=" -fpermissive"
+  mkdir -p build && cd build
+  
   cmake \
       -DCMAKE_INSTALL_PREFIX=/usr \
       -DCMAKE_INSTALL_LIBDIR=/usr/lib \
@@ -25,24 +23,17 @@ cd $SRC/$name-${version/rc/~rc}
       -DBUILD_USERMANUAL=False \
       -DUSE_LIBSECRET=On \
       -DUSE_LUA=On \
-      -DUSE_GNOME_KEYRING=Off \
       -DUSE_COLORD=On \
       -DPROJECT_VERSION=$version \
-      ..
-  make
+      ../$name-${version/rc/~rc}
 
-  cd ../tools/basecurve
-  cmake .
   make
-
 }
 
 package() {
 
-  cd $srcdir/$name-${version/rc/~rc}/build
+  cd $name-${version/rc/~rc}/build
+
   make DESTDIR=$PKG install
   ln -s darktable/libdarktable.so $PKG/usr/lib/libdarktable.so
-  install -Dm0755 ../tools/basecurve/dt-curve-tool $PKG/usr/bin/dt-curve-tool
-  install -Dm0755 ../tools/basecurve/dt-curve-tool-helper $PKG/usr/bin/dt-curve-tool-helper
-
 }
