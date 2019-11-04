@@ -17,7 +17,5 @@ cd HandBrake-$version
 ./configure --prefix=/usr
 
 make -C build
-
-cd build
-make DESTDIR="$PKG" install
+make -C build DESTDIR="$PKG" install
 }
