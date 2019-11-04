@@ -13,20 +13,17 @@ source=(http://ftp.gnome.org/pub/gnome/sources/$name/${version%.*}/$name-$versio
 build() {
 
 cd $name-$version
-sed -e "s@zz-application/zz-winassoc-xls;@@" -i gnumeric.desktop.in
+
+sed -i 's/HELP_LINGUAS = cs de es/HELP_LINGUAS = de es/' doc/Makefile.in
+
 ./configure --prefix=/usr \
---sysconfdir=/etc \
---localstatedir=/var/lib \
---disable-schemas-install --enable-ssindex
+            --sysconfdir=/etc \
+            --localstatedir=/var/lib \
+            --disable-schemas-install \
+            --enable-ssindex
 
 make
 make DESTDIR=$PKG install
-
-rm $PKG/usr/lib/libspreadsheet.la
-for FILE in `find $PKG/usr/lib/$name/$version/plugins -name "*.la"`
-do
- rm $FILE
-done
 }
 
 uptodate(){
