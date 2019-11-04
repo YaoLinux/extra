@@ -2,6 +2,7 @@ makedepends=(bluez gtk3 libnotify python2-cairo dbus-python python-gobject pytho
 
 description="GTK3 Bluetooth manager"
 url="https://github.com/blueman-project/blueman"
+
 maintainer="rems"
 packager="Yaolinux Team"
 
@@ -14,28 +15,25 @@ source=(https://github.com/blueman-project/$name/releases/download/$version/$nam
 
 prepare() {
    cd $name-$version
+ 
  # Fix path for bluetoothd
-   sed -i 's|/usr/sbin/bluetoothd|/usr/lib/bluetooth/bluetoothd|' apps/blueman-report
-
- # Fix non-standard icon names
-   sed -i 's/gtk-find/edit-find/' data/ui/device-list-widget.ui
-   sed -i 's/mouse/input-mouse/' blueman/services/Input.py
+   sed -i 's|/usr/sbin/bluetoothd|/usr/lib/bluetooth/bluetoothd|' apps/blueman-report.in
 }
 
 build() {
 
 cd $name-$version
 
-   ./configure \
-    --prefix=/usr \
-    --sysconfdir=/etc \
-    --libexecdir=/usr/lib/$name \
-    --disable-schemas-compile \
-    CYTHONEXEC=/usr/bin/cython3
+   ./configure --prefix=/usr \
+               --sysconfdir=/etc \
+               --libexecdir=/usr/lib/$name \
+               --disable-schemas-compile
+  
   make
 }
 
 package() {
   cd $name-$version  
-  make DESTDIR=$PKG install
+ 
+ make DESTDIR=$PKG install
 }
