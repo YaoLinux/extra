@@ -1,4 +1,4 @@
-makedepends=(shared-mime-info gtk3 libpcap pcre hicolor-icon-theme)
+makedepends=(shared-mime-info qtsvg qttools qtmultimedia libssh libgcrypt glib gnutls libxml2 libpcap pcre hicolor-icon-theme)
 
 description="Network Sniffer with nice GTK3 UI"
 url="http://www.wireshark.org"
