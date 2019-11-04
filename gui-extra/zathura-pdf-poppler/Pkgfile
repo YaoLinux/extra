@@ -9,13 +9,14 @@ version=0.2.9
 
 PKGMK_KEEP_SOURCES="no"
 
-source=(ttps://github.com/pwmt/zathura-pdf-poppler/archive/$version.tar.gz)
+source=(https://github.com/pwmt/zathura-pdf-poppler/archive/$version.tar.gz)
 
 build() {
-cd $name-${version}
+mkdir build && cd build
 
-meson --prefix=/usr build
+meson --prefix=/usr \
+      ../$name-${version}
 
-ninja -C build
-DESTDIR="$PKG" ninja -C build install
+ninja
+DESTDIR="$PKG" ninja install
 }
