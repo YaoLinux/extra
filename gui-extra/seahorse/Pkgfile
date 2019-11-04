@@ -1,4 +1,4 @@
-makedepends=(meson gsettings-desktop-schemas desktop-file-utils gtk-update-icon-cache gtk3 gcr libsoup libsecret desktop-file-utils dconf gpgme openldap intltool yelp-tools gobject-introspection xorg-libsm vala)
+makedepends=(gsettings-desktop-schemas desktop-file-utils gtk-update-icon-cache gtk3 gcr libsoup libsecret libpwquality desktop-file-utils dconf gpgme openldap intltool yelp-tools gobject-introspection xorg-libsm vala)
 
 description="GNOME application for managing PGP keys"
 url="http://www.gnome.org/"
