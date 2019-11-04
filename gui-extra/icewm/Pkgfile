@@ -5,17 +5,18 @@ url="www.icewm.org"
 description="IceWM is a window manager with the goals of speed, simplicity"
 
 name=icewm
-version=1.6.2
+version=1.4.2
 
 source=(http://github.com/bbidulock/$name/releases/download/$version/$name-$version.tar.lz)
  
 build() {
 
 cd $name-$version
-./configure --prefix=/usr \
---sysconfdir=/etc \
---docdir=/usr/share/$name-$version
-make
 
+./configure --prefix=/usr \
+            --sysconfdir=/etc \
+            --docdir=/usr/share/$name-$version
+
+make
 make DESTDIR=$PKG install
 }
