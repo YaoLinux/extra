@@ -15,7 +15,7 @@ source=($url/releases/individual/app/xdm-$version.tar.bz2
         Xsession-loginshell.patch 
         Xsession-xsm.patch
 	libsystemd.patch
-	xdm-1.0.5-sessreg-utmp-fix-bug177890.patch"
+	xdm-1.0.5-sessreg-utmp-fix-bug177890.patch
 	nolisten.patch)
 	
 	
