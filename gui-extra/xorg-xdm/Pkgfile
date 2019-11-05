@@ -1,36 +1,47 @@
-makedepends=(pam xorg-libxaw xorg-libxinerama xorg-xinit xorg-libxft)
+makedepends=(pam xorg-libxaw xorg-libxinerama xorg-xinit xorg-libxft systemd)
 
 description="X display Manager"
 url="https://xorg.freedesktop.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=xorg-xdm
 version=1.1.12
-release=4
 
 run=(xorg-xinit)
 
 source=($url/releases/individual/app/xdm-$version.tar.bz2
-		git_fixes.diff Xsession-loginshell.patch 
-		Xsession-xsm.patch)
+        Xsession-loginshell.patch 
+        Xsession-xsm.patch
+	libsystemd.patch
+	xdm-1.0.5-sessreg-utmp-fix-bug177890.patch"
+	nolisten.patch)
 	
 	
 build() {
 
    cd xdm-$version
-   patch -Np1 -i ../git_fixes.diff
+
    patch -Np0 -i ../Xsession-loginshell.patch
    patch -Np1 -i ../Xsession-xsm.patch
-   autoreconf -fi
+   patch -Np1 -i ../libsystemd.patch
+   patch -Np1 -i ../nolisten.patch
+   patch -Np0 -i ../xdm-1.0.5-sessreg-utmp-fix-bug177890.patch
+   
+   autoreconf -fiv
+   
    ./configure --prefix=/usr \
-   --with-xdmconfigdir=/etc/X11/xdm \
-   --with-xdmscriptdir=/etc/X11/xdm \
-   --with-pixmapdir=/usr/share/xdm/pixmaps
+               --with-xdmconfigdir=/etc/X11/xdm \
+               --with-xdmscriptdir=/etc/X11/xdm \
+               --with-pixmapdir=/usr/share/xdm/pixmaps
+   
    make
    make DESTDIR=$PKG install
+   
    mkdir -p $PKG/{usr/sbin,etc/pam.d}
-   mv $PKG/usr/{,s}bin/xdm 
+   mv $PKG/usr/{,s}bin/xdm
+
    cat > $PKG/etc/pam.d/xdm << "EOF"
 # Begin /etc/pam.d/xdm
 
