@@ -2,6 +2,7 @@ makedepends=(ijs gtk2 cups foomatic-db-engine ghostscript cups-filters)
 
 description="Top quality printer drivers for POSIX systems"
 url="http://gimp-print.sourceforge.net"
+
 maintainer="rems"
 packager="Yaolinux Team"
 
@@ -15,36 +16,28 @@ build() {
 cd $name-$version
 sed -i 's|$(PACKAGE)/doc|doc/$(PACKAGE)-$(VERSION)|' \
        {,doc/,doc/developer/}Makefile.in
-# sbindir is not properly taken over there
-sed -i "s:cups_sbindir=\"\/usr\/sbin\":cups_sbindir=\"\/usr\/bin\":g" m4/stp_cups.m4
-sed -i  "s:cups_sbindir=\"\${cups_prefix}\/sbin\":cups_sbindir=\"\${cups_prefix}\/bin\":" m4/stp_cups.m4
-sed -i "s:m4local:m4extra:" Makefile.am
+
 autoreconf -vfi
 
 ./configure --prefix=/usr \
---sbin=/usr/sbin \
---disable-rpath \
---enable-samples \
---disable-static \
---disable-static-genppd \
---enable-cups-ppds \
---enable-simplified-cups-ppds=only \
---enable-translated-cups-ppds \
---infodir=/usr/share/info \
---mandir=/usr/share/man
+            --sbin=/usr/sbin \
+            --disable-rpath \
+            --enable-samples \
+            --disable-static \
+            --disable-static-genppd \
+            --enable-cups-ppds \
+            --enable-simplified-cups-ppds=only \
+            --enable-translated-cups-ppds \
+            --infodir=/usr/share/info \
+            --mandir=/usr/share/man
+
 make
 make DESTDIR=$PKG install
 
-cd ..
-mkdir tmp
+install -v -m755 -d $PKG/usr/share/doc/gutenprint-5.3.3/api/gutenprint{,ui2}
 
-mv ${PKG}/usr/share/cups/model tmp/
+install -v -m644    doc/gutenprint/html/* \
+                    $PKG/usr/share/doc/gutenprint-5.3.3/api/gutenprint
 
-
-rm -rf ${PKG}/usr/share/foomatic
-rm -rf ${PKG}/etc
-
-mkdir -p ${PKG}/usr/share/cups
-mv tmp/* ${PKG}/usr/share/cups/
-
-}
+install -v -m644    doc/gutenprintui2/html/* \
+                    $PKG/usr/share/doc/gutenprint-5.3.3/api/gutenprintui2
