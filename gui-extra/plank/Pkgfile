@@ -1,4 +1,4 @@
-makedepends=(atk cairo gdk-pixbuf glib gtk3 libgee libwnck xorg-libx11 xorg-libxfixes xorg-libxi pango bamf)
+makedepends=(atk cairo gdk-pixbuf glib gtk3 libgee libwnck xorg-libx11 xorg-libxfixes xorg-libxi pango bamf gnome-menus)
 
 description="Elegant, simple, clean dock"
 url="https://launchpad.net/plank"
