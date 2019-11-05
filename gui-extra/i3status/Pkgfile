@@ -17,6 +17,6 @@ autoreconf -fiv
             --sysconfdir=/etc \
             --disable-sanitizers
 
-make
+make CPPFLAGS+="-U_FORTIFY_SOURCE"
 make DESTDIR=$PKG install
 }
