@@ -1,7 +1,8 @@
-makedepends=(confuse libnl yajl alsa-lib pulseaudio)
+makedepends=(confuse libnl yajl alsa-lib pulseaudio asciidoc)
 
 description="Generate status bar to use with i3bar,dzen2 or xmobar"
 url="https://i3wm.org/i3status/"
+
 name=i3status
 version=2.13
 
