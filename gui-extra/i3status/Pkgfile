@@ -9,7 +9,13 @@ source=(https://i3wm.org/i3status/$name-$version.tar.bz2)
 
 build() {
 cd $name-$version
+
+autoreconf -fiv
+
+./configure --prefix=/usr \
+            --sysconfdir=/etc \
+            --disable-sanitizers
+
 make
 make DESTDIR=$PKG install
-make clean
 }
