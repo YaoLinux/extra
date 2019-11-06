@@ -10,7 +10,7 @@ packager="Yaolinux Team"
 name=openttd
 version=1.9.3
 
-source=(http://binaries.openttd.org/releases/${version}/${name}-${version}-source.tar.xz
+source=(http://proxy.binaries.openttd.org/openttd-releases/${version}/${name}-${version}-source.tar.xz
 )
 
 build() {
