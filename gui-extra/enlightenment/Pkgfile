@@ -2,8 +2,9 @@ makedepends=(efl xcb-util-keysyms)
 
 description="Enlightenment window manager"
 url="http://www.enlightenment.org/"
+
 packager="Yaolinux Team"
-maintainer="rems"
+maintainer="Dania"
 
 run=(efl)
 
@@ -13,11 +14,17 @@ version=0.23.1
 source=(https://download.enlightenment.org/rel/apps/enlightenment/$name-$version.tar.xz)
 
 build() {
-cd $name-$version
-./configure --prefix=/usr
-make
-make DESTDIR=$PKG install
+
+mkdir build && cd build
+
+meson  --prefix=/usr       \
+       -Dbuildtype=release \
+       ../$name-$version
+
+ninja
+DESTDIR=$PKG ninja install
 }
+
 uptodate() {
 local ext url LYNX
 LYNX="lynx -read_timeout=20 -dump -listonly -nonumbers "
