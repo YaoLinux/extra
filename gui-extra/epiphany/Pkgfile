@@ -2,8 +2,10 @@ makedepends=(icu ninja meson lsb-release libwnck avahi gcr iso-codes libgnome-ke
 
 description="A GNOME web browser based on the WebKit rendering engine."
 url="http://www.gnome.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
+
 run=(adwaita-icon-theme gsettings-desktop-schemas desktop-file-utils gtk-update-icon-cache)
 
 name=epiphany
@@ -12,10 +14,14 @@ version=3.34.1
 source=(http://ftp.gnome.org/pub/gnome/sources/$name/${version:0:4}/$name-$version.tar.xz)
 
 build() {
-cd $name-$version
-mkdir build
-cd    build
-meson --prefix=/usr -Ddistributor_name=NuTyX -Dunit_tests=false
+
+mkdir build && cd build
+
+meson --prefix=/usr \
+      -Ddistributor_name="YaoLinuX" \
+      -Dunit_tests=disabled \
+      ../$name-$version
+
 ninja
 DESTDIR=$PKG ninja install
 }
