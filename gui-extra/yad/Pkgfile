@@ -8,7 +8,7 @@ packager="Yaolinux Team"
 name=yad
 version=5.0
 
-source=(https://github.com/v1cont/yad/releases/download/v${pkgver}/${pkgname}-${pkgver}.tar.xz)
+source=(https://github.com/v1cont/yad/releases/download/v${version}/${name}-${version}.tar.xz)
 
 build() {
 
