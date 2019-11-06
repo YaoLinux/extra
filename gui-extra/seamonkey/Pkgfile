@@ -95,6 +95,8 @@ make  -f client.mk DESTDIR=$PKG install INSTALL_SDK=
 
 chown -R 0:0 $PKG/usr/lib/seamonkey-$version
 
+install -vdm755 $PKG/usr/share/man/man1
+
 cp -v $(find -name seamonkey.1 | head -n1) $PKG/usr/share/man/man1
 
 make -C obj* DESTDIR=$PKG install
