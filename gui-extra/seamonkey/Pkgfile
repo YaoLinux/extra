@@ -1,12 +1,12 @@
-makedepends=(autoconf2-13 gtk2 gtk3 unzip yasm zip icu libevent libvpx nspr nss pulseaudio sqlite dbus-glib gconf gstreamer-plugins-base startup-notification)
+makedepends=(autoconf2-13 gtk2 gtk3 unzip yasm zip icu llvm libevent libvpx nspr nss pulseaudio sqlite dbus-glib gconf gstreamer-plugins-base startup-notification)
 
 description="Browser suite, the Open Source sibling of Netscape"
 url="https://www.seamonkey-project.org/"
+
 packager="Yaolinux Team"
 
 name=seamonkey
-version=2.49.4
-release=2
+version=2.49.5
 
 source=( https://ftp.mozilla.org/pub/$name/releases/$version/source/$name-$version.source.tar.xz )
 
@@ -83,32 +83,19 @@ ac_add_options --with-system-png
 ac_add_options --with-system-zlib
 EOF
 
-CFLAGS_HOLD=$CFLAGS
-CXXFLAGS_HOLD=$CXXFLAGS
-EXTRA_FLAGS=" -fno-delete-null-pointer-checks -fno-lifetime-dse -fno-schedule-insns2"
-export CFLAGS+=$EXTRA_FLAGS
-export CXXFLAGS+=$EXTRA_FLAGS
-unset EXTRA_FLAGS
+grep -rl -- '-Werror=format' | xargs sed -i 's/error=format/no-&/'
 
-SHELL=/bin/sh make -f client.mk
+sed -i -e '/pid_t gettid/,+3 s@^@//@' mozilla/tools/profiler/core/platform.h
 
-SHELL=/bin/sh make -f client.mk DESTDIR=$PKG install INSTALL_SDK=
+sed -i '/USE_LIBS/,+2 s/^/#/' mozilla/security/manager/ssl/moz.build
 
-chown -R 0:0 $PKG/usr/lib/$name-$version
+make -f client.mk
 
-mkdir -p $PKG/usr/share/man/man1
+make  -f client.mk DESTDIR=$PKG install INSTALL_SDK=
+
+chown -R 0:0 $PKG/usr/lib/seamonkey-$version
+
 cp -v $(find -name seamonkey.1 | head -n1) $PKG/usr/share/man/man1
 
-install -Dm644 suite/branding/nightly/icons/gtk/seamonkey.png \
-$PKG/usr/share/pixmaps/seamonkey.png
-
-install -Dm644 mozilla/toolkit/mozapps/installer/linux/rpm/mozilla.desktop \
-$PKG/usr/share/applications/seamonkey.desktop
-
-sed -i 's/@MOZ_APP_DISPLAYNAME@/SeaMonkey internet suite/' \
-$PKG/usr/share/applications/seamonkey.desktop
-
-sed -i 's/@MOZ_APP_NAME@/seamonkey/' \
-$PKG/usr/share/applications/seamonkey.desktop
-
+make -C obj* DESTDIR=$PKG install
 }
