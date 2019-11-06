@@ -1,7 +1,8 @@
-makedepends=(aspell enchant gmime libesmtp rarian pcre gtksourceview2 gtksourceview libnotify kerberos openldap openssl sqlite webkitgtk procmail )
+makedepends=(aspell enchant gmime libesmtp rarian pcre gtksourceview libnotify kerberos openldap openssl sqlite gpgme libsecret)
 
 description="The Balsa package contains a GNOME based mail client."
 url="https://pawsa.fedorapeople.org/balsa/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -20,10 +21,11 @@ build() {
 	            --with-ssl               \
 	            --with-rubrica           \
 	            --without-html-widget    \
-	            --without-libnotify      \
-	            --without-gtkspell       
+	            --with-sqlite            \
+		    --with-gpgme             \
+		    --with-libsecret
+		    
 	make
 
 	make DESTDIR=$PKG install
-
 }
