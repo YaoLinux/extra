@@ -15,7 +15,7 @@ source=(https://github.com/crawl/crawl/archive/$version.tar.gz)
 
 build () {
 
-cd crawl/crawl-ref/source
+cd crawl-$version/crawl-ref/source
 
 echo $version > util/release_ver
 
