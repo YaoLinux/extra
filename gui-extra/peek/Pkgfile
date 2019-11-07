@@ -12,19 +12,4 @@ PKGMK_KEEP_SOURCES="no"
 
 source=(https://github.com/phw/$name/archive/$version.tar.gz)
 
-
-prepare() {
-  mkdir -p build
-}
-
-build() {
-  cd build
-  cmake $SRC/${name}-${version} \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DBUILD_TESTS=ON \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DGSETTINGS_COMPILE=OFF \
-    -DENABLE_FILECHOOSERNATIVE=ON
-  make
-  make DESTDIR=$PKG install
-}
+build=meson
