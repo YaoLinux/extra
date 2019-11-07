@@ -12,9 +12,9 @@ PKGMK_KEEP_SOURCES="no"
 
 source=(https://github.com/DeaDBeeF-Player/${name}/archive/${version}.tar.gz)
 
-build () {
-  cd $name-$version
-  CXX="g++ -std=c++98" ./configure --prefix=/usr --disable-ffmpeg --enable-gtk3
-  make 
-  make DESTDIR=$PKG install
+prepare() {
+
+cd $name-$version
+
+./autogen.sh
 }
