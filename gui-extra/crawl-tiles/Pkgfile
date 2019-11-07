@@ -27,7 +27,7 @@ sed -i Makefile \
 make DESTDIR=$PKG \
 	 prefix=/usr \
 	 bin_prefix=bin \
-	 BUILD_LUA=yes \
+	 LUA_PACKAGE=lua51 \
 	 DATADIR=/usr/share/$name \
 	 SAVEDIR='~/.crawl/' \
 	 TILES=y \
