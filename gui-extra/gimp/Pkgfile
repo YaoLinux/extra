@@ -1,4 +1,4 @@
-makedepends=(shared-mime-info gtk2 python2-gtk curl libexif xorg-libxmu xorg-libxpm openexr gegl poppler-glib glib-networking libmng alsa-lib babl libmypaint mypaint-brushes lcms2 libgexiv2 harfbuzz libjpeg-turbo librsvg libtiff libxml2)
+makedepends=(shared-mime-info gtk2 python2-gtk curl libexif xorg-libxmu xorg-libxpm openexr gegl poppler-glib glib-networking libmng alsa-lib babl mypaint-brushes1 lcms2 libgexiv2 harfbuzz libjpeg-turbo2 librsvg libtiff libxml2)
 
 description="GNU Image Manipulation Program"
 url="http://www.gimp.org/"
@@ -12,15 +12,13 @@ run=(python2-gtk)
 
 source=(http://download.gimp.org/pub/gimp/v2.10/gimp-$version.tar.bz2)
 
-
 build() {
 
 cd $name-$version
 
+./configure --prefix=/usr \
+            --sysconfdir=/etc
 
-./configure --prefix=/usr --sysconfdir=/etc
 make
-
 make DESTDIR=$PKG install
-
 }
