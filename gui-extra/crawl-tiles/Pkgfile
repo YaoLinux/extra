@@ -11,7 +11,7 @@ version=0.23.2
 
 PKGMK_KEEP_SOURCES="no"
 
-source=(https://github.com/crawl/$pkgname/archive/$version.tar.gz)
+source=(https://github.com/crawl/$name/archive/$version.tar.gz)
 
 build () {
 
