@@ -31,8 +31,7 @@ build() {
     --enable-dvdnav \
     --enable-libarchive \
     --enable-libmpv-shared \
-    --enable-libsmbclient \
-    --enable-tv
+    --enable-libsmbclient
 
   ./waf build
 
