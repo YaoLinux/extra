@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=crawl-tiles
-version=0.23.2
+version=0.24.0
 
 PKGMK_KEEP_SOURCES="no"
 
@@ -31,6 +31,5 @@ make DESTDIR=$PKG \
 	 DATADIR=/usr/share/$name \
 	 SAVEDIR='~/.crawl/' \
 	 TILES=y \
-         SOUND=y \
-	install
+         install
 }
