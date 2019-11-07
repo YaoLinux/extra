@@ -1,4 +1,4 @@
-makedepends=(python-yaml git xorg-glu sdl2 sdl2-image sdl2-mixer freetype zlib libpng pcre mesa glew dejavu-ttf)
+makedepends=(python-yaml git xorg-glu sdl2 sdl2-image sdl2-mixer freetype zlib libpng pcre mesa glew dejavu-ttf lua51)
 
 description="Dungeon Crawl Stone Soup is a singleplayer roguelike game - Tiles version"
 url="http://crawl.develz.org/"
