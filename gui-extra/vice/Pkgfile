@@ -16,21 +16,20 @@ prepare(){
   cd ${name}-${version}
   rm -rf src/lib/{liblame,libx264,libffmpeg}
 
-  patch -p1 -i "$SRC/disable-fc-cache.patch"
+  patch -p1 -i "../disable-fc-cache.patch"
+  
   sed -i 's/lib64/lib/g' configure.ac
-  autoreconf -fiv
 
-  sed -e 's|CODEC_CAP_VARIABLE_FRAME_SIZE|AV_&|g' -e 's|CODEC_FLAG_GLOBAL_HEADER|AV_&|g' -e 's|\& AVFMT_RAWPICTURE||' \
-    -i src/gfxoutputdrv/ffmpegdrv.c # Fix build with ffmpeg 4
+  autoreconf -fiv
 }
 
 build() {
   cd ${name}-${version}
 
   ./configure --prefix=/usr \
-    --libdir=/usr/lib \
-    --enable-gnomeui \
-    --enable-external-ffmpeg
+              --libdir=/usr/lib \
+              --enable-external-ffmpeg
+  
   make
 }
 
