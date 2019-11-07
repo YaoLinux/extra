@@ -1,17 +1,17 @@
-makedepends=(node cbindgen icu libvpx libwebp nspr nss libevent rustc dbus-glib autoconf2-13 pulseaudio gconf libnotify yasm sqlite nss alsa-lib gtk2 gtk3 zip unzip gstreamer gstreamer-plugins-base gstreamer-plugins-good gstreamer-plugins-libav shared-mime-info)
+makedepends=(startup-notification node cbindgen icu libvpx libwebp nspr nss libevent rustc dbus-glib autoconf2-13 pulseaudio gconf libnotify yasm sqlite nss alsa-lib gtk2 gtk3 zip unzip gstreamer gstreamer-plugins-base gstreamer-plugins-good gstreamer-plugins-libav shared-mime-info)
 
 description="Standalone web browser from mozilla.org"
 url="http://www.mozilla.com/firefox/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 run=(shared-mime-info icu libevent pulseaudio gconf sqlite libvpx nss alsa-lib gtk2 gtk3 zip unzip gstreamer gstreamer-plugins-base gstreamer-plugins-good gstreamer-plugins-libav)
+
 name=firefox
 version=70.0.1
-release=1
 
 source=(firefox.desktop
-	http://www.linuxfromscratch.org/patches/blfs/svn/firefox-68.0.2-system_graphite2_harfbuzz-1.patch
 	https://archive.mozilla.org/pub/firefox/releases/$version/source/$name-$version.source.tar.xz)
 
 build() {
@@ -20,25 +20,19 @@ ARCH=`uname -m`
 
 for lang in ar da de es-ES fi fr it nb-NO nl pt-PT ru sv-SE tr ja zh-CN hi-IN
 do 
-wget  http://download.cdn.mozilla.net/pub/mozilla.org/firefox/releases/$version/linux-$ARCH/xpi/$lang.xpi
+     wget  http://download.cdn.mozilla.net/pub/mozilla.org/firefox/releases/$version/linux-$ARCH/xpi/$lang.xpi
 done
 
 cd $name-$version
+
 # Locale autodetect
 sed -i '/intl.locale.matchOS/s/false/true/' modules/libpref/init/all.js
 
 cat > mozconfig << "EOF"
 # If you have a multicore machine, all cores will be used by default.
-# If desired, you can reduce the number of cores used, e.g. to 1, by
-# uncommenting the next line and setting a valid number of CPU cores.
-#mk_add_options MOZ_MAKE_FLAGS="-j1"
 
-# If you have installed dbus-glib, comment out this line:
-#ac_add_options --disable-dbus
-
-# If you have installed dbus-glib, and you have installed (or will install)
-# wireless-tools, and you wish to use geolocation web services, comment out
-# this line
+# If you have installed (or will install) wireless-tools, and you wish
+# to use geolocation web services, comment out this line
 ac_add_options --disable-necko-wifi
 
 # API Keys for geolocation APIs - necko-wifi (above) is required for MLS
@@ -47,29 +41,35 @@ ac_add_options --disable-necko-wifi
 
 # Uncomment the following line if you wish to use Google's geolocaton API
 # (needed for use with saved maps with Google Maps)
-#ac_add_options --with-google-api-keyfile=$PWD/google-key
+#ac_add_options --with-google-location-service-api-keyfile=$PWD/google-key
 
-# Uncomment these lines if you have installed optional dependencies:
-#ac_add_options --enable-system-hunspell
-#ac_add_options --enable-startup-notification
+# Uncomment this line if you have installed startup-notification:
+ac_add_options --enable-startup-notification
 
-# Comment out following option if you have PulseAudio installed
-# ac_add_options --disable-pulseaudio
-
-# If you have installed GConf, comment out this line
-ac_add_options --disable-gconf
+# Uncomment the following option if you have not installed PulseAudio
+#ac_add_options --disable-pulseaudio
+# or uncomment this if you installed alsa-lib instead of PulseAudio
+#ac_add_options --enable-alsa
 
 # Comment out following options if you have not installed
 # recommended dependencies:
 ac_add_options --enable-system-sqlite
 ac_add_options --with-system-libevent
-#ac_add_options --with-system-libvpx
-ac_add_options --with-system-nss
+# firefox-65 understands webp and ships with an included copy
+ac_add_options --with-system-webp
 ac_add_options --with-system-nspr
+ac_add_options --with-system-nss
 ac_add_options --with-system-icu
 
-# The gold linker is no-longer the default
-ac_add_options --enable-linker=gold
+# Do not specify the gold linker which is not the default. It will take
+# longer and use more disk space when debug symbols are disabled.
+
+# libdavid (av1 decoder) requires nasm. Uncomment this if nasm
+# has not been installed.
+#ac_add_options --disable-av1
+
+# You cannot distribute the binary if you do this
+ac_add_options --enable-official-branding
 
 # If you are going to apply the patch for system graphite
 # and system harfbuzz, uncomment these lines:
@@ -81,36 +81,56 @@ ac_add_options --enable-linker=gold
 #ac_add_options --disable-strip
 #ac_add_options --disable-install-strip
 
+# Disabling debug symbols makes the build much smaller and a little
+# faster. Comment this if you need to run a debugger. Note: This is
+# required for compilation on i686.
+ac_add_options --disable-debug-symbols
+
 # The BLFS editors recommend not changing anything below this line:
 ac_add_options --prefix=/usr
 ac_add_options --enable-application=browser
 
+# The elf-hack is reported to cause failed installs (after successful builds)
+# on some machines. It is supposed to improve startup time and it shrinks
+# libxul.so by a few MB - comment this if you know your machine is not affected.
+ac_add_options --disable-elf-hack
+
 ac_add_options --disable-crashreporter
 ac_add_options --disable-updater
+# enabling the tests will use a lot more space and significantly
+# increase the build time, for no obvious benefit.
 ac_add_options --disable-tests
 
-# Optimization for size is broken with gcc7
-ac_add_options --enable-optimize="-O2"
+# The default level of optimization again produces a working build with gcc.
+ac_add_options --enable-optimize
 
+# From firefox-61 system cairo is not supported
 
-ac_add_options --enable-official-branding
-
-# From firefox-61, system cairo is not supported
 ac_add_options --enable-system-ffi
 ac_add_options --enable-system-pixman
 
+# From firefox-62 --with-pthreads is not recognized
 
 ac_add_options --with-system-bz2
 ac_add_options --with-system-jpeg
 ac_add_options --with-system-png
 ac_add_options --with-system-zlib
 
+# The following option unsets Telemetry Reporting. With the Addons Fiasco,
+# Mozilla was found to be collecting user's data, including saved passwords and
+# web form data, without users consent. Mozilla was also found shipping updates
+# to systems without the user's knowledge or permission.
+# As a result of this, use the following command to permanently disable
+# telemetry reporting in Firefox.
+unset MOZ_TELEMETRY_REPORTING
+
 mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/firefox-build-dir
 EOF
 
-patch -Np1 -i ../firefox-68.0.2-system_graphite2_harfbuzz-1.patch
 sed -e 's/checkImpl/checkFFImpl/g' -i js/src/vm/JSContext*.h
+
 export CC=clang CXX=clang++ AR=llvm-ar NM=llvm-nm RANLIB=llvm-ranlib
+
 export MOZBUILD_STATE_PATH=${PWD}/mozbuild
 
 SHELL=/bin/sh ./mach build
@@ -157,5 +177,4 @@ pref("browser.shell.checkDefaultBrowser", false);
 pref("extensions.autoDisableScopes", 11);
 pref("extensions.shownSelectionUI", true);
 END
-
 }
