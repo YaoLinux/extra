@@ -23,13 +23,20 @@ build() {
         
 	mkdir ../build && cd ../build
 
-        cmake ../$name-$version -DCMAKE_INSTALL_PREFIX=/usr \
-		-DCMAKE_SKIP_RPATH=ON \
-                -DLIB_SUFFIX=""
+        cmake ../$name-$version \
+	      -DCMAKE_INSTALL_PREFIX=/usr \
+              -DCMAKE_SKIP_RPATH=ON \
+              -DCMAKE_BUILD_TYPE=None
 
         make
 	make DESTDIR=$PKG install
 
         install -Dm644 $SRC/$name-$version/scribus.desktop \
 	$PKG/usr/share/applications/scribus.desktop
+	
+	for i in 16x16 32x32 128x128 256x256 512x512 1024x1024
+    do
+        install -Dm644 resources/iconsets/artwork/icon_${i}.png \
+	               "${PKG}"/usr/share/icons/hicolor/${i}/apps/scribus.png
+    done
 }
