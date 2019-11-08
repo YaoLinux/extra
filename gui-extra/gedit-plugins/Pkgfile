@@ -1,4 +1,4 @@
-makedepends=(gedit gsettings-desktop-schemas desktop-file-utils gtk-update-icon-cache )
+makedepends=(gedit gsettings-desktop-schemas desktop-file-utils gtk-update-icon-cache)
 
 description="A text editor for GNOME"
 url="http://www.gnome.org/"
