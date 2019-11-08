@@ -14,7 +14,7 @@ run=(shared-mime-info)
 source=(https://downloads.sourceforge.net/${name}/${name}-${version}.tar.xz)
 
 build() {
-	cd $name -$version
+	cd $name-$version
 
 # Fix python name
     sed -e 's|#!/usr/bin/python|#!/usr/bin/python2|' \
