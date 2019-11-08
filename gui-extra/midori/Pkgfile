@@ -10,21 +10,20 @@ run=(desktop-file-utils gtk-update-icon-cache hicolor-icon-theme)
 name=midori
 version=9.0
 
-source=(https://github.com/midori-browser/core/releases/download/v${version:0:1}/$name-v$version.tar.gz)
+source=(https://github.com/midori-browser/core/releases/download/v$version/midori-v$version.tar.gz)
 
 build () {
-cd $name-v$version
 
-mkdir build
-cd build
+mkdir build && cd build
+
 cmake -DCMAKE_INSTALL_PREFIX=/usr \
- -DCMAKE_INSTALL_LIBDIR=lib \
- -DCMAKE_INSTALL_DOCDIR=/usr/share/doc/$name-$version \
- -DCMAKE_C_FLAGS="$CFLAGS -fPIC -w" \
- -DVALA_CFLAGS="$CFLAGS -fPIC -w" \
- -G Ninja \
- ..
+      -DCMAKE_INSTALL_LIBDIR=lib \
+      -DCMAKE_INSTALL_DOCDIR=/usr/share/doc/$name-$version \
+      -DCMAKE_C_FLAGS="$CFLAGS -fPIC -w" \
+      -DVALA_CFLAGS="$CFLAGS -fPIC -w" \
+      -G Ninja \
+      ../$name-v$version
+
 ninja
-cd ..
-DESTDIR="$PKG" ninja -C build install
+DESTDIR="$PKG" ninja install
 }
