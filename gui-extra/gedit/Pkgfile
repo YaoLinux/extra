@@ -2,6 +2,7 @@ makedepends=(gsettings-desktop-schemas desktop-file-utils gtk-update-icon-cache 
 
 description="A text editor for GNOME"
 url="http://www.gnome.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -13,9 +14,13 @@ version=3.34.0
 source=(http://ftp.gnome.org/pub/gnome/sources/$name/${version%.*}/$name-$version.tar.xz)
 
 build() {
-cd $name-$version
-./configure --prefix=/usr --disable-spell --disable-schemas-compile --enable-zeitgeist \
- --enable-python --enable-gvfs-metadata
-make
-make DESTDIR=$PKG install
+
+mkdir build && cd build
+
+meson --prefix=/usr \
+      -Ddocumentation=true \
+      ../$name-$version
+      
+ninja
+DESDIR=$PKG ninja install
 }
