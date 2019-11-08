@@ -22,5 +22,5 @@ meson --prefix=/usr \
       ../$name-$version
       
 ninja
-DESDIR=$PKG ninja install
+DESTDIR=$PKG ninja install
 }
