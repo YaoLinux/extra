@@ -13,6 +13,9 @@ source=(https://download.kde.org/stable/$name/${version%.*}/$name-$version.tar.x
         https://cgit.kde.org/falkon.git/patch/?id=479933e0)
 
 prepare(){
+
+mv ?id=479933e0 falkon-pyside-5.12.2.patch
+
   cd $name-$version
      patch -p1 -i ../falkon-pyside-5.12.2.patch # Fix build with PySide 5.12.2
 
