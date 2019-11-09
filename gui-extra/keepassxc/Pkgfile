@@ -1,4 +1,4 @@
-makedepends=(xorg-libxtst qttools qtsvg qtx11extras shared-mime-info libgcrypt hicolor-icon-theme libsodium argon2 qrencode)
+makedepends=(xorg-libxtst qttools qtsvg qtx11extras shared-mime-info libgcrypt hicolor-icon-theme libsodium libyubikey argon2 qrencode)
 
 description="Password manager"
 url="http://www.keepassx.org"
