@@ -2,11 +2,12 @@ makedepends=(kodi-platform git)
 
 description="Tvheadend HTSP PVR client addon for Kodi"
 url="https://github.com/kodi-pvr/"
+
 maintainer="rems"
 packager="Yaolinux Team"
  
 name=kodi-addon-pvr-hts
-version=4.4.18-Leia
+version=4.4.19-Leia
 
 PKGMK_KEEP_SOURCES="no"
 
@@ -14,14 +15,12 @@ source=(https://github.com/kodi-pvr/pvr.hts/archive/$version.tar.gz)
 
 build() {
 
-cd pvr.hts-$version
-
 mkdir -pv build 
- pushd build
-  cmake \
-  -DCMAKE_INSTALL_PREFIX=/usr \
-  -DCMAKE_BUILD_TYPE=Release \
-  ..
+
+pushd build
+  cmake -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_BUILD_TYPE=Release \
+        ../pvr.hts-$version
 
  make
  popd
@@ -30,6 +29,5 @@ mkdir -pv build
 
 package() {
 
-  cd pvr.hts-$version/build   
-  make DESTDIR=$PKG install
+  make -C build DESTDIR=$PKG install
 }
