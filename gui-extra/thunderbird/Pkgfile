@@ -1,15 +1,15 @@
 makedepends=(autoconf2-13 icu alsa-lib gtk2 zip unzip libevent libvpx nspr nss yasm dbus-glib doxygen libnotify openjdk startup-notification hunspell sqlite wireless-tools xorg-libx11 xorg-libxt xorg-libxrandr desktop-file-utils hicolor-icon-theme shared-mime-info cbindgen pulseaudio node)
 
-description="Stand-alone mail/news client based on the Mozilla codebase."
+description="Stand-alone mail/news client based on the Mozilla codebase"
 url="http://www.mozilla.org/thunderbird"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 run=(startup-notification hunspell)
 
 name=thunderbird
-version=68.2.1
-release=2
+version=68.2.2
 
 source=(http://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/$version/source/$name-$version.source.tar.xz
 	$name.desktop)
@@ -84,6 +84,14 @@ EOF
 
 ./mach build
 DESTDIR=$PKG ./mach install
+
+for i in 16 22 24 32 48 64 128 256; do
+    install -Dm644 comm/mail/branding/thunderbird/default${i}.png \
+                   "$PKG/usr/share/icons/hicolor/${i}x${i}/apps/$name.png"
+  done
+
+install -Dm644 comm/mail/branding/thunderbird/TB-symbolic.svg \
+               "$PKG/usr/share/icons/hicolor/symbolic/apps/thunderbird-symbolic.svg"
 
 mkdir -pv $PKG/usr/share/applications
 install -Dm644 $SRC/thunderbird.desktop \
