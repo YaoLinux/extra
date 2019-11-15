@@ -5,9 +5,9 @@ url="http://st.suckless.org/"
 maintainer="rems"
 
 name=st
-version=0.8.1
+version=0.8.2
 
-source=(http://dl.suckless.org/st/$name-$version.tar.gz
+source=(https://dl.suckless.org/$name/$name-$version.tar.gz
 		config.h)
 
 prepare() {
