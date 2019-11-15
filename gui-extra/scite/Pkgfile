@@ -6,10 +6,10 @@ maintainer="rems"
 url="http://scintilla.org/"
 
 name=scite
-version=4.1.2
+version=4.2.1
 release=1
 
-source=(http://downloads.sourceforge.net/sourceforge/scintilla/${name}${version//./}.tgz)
+source=(https://www.scintilla.org/${name}${version//./}.tgz)
 
 
 build() {
