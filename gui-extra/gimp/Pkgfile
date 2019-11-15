@@ -6,11 +6,11 @@ maintainer="rems"
 packager="Yaolinux Team"
 
 name=gimp
-version=2.10.12
+version=2.10.14
 
 run=(python2-gtk)
 
-source=(http://download.gimp.org/pub/gimp/v2.10/gimp-$version.tar.bz2)
+source=(https://download.gimp.org/pub/gimp/v${version%.*}/${name}-${version}.tar.bz2)
 
 build() {
 
