@@ -7,6 +7,7 @@ maintainer="rems"
 name="appimage-launcher"
 version="2.0.3"
 _version="4f7bc8e"
+release=2
 
 source=(https://github.com/TheAssassin/AppImageLauncher/releases/download/v$version/appimagelauncher-"${_version}".source.tar.xz)
 
@@ -30,5 +31,7 @@ cmake -DCMAKE_INSTALL_PREFIX=/usr \
        ../appimagelauncher-"${_version}".source
 
 make
+
+cmake ../appimagelauncher-"${_version}".source
 make DESTDIR=$PKG install
 }
