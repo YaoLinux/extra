@@ -1,0 +1,19 @@
+description="TCP, UDP, and SCTP network bandwidth measurement tool"
+url="https://github.com/esnet/iperf"
+
+packager="Yaolinux Team"
+maintainer="rems"
+
+name="iperf"
+version="3.7"
+
+source=(http://downloads.es.net/pub/iperf/iperf-${version}.tar.gz)
+
+makedepends=(openssl)
+
+package() {
+
+cd $name-$version
+
+install -Dm 644 examples/*{.am,.in,.c} -t "${PKG}/usr/share/doc/${name}-$version/examples"
+}
