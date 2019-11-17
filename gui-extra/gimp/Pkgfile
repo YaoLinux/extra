@@ -1,7 +1,8 @@
-makedepends=(shared-mime-info gtk2 python2-gtk curl libexif xorg-libxmu xorg-libxpm openexr gegl poppler-glib glib-networking libmng alsa-lib babl mypaint-brushes1 lcms2 libgexiv2 harfbuzz libjpeg-turbo2 librsvg libtiff libxml2)
+makedepends=(shared-mime-info gtk2 python2-gtk curl libexif xorg-libxmu xorg-libxpm openexr gegl poppler-glib glib-networking libmng alsa-lib babl mypaint-brushes1 lcms2 libgexiv2 harfbuzz libjpeg-turbo2 librsvg libtiff libxml2 webkitgtk libwmf)
 
 description="GNU Image Manipulation Program"
 url="http://www.gimp.org/"
+
 maintainer="rems"
 packager="Yaolinux Team"
 
