@@ -2,12 +2,17 @@ makedepends=(efl)
 
 description="Image viewer/editor/manipulator/slideshow creator for enlightenment"
 url="http://www.enlightenment.org"
+
 packager="Yaolinux Team"
-maintainer="rems"
+maintainer="dania"
 
 name=ephoto
+
 version=1.5
+release=2
+
 source=(http://download.enlightenment.org/rel/apps/$name/$name-$version.tar.xz)
+
 uptodate() {
 local ext url LYNX
 LYNX="lynx -read_timeout=20 -dump -listonly -nonumbers "
