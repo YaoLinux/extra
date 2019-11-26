@@ -9,7 +9,7 @@ maintainer="rems"
 name=balsa
 version=2.5.9
 
-source=(http://pawsa.fedorapeople.org/balsa/$name-$version.tar.bz2)
+source=(https://pawsa.fedorapeople.org/balsa/$name-$version.tar.bz2)
  
 build() {
 
