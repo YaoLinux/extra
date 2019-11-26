@@ -10,7 +10,7 @@ run=(python-gobject python-xdg dejavu-ttf shared-mime-info)
 name=zim
 version=0.72.0
 
-source=(http://www.zim-wiki.org/downloads/$name-$version.tar.gz)
+source=(https://www.zim-wiki.org/downloads/${name}-${version}.tar.gz)
 
 build() {
     cd $name-$version
