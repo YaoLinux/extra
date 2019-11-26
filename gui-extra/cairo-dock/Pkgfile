@@ -2,25 +2,23 @@ makedepends=(bzr cairo cmake curl dbus-glib xorg-glu gtk3)
 
 description="Light eye-candy fully themable animated dock"
 url="http://glx-dock.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=cairo-dock
 version=3.4.1
 
-source=(https://launchpad.net/cairo-dock-core/3.4/$version/+download/$name-$version.tar.gz)
+source=(https://github.com/Cairo-Dock/cairo-dock-core/archive/${version}.tar.gz)
 
 build() {
-  cd $name-$version 
 
-  if [[ -d build ]]; then
-    rm -rf build
-  fi
   mkdir build && cd build
 
-  cmake .. \
-    -DCMAKE_BUILD_TYPE='Release' \
-    -DCMAKE_INSTALL_PREFIX='/usr'
+  cmake ../$name-$version \
+        -DCMAKE_BUILD_TYPE='Release' \
+        -DCMAKE_INSTALL_PREFIX='/usr'
+
   make
   make DESTDIR=$PKG install
 }
