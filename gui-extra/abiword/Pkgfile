@@ -6,7 +6,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=abiword
-version=3.0.2
+version=3.0.3
 release=4
 
 source=(${url}downloads/$name/$version/source/$name-$version.tar.gz
