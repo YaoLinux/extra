@@ -5,7 +5,7 @@ url="http://www.grisbi.org"
 packager="Yaolinux Team"
 maintainer="rems"
 name=grisbi
-version=1.2.0
+version=1.2.2
 
 source=(https://downloads.sourceforge.net/$name/$name-$version.tar.bz2)
 
