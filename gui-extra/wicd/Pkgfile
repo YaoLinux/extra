@@ -11,7 +11,7 @@ name=wicd
 version=1.7.4
 release=3
 
-source=( http://launchpad.net/wicd/1.7/$version/+download/$name-$version.tar.gz)
+source=(https://launchpad.net/wicd/1.7/$version/+download/wicd-$version.tar.gz)
 build() {
 unset MAKEFLAGS
 cd $name-$version
