@@ -2,11 +2,12 @@ makedepends=(efl meson ninja)
 
 description="Terminal emulator for enlightenment"
 url="http://www.enlightenment.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=terminology
-version=1.5.0
+version=1.6.0
 
 source=(http://download.enlightenment.org/rel/apps/terminology/$name-$version.tar.xz)
 
