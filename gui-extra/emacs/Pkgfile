@@ -8,16 +8,16 @@ packager="Yaolinux Team"
 name=emacs
 version=26.3
 
-source=(https://ftp.gnu.org/pub/gnu/emacs/$name-$version.tar.xz)
+source=(https://ftp.gnu.org/gnu/emacs/$name-$version.tar.xz)
 
 build () {
 
 cd $name-$version
     
 ./configure --prefix=/usr \
---localstatedir=/var
+            --localstatedir=/var
+
 make
 make DESTDIR=$PKG install
 chown -v -R root:root $PKG/usr/share/emacs/$version
-
 }
