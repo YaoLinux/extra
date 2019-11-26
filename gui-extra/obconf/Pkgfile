@@ -9,7 +9,7 @@ release=4
 
 run=(shared-mime-info)
 
-source=(http://icculus.org/openbox/obconf/$name-$version.tar.gz)
+source=(http://openbox.org/dist/$name/$name-$version.tar.gz)
 
 build() {
    cd $name-$version
