@@ -1,4 +1,4 @@
-makedepends=(efl xcb-util-keysyms)
+makedepends=(efl xcb-util-keysyms xorg-server)
 
 description="Enlightenment window manager"
 url="http://www.enlightenment.org/"
@@ -10,6 +10,7 @@ run=(efl)
 
 name=enlightenment
 version=0.23.1
+release=2
 
 source=(https://download.enlightenment.org/rel/apps/enlightenment/$name-$version.tar.xz)
 
@@ -19,6 +20,7 @@ mkdir build && cd build
 
 meson  --prefix=/usr       \
        -Dbuildtype=release \
+       -Dwl=true           \
        ../$name-$version
 
 ninja
