@@ -8,7 +8,7 @@ maintainer="rems"
 name=uget
 version=2.2.2
 
-source=(http://downloads.sourceforge.net/urlget/$name-$version.tar.gz)
+source=(https://downloads.sourceforge.net/urlget/$name-$version.tar.gz)
 build() {
 	cd $name-$version
 	./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var
