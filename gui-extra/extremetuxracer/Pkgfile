@@ -6,7 +6,7 @@ packager="Yaolinux Team"
 name=extremetuxracer
 version=0.7.5
 
-source=(http://sourceforge.net/projects/extremetuxracer/files/releases/$version/etr-$version.tar.xz)
+source=(https://downloads.sourceforge.net/${name}/etr-${version}.tar.xz)
  
 build() {
 
