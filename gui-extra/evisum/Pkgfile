@@ -1,0 +1,20 @@
+makedepends=(efl)
+
+description="System and process monitor written with EFL"
+url="https://www.enlightenment.org/"
+
+packager="Yaolinux Team"
+maintainer="Dania"
+
+name=evisum
+version=0.2.6
+
+source=(http://download.enlightenment.org/rel/apps/$name/$name-$version.tar.xz)
+
+build() {
+
+cd $name-$version
+
+	make
+	make PREFIX=$PKG/usr install
+}
