@@ -9,7 +9,7 @@ makedepends=(libusb)
 name=usbredir
 version=0.8.0
 
-source=(http://spice-space.org/download/usbredir/$name-$version.tar.bz2)
+source=(https://spice-space.org/download/usbredir/$name-$version.tar.bz2)
 build() {
 	cd $name-$version
 	./configure --prefix=/usr 
