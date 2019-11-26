@@ -9,7 +9,7 @@ name=fluxbox
 version=1.3.7	
 release=1
 
-source=(http://downloads.sourceforge.net/fluxbox/$name-$version.tar.xz
+source=(https://downloads.sourceforge.net/sourceforge/${name}/${name}-${version}.tar.xz
 		fluxbox.desktop)
  
 build() {
