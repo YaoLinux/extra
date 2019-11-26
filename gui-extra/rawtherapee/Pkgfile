@@ -8,7 +8,7 @@ name=rawtherapee
 version=5.7
 release=3
 
-source=("http://rawtherapee.com/shared/source/$name-$version.tar.xz" )
+source=(https://rawtherapee.com/shared/source/rawtherapee-$version.tar.xz)
 
 build() { 
 mkdir -p "$SRC/$name-build"
