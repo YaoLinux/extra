@@ -9,7 +9,7 @@ maintainer="rems"
 name=vice
 version=3.3
 
-source=(http://downloads.sourceforge.net/project/vice-emu/releases/$name-$version.tar.gz 
+source=(https://downloads.sourceforge.net/project/vice-emu/releases/${name}-${version}.tar.gz
         disable-fc-cache.patch)
 
 prepare(){
