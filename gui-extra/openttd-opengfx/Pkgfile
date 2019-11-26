@@ -10,7 +10,7 @@ packager="Yaolinux Team"
 name=openttd-opengfx
 version=0.5.5
 release=1
-source=(http://bundles.openttdcoop.org/opengfx/releases/${version}/opengfx-${version}.zip)
+source=(https://bundles.openttdcoop.org/opengfx/releases/${version}/opengfx-${version}.zip)
 
 build() {
     cd ${SRC}
