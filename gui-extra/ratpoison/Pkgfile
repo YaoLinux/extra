@@ -9,7 +9,7 @@ name=ratpoison
 version=1.4.9
 release=1
 
-source=(http://savannah.nongnu.org/download/$name/$name-$version.tar.xz
+source=(https://savannah.nongnu.org/download/${name}/${name}-${version}.tar.xz
 		$name.desktop
 		$name.README)
 
