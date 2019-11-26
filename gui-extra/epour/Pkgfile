@@ -1,0 +1,24 @@
+makedepends=(dbus-python hicolor-icon-theme intltool libtorrent-rasterbar python-distutils-extra python-efl python-xdg)
+
+description="Torrent client based on EFL" 
+url="https://phab.enlightenment.org/w/projects/epour/"
+
+packager="Yaolinux-Team"
+maintainer="Dania"
+
+name=epour
+version=0.7.0
+
+run="libtorrent-rasterbar"
+
+source="http://download.enlightenment.org/rel/apps/$name/$name-$version.tar.xz"
+
+build() {
+  cd $name-$version
+
+  python3 setup.py install --prefix=/usr --root=$PKG 
+
+# install text files
+  install -d $PKG/usr/share/doc/$name/
+  install -m644 -t $PKG/usr/share/doc/$name/ AUTHORS README COPYING
+}
