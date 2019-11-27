@@ -1,31 +1,52 @@
-makedepends=(icu boost cairo aspell fribidi enchant wv librsvg gtk2 redland rasqal desktop-file-utils gtk3)
+makedepends=(icu boost cairo aspell fribidi enchant wv librsvg gtk2 redland rasqal desktop-file-utils gtk3 autoconf-archive)
 
 description="Word processing similar to MS® Word, suitable for a wide variety of word processing tasks"
 url="http://www.abisource.com/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=abiword
 version=3.0.3
-release=4
 
 source=(${url}downloads/$name/$version/source/$name-$version.tar.gz
-		abiword-3.0.2-gtk3_22_render_fix-1.patch)
-		
+        abiword-3.0.0-librevenge.patch
+        command-plugin.m4
+        abiword-3.0.1-libwps-0.4.patch
+        aiksaurus-plugin.m4
+        enchant-2.1.patch
+        python-override.patch)
+
+unset MAKEFLAGS
+
 prepare() {
 
-cp $SRC/abiword-3.0.2-gtk3_22_render_fix-1.patch $SRC/$name-$version/abiword-3.0.2-gtk3_22_render_fix-1.patch
 cd $name-$version
-patch -Np1 -i abiword-3.0.2-gtk3_22_render_fix-1.patch
 
-sed -e "s/free_suggestions/free_string_list/" \
-    -e "s/_to_personal//"                     \
-    -e "s/in_session/added/"                  \
-    -i src/af/xap/xp/enchant_checker.cpp      &&
+# fix build with librevenge based import filters
+  patch -Np0 -i ../abiword-3.0.0-librevenge.patch
 
-sed -e "/icaltime_from_timet/{s/timet/&_with_zone/;s/0/0, 0/}" \
-    -i src/text/ptbl/xp/pd_DocumentRDF.cpp
+# Fix libwpd 0.4 detection
+  patch -Np1 -i ../abiword-3.0.1-libwps-0.4.patch
 
+# Fix python override code to work with Python 3.x
+  patch -Np1 -i ../python-override.patch
+
+ # Replace deprecated enchant functions
+  patch -Np1 -i ../enchant-2.1.patch
+
+# Install missing m4 file
+  install -m644 ../aiksaurus-plugin.m4 plugins/aiksaurus/plugin.m4
+  install -m644 ../command-plugin.m4 plugins/command/plugin.m4
+
+# Generate m4 file for configure
+  find plugins -name plugin.m4 | xargs cat > plugin-configure.m4
+
+# enchant-2 naming change
+  sed -i 's/enchant >=/enchant-2 >=/' configure.ac
+
+  libtoolize --force
+  autoreconf -fiv
 }
 
 build() {
@@ -33,7 +54,8 @@ build() {
 cd $name-$version
 
 ./configure --prefix=/usr \
-    --disable-static
+            --disable-static
+
 make DESTDIR=$PKG install
 
 }
