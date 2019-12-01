@@ -6,8 +6,11 @@ url="https://www.enlightenment.org/"
 packager="Yaolinux Team"
 maintainer="Dania"
 
+set=(elementary)
+
 name=evisum
 version=0.2.6
+release=4
 
 source=(http://download.enlightenment.org/rel/apps/$name/$name-$version.tar.xz)
 
