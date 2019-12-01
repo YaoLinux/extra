@@ -6,8 +6,11 @@ url="https://phab.enlightenment.org/w/projects/epour/"
 packager="Yaolinux-Team"
 maintainer="Dania"
 
+set=(elementary)
+
 name=epour
 version=0.7.0
+release=4
 
 run="libtorrent-rasterbar"
 
