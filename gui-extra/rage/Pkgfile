@@ -6,8 +6,11 @@ url="http://www.enlightenment.org"
 packager="Yaolinux Team"
 maintainer="Dania"
 
+set=(elementary)
+
 name=rage
 version=0.3.1
+release=4
 
 source=(http://download.enlightenment.org/rel/apps/$name/$name-$version.tar.xz)
 
