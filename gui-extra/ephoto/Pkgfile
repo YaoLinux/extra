@@ -6,10 +6,12 @@ url="http://www.enlightenment.org"
 packager="Yaolinux Team"
 maintainer="dania"
 
+set=(elementary)
+
 name=ephoto
 
 version=1.5
-release=2
+release=5
 
 source=(http://download.enlightenment.org/rel/apps/$name/$name-$version.tar.xz)
 
