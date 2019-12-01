@@ -8,9 +8,11 @@ maintainer="Dania"
 
 run=(efl)
 
+set=(elementary)
+
 name=enlightenment
 version=0.23.1
-release=2
+release=5
 
 source=(https://download.enlightenment.org/rel/apps/enlightenment/$name-$version.tar.xz)
 
