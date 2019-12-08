@@ -7,6 +7,7 @@ packager="Yaolinux Team"
 
 name=seamonkey
 version=2.49.5
+release=2
 
 source=(https://archive.mozilla.org/pub/mozilla.org/seamonkey/releases/$version/source/seamonkey-$version.source.tar.xz)
 
