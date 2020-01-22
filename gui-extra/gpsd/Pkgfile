@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=gpsd
-version=3.19
+version=3.20
 release=2
 
 source=(https://download.savannah.gnu.org/releases/$name/$name-$version.tar.gz
