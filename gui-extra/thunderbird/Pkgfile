@@ -9,10 +9,9 @@ maintainer="rems"
 run=(startup-notification hunspell)
 
 name=thunderbird
-version=68.3.0
+version=68.4.1
 
 source=(https://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/$version/source/thunderbird-$version.source.tar.xz{,.asc}
-	thunderbird-rust-1.39.patch
         $name.desktop)
 
 build() {
@@ -25,8 +24,6 @@ wget  http://download.cdn.mozilla.net/pub/$name/releases/$version/linux-$ARCH/xp
 done
 
 cd $name-$version
-
-patch -p1 -i ../thunderbird-rust-1.39.patch # Fix build with rust 1.39 (Gentoo)
 
 cat > mozconfig << "EOF"
 # If you have a multicore machine, the build may be faster if using parallel
