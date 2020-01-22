@@ -6,7 +6,7 @@ maintainer="rems"
 packager="Yaolinux Team"
 
 name=hexchat
-version=2.14.2
+version=2.14.3
 
 run=(desktop-file-utils shared-mime-info)
 
