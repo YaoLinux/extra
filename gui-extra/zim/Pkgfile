@@ -8,7 +8,7 @@ packager="Yaolinux Team"
 run=(python-gobject python-xdg dejavu-ttf shared-mime-info)
 
 name=zim
-version=0.72.0
+version=0.72.1
 
 source=(https://www.zim-wiki.org/downloads/${name}-${version}.tar.gz)
 
