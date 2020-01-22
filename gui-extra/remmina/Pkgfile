@@ -6,15 +6,13 @@ maintainer="rems"
 packager="Yaolinux Team"
  
 name=remmina
-version=1.3.6
+version=1.3.10
 
-PKGMK_KEEP_SOURCES="no"
-
-source=(https://github.com/FreeRDP/Remmina/archive/v$version.tar.gz)
+source=(https://gitlab.com/Remmina/Remmina/-/archive/v$version/Remmina-v$version.tar.gz)
 
 build() {
 
-cd Remmina-$version
+cd Remmina-v$version
 
 sed -e 's|ssh_threads|ssh|' -i cmake/FindLIBSSH.cmake # Fix build with libssh 0.8
 
