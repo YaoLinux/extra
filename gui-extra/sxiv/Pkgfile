@@ -8,7 +8,7 @@ maintainer="rems"
 PKGMK_KEEP_SOURCES="no"
 
 name=sxiv
-version=25
+version=26
 release=1
 
 source=(https://github.com/muennich/$name/archive/v$version.tar.gz)
