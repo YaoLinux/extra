@@ -7,7 +7,7 @@ maintainer="rems"
 packager="Yaolinux Team"
 
 name=mc
-version=4.8.23
+version=4.8.24
 
 source=(${url}downloads/$name-$version.tar.xz)
 
@@ -22,5 +22,5 @@ build() {
                 --with-screen=slang
 
 	make
-	make DESTDIR=$PKG install
+	make -j1 DESTDIR=$PKG install
 }
