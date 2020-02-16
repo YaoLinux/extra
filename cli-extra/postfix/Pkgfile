@@ -7,12 +7,12 @@ maintainer="rems"
 packager="Yaolinux Team"
 
 name=postfix
-version=3.4.7
-yaolinux_version=1.0-RC1
+version=3.4.9
+yaolinux_version=1.0-RC2
 
 source=(http://downloads.yaolinux.org/yaolinux/files/yaolinux-${yaolinux_version}.tar.xz
 	    ftp://ftp.porcupine.org/mirrors/postfix-release/official/$name-$version.tar.gz
-        http://www.linuxfromscratch.org/patches/blfs/svn/postfix-$version-glibc230_fix-1.patch)
+        http://www.linuxfromscratch.org/patches/blfs/svn/postfix-3.4.8-glibc230_fix-1.patch)
 
 build() {
 
@@ -20,7 +20,7 @@ build() {
 
     sed -i 's/.\x08//g' README_FILES/*
 
-    patch -Np1 -i ../postfix-3.4.7-glibc230_fix-1.patch
+    patch -Np1 -i ../postfix-3.4.8-glibc230_fix-1.patch
 
 	make CCARGS="-DUSE_TLS -I/usr/include/openssl/        \
 	-DUSE_SASL_AUTH -DUSE_CYRUS_SASL -I/usr/include/sasl" \
