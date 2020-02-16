@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 makedepends=(ntfs-3g)
 
 name=testdisk
-version=7.0
+version=7.1
 
 source=(http://www.cgsecurity.org/$name-$version.tar.bz2)
 
