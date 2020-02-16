@@ -5,7 +5,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=screenfetch
-version=3.9.0
+version=3.9.1
 
 PKGMK_KEEP_SOURCES="no"
 
