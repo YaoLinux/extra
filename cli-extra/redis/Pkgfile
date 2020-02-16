@@ -7,7 +7,8 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=redis
-version=5.0.6
+version=5.0.7
+release=2
 
 source=(http://download.redis.io/releases/redis-$version.tar.gz
         redis.rc
@@ -25,13 +26,13 @@ patch -p1 -i ../redis.conf-sane-defaults.patch
 build() {
 cd $name-$version
 
-make PREFIX=/usr
+make
 }
 
 package() {
 cd $name-$version
 
-make DESTDIR=$PKG PREFIX=/usr install
+make PREFIX=$PKG/usr install
 
 install -Dm644 ../redis.conf $PKG/etc/redis.conf
 install -Dm644 ../redis.logrotate $PKG/etc/logrotate.d/redis
