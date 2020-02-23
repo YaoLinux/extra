@@ -6,21 +6,28 @@ maintainer="rems"
 packager="Yaolinux Team"
 run=(gsettings-desktop-schemas desktop-file-utils gtk-update-icon-cache guile)
 name=aisleriot
-version=3.22.9
+version=3.22.10
 
-source=(http://ftp.gnome.org/pub/gnome/sources/$name/${version%.*}/$name-$version.tar.xz)
+source=()
+
+prepare() {
+
+git clone https://gitlab.gnome.org/GNOME/aisleriot.git $name-$version
+
+cd $name-$version
+git checkout 5123a8c1bf87993ed5deef8ab13f5717496ba482
+
+sed -e 's@#!/usr/bin/bash@#!/bin/sh@' -i cards/meson_svgz.sh
+}
 
 build() {
 
-cd $name-$version
+mkdir build && cd build
 
-./configure --prefix=/usr \
-            --sysconfdir=/etc \
-            --with-card-theme-formats=svg \
-            --disable-static \
-            --with-platform=gtk-only
+meson --prefix=/usr \
+      -Dtheme_kde=false \
+      ../$name-$version
 
-
-make
-make DESTDIR=$PKG install
+ninja
+DESTDIR=$PKG ninja install
 }
