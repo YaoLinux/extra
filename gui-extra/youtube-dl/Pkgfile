@@ -6,7 +6,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=youtube-dl
-version=2020.01.24
+version=2020.02.16
 
 run=(python)
 
