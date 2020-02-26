@@ -8,6 +8,7 @@ maintainer="rems"
 
 name=sysfsutils
 version=2.1.0
+release=2
 
 source=(http://downloads.sourceforge.net/sourceforge/linux-diag/${name}-${version}.tar.gz)
 
