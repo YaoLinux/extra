@@ -8,6 +8,7 @@ maintainer="rems"
 
 name=amrwb
 version=11.0.0.0
+release=2
 
 source=(ftp://ftp.penguin.cz/pub/users/utx/amr/${name}-${version}.tar.bz2)
 
