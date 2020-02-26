@@ -8,7 +8,7 @@ maintainer="rems"
 
 name=amrnb
 version=11.0.0.0
-release=1
+release=2
 
 source=(http://ftp.penguin.cz/pub/users/utx/amr/$name-$version.tar.bz2)
 
