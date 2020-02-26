@@ -1,4 +1,4 @@
-makedepends=(systemd asciidoc)
+makedepends=(systemd asciidoc git)
 
 description="Can generate a customized initrams image which contains only whatever is necessary to boot"
 url="https://www.kernel.org/pub/linux/utils/boot/dracut/dracut.html"
@@ -8,10 +8,14 @@ packager="Yaolinux Team"
 
 name=dracut
 version=049
+release=3
 
-PKGMK_KEEP_SOURCE="no"
+source=()
 
-source=(https://github.com/dracutdevs/dracut/archive/$version.tar.gz)
+prepare() {
+
+git clone https://git.kernel.org/pub/scm/boot/dracut/dracut.git $name-$version
+}
 
 build() {
 
@@ -19,6 +23,7 @@ build() {
 
 	./configure --prefix=/usr \
                     --sysconfdir=/etc \
+                    --datadir=/usr/lib \
                     --systemdsystemunitdir=/lib/systemd/system
 
 	make
