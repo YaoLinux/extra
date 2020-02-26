@@ -6,6 +6,7 @@ maintainer="rems"
 
 name="iperf"
 version="3.7"
+release=2
 
 source=(http://downloads.es.net/pub/iperf/iperf-${version}.tar.gz)
 
