@@ -8,6 +8,7 @@ packager="Yaolinux Team"
 
 name=audiofile
 version=0.3.6
+release=2
 
 source=(https://audiofile.68k.org/$name-$version.tar.gz
 		01_gcc6.patch
