@@ -1,0 +1,26 @@
+makedepends=()
+
+description=""
+packager="YaoLinux Teams"
+maintainer=""
+url=""
+
+name=
+version=
+release=
+
+source=()
+
+
+prepare() {
+  cd $name-$version
+}
+
+build () {
+  cd $name-$version
+}
+
+package() {
+  cd $name-$version
+}
+

@@ -1,0 +1,27 @@
+makedepends=(qtbase qtwebkit qtwebengine)
+
+description="Algorithmic learning for high school students"
+url="http://www.xm1math.net/algobox/index.html"
+
+packager="YaoLinux Teams"
+maintainer="rems"
+
+name=algobox
+version=1.0.3
+
+source=(http://www.xm1math.net/algobox/${name}-${version}.tar.bz2)
+
+build () {
+  cd $name-$version
+
+qmake
+
+make
+}
+
+package() {
+  cd $name-$version
+
+make INSTALL_ROOT="${PKG}" install
+}
+
