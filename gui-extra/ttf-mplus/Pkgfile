@@ -9,7 +9,7 @@ url="http://mplus-fonts.osdn.jp/mplus-outline-fonts/index-en.html"
 run=()
 
 name=ttf-mplus
-version=TESTFLIGHT_063
+version=TESTFLIGHT_063a
 _version=${version/_/-}
 
 release=1
