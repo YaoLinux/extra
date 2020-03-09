@@ -7,6 +7,7 @@ maintainer="rems"
 
 name=mplayer
 version=1.4
+release=2
 
 alias=(MPlayer)
 
@@ -26,7 +27,7 @@ cd MPlayer-$version
             --confdir=/etc/mplayer   \
             --enable-dynamic-plugins \
             --enable-menu            \
-            --enable-gui  			\
+            --enable-gui             \
             --enable-radio \
             --enable-radio-capture  \
             --enable-rpath  \
