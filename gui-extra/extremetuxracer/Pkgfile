@@ -4,7 +4,7 @@ description="High speed arctic racing game based on Tux Racer."
 url="http://sourceforge.net/projects/extremetuxracer/"
 packager="Yaolinux Team"
 name=extremetuxracer
-version=0.7.5
+version=0.8.0
 
 source=(https://downloads.sourceforge.net/${name}/etr-${version}.tar.xz)
  
