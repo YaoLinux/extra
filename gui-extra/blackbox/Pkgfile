@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=blackbox
-version=0.75
+version=0.76
 
 PKGMK_KEEP_SOURCE="no"
 
