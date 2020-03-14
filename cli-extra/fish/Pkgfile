@@ -1,4 +1,4 @@
-makedepends=(ncurses doxygen inetutils)
+makedepends=(ncurses pcre2 cmake)
 
 description="a modern interactive commandline shell."
 url="http://www.fishshell.com/"
@@ -6,30 +6,30 @@ url="http://www.fishshell.com/"
 packager="Yaolinux Team"
 maintainer="rems"
 
-run=(doxygen)
-
 name=fish
-version=3.0.2
+version=3.1.0
 
-source=(https://github.com/fish-shell/fish-shell/archive/$version.tar.gz)
+source=(https://github.com/fish-shell/fish-shell/releases/download/${version}/${name}-${version}.tar.gz)
 
 prepare() {
 
-  cd fish-shell-$version
-  echo $version > version
-  autoreconf -fiv
+mkdir build
 }
 
 build() {
 
-  cd fish-shell-$version
-  ./configure --prefix=/usr \
-              --sysconfdir=/etc
+  cd build
+
+  cmake -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_INSTALL_SYSCONFDIR=/etc \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DBUILD_DOCS=False \
+        ../$name-$version
+
   make
 }
 
 package() {
 
-	cd fish-shell-$version
-	make DESTDIR=$PKG install
+	make DESTDIR=$PKG -C build install
 }
