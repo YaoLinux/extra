@@ -1,0 +1,109 @@
+description="Chromium browser"
+url="https://chromium.googlesource.com"
+
+packager="Yaolinux Team"
+maintainer="rems"
+
+name="chromium"
+version="80.0.3987.163"
+
+_launcher_ver="6"
+
+source=(https://github.com/foutrelis/chromium-launcher/archive/"v${_launcher_ver}".tar.gz)
+
+makedepends=(ffmpeg llvm perl gperf nss alsa-lib glib gtk3 nspr ttf-ms-fonts freetype cairo dbus libgnome-keyring python2-setuptools json-glib)
+
+prepare() {
+
+git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
+}
+
+
+build() {
+
+make -C chromium-launcher-${_launcher_ver}
+make -C chromium-launcher-${_launcher_ver} PREFIX=/usr DESTDIR="$PKG" install
+
+install -Dm644 chromium-launcher-${_launcher_ver}/LICENSE \
+               "$PKG/usr/share/licenses/chromium/LICENSE.launcher"
+
+
+
+export PATH="$PATH:$SRC/depot_tools"
+
+mkdir chromium && cd chromium
+
+fetch --nohooks chromium
+
+cd src
+
+gclient runhooks
+
+git checkout $version
+
+gclient sync
+
+export CC=clang
+export CXX=clang++
+export AR=ar
+export NM=nm
+
+_args=(
+'is_official_build=true'
+'ffmpeg_branding="Chrome"'
+'proprietary_codecs=true'
+'enable_nacl=false'
+'treat_warnings_as_errors=false'
+'fatal_linker_warnings=false'
+)
+
+gn gen out/Release --args="${_args[*]}" --script-executable=/usr/bin/python2
+
+autoninja -C out/Release chrome chrome_sandbox chromedriver
+
+# Normal installation of chromium
+
+install -D out/Release/chrome "$PKG/usr/lib/chromium/chromium"
+install -Dm4755 out/Release/chrome_sandbox "$PKG/usr/lib/chromium/chrome-sandbox"
+ln -sv /usr/lib/chromium/chromedriver "$PKG/usr/bin/chromedriver"
+
+install -Dm644 chrome/installer/linux/common/desktop.template \
+               "$PKG/usr/share/applications/chromium.desktop"
+
+sed -e "s/@@MENUNAME@@/Chromium/g" \
+    -e "s/@@PACKAGE@@/chromium/g" \
+    -e "s/@@USR_BIN_SYMLINK_NAME@@/chromium/g" \
+    -i "$PKG/usr/share/applications/chromium.desktop"
+
+for file in libEGL.so libVkICD_mock_icd.so libGLESv2.so libvk_swiftshader.so
+	do
+		install -vm755 "out/Release/$file" \
+               "$PKG/usr/lib/chromium/"
+done
+
+cp out/Release/{chrome_{100,200}_percent,resources}.pak \
+   out/Release/{*.bin,chromedriver} \
+   "$PKG/usr/lib/chromium/"
+
+install -Dm644 -t "$PKG/usr/lib/chromium/locales" out/Release/locales/*.pak
+
+cp -a out/Release/{angledata,MEIPreload,resources,swiftshader} \
+      $PKG/usr/lib/chromium/
+
+for size in 24 48 64 128 256
+  do
+    install -Dm644 "chrome/app/theme/chromium/product_logo_$size.png" \
+      "$PKG/usr/share/icons/hicolor/${size}x${size}/apps/chromium.png"
+done
+
+for size in 16 32
+  do
+    install -Dm644 "chrome/app/theme/default_100_percent/chromium/product_logo_$size.png" \
+      "$PKG/usr/share/icons/hicolor/${size}x${size}/apps/chromium.png"
+  done
+
+# File to install if icu isn't in dep list
+
+    cp out/Release/icudtl.dat "$PKG/usr/lib/chromium/"
+
+}
