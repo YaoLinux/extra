@@ -9,7 +9,7 @@ maintainer="rems"
 run=(startup-notification hunspell)
 
 name=thunderbird
-version=68.7.0
+version=68.8.0
 
 source=(https://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/$version/source/thunderbird-$version.source.tar.xz{,.asc}
         $name.desktop)
@@ -82,6 +82,10 @@ ac_add_options --with-system-png
 ac_add_options --with-system-zlib
 EOF
 
+mountpoint /dev/shm >/dev/null || mount -t tmpfs devshm /dev/shm
+
+export SHELL=/bin/sh
+
 ./mach build
 DESTDIR=$PKG ./mach install
 
@@ -107,4 +111,6 @@ do
     install -Dm644 $SRC/$lang.xpi \
     $PKG/usr/lib/thunderbird/extensions/langpack-$lang@thunderbird.mozilla.org.xpi
 done
+
+mountpoint /dev/shm >/dev/null && umount /dev/shm
 }
