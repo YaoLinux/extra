@@ -9,15 +9,8 @@ maintainer="Dania"
 set=(elementary)
 
 name=evisum
-version=0.2.6
-release=4
+version=0.4.1
 
 source=(http://download.enlightenment.org/rel/apps/$name/$name-$version.tar.xz)
 
-build() {
-
-cd $name-$version
-
-	make
-	make PREFIX=$PKG/usr install
-}
+build=meson
