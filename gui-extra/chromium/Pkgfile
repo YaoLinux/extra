@@ -5,7 +5,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name="chromium"
-version="81.0.4044.92"
+version="83.0.4103.61"
 
 _launcher_ver="6"
 
@@ -75,7 +75,7 @@ sed -e "s/@@MENUNAME@@/Chromium/g" \
     -e "s/@@USR_BIN_SYMLINK_NAME@@/chromium/g" \
     -i "$PKG/usr/share/applications/chromium.desktop"
 
-for file in libEGL.so libVkICD_mock_icd.so libGLESv2.so libvk_swiftshader.so
+for file in libEGL.so libVkICD_mock_icd.so libGLESv2.so libvk_swiftshader.so libvulkan.so
 	do
 		install -vm755 "out/Release/$file" \
                "$PKG/usr/lib/chromium/"
