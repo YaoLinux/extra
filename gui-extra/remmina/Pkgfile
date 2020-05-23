@@ -2,26 +2,24 @@ makedepends=(gtk3 zlib libjpeg-turbo2 libssh avahi vte3 libgcrypt libsodium xorg
 
 description="Remote desktop client written in GTK+"
 url="https://github.com/FreeRDP/Remmina/"
+
 maintainer="rems"
 packager="Yaolinux Team"
  
 name=remmina
-version=1.4.1
-release=2
+version=1.4.4
 
 source=(https://gitlab.com/Remmina/Remmina/-/archive/v$version/Remmina-v$version.tar.gz)
 
 build() {
 
-cd Remmina-v$version
+mkdir build && cd build
 
-sed -e 's|ssh_threads|ssh|' -i cmake/FindLIBSSH.cmake # Fix build with libssh 0.8
-
-cmake \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_INSTALL_LIBDIR=/usr/lib \
-    -DWITH_AVAHI=OFF \
-    -DWITH_APPINDICATOR=OFF .
+cmake -DCMAKE_INSTALL_PREFIX=/usr \
+      -DCMAKE_INSTALL_LIBDIR=/usr/lib \
+      -DWITH_AVAHI=OFF \
+      -DWITH_APPINDICATOR=OFF \
+      ../Remmina-v$version
 
   make
   make DESTDIR=$PKG install
