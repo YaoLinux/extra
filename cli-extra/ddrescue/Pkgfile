@@ -1,0 +1,25 @@
+description="GNU data recovery tool"
+url="https://www.gnu.org/software/ddrescue/ddrescue.html"
+
+packager="Yaolinux Team"
+maintainer="rems"
+
+name="ddrescue"
+version="1.25"
+
+source=(https://ftp.gnu.org/gnu/$name/$name-$version.tar.lz)
+
+makedepends=()
+
+build() {
+
+cd $name-$version
+
+./configure --prefix=/usr \
+            CPPFLAGS="${CPPFLAGS}" \
+            CXXFLAGS="${CXXFLAGS}" \
+            LDFLAGS="${LDFLAGS}"
+
+make
+make DESTDIR="$PKG" install install-man
+}
