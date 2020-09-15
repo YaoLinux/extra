@@ -9,11 +9,10 @@ maintainer="rems"
 run=(shared-mime-info icu libevent pulseaudio gconf sqlite libvpx nss alsa-lib gtk2 gtk3 zip unzip gstreamer gstreamer-plugins-base gstreamer-plugins-good gstreamer-plugins-libav)
 
 name=firefox
-version=76.0.1
+version=80.0.1
 
 source=(https://archive.mozilla.org/pub/firefox/releases/$version/source/$name-$version.source.tar.xz
-        firefox.desktop
-        0001-Use-remoting-name-for-GDK-application-names.patch)
+        firefox.desktop)
 
 build() {
 
@@ -25,10 +24,6 @@ do
 done
 
 cd $name-$version
-
-# https://bugzilla.mozilla.org/show_bug.cgi?id=1530052
-  patch -Np1 -i ../0001-Use-remoting-name-for-GDK-application-names.patch
-
 
 # Locale autodetect
 sed -i '/intl.locale.matchOS/s/false/true/' modules/libpref/init/all.js
@@ -47,9 +42,6 @@ ac_add_options --disable-necko-wifi
 # Uncomment the following line if you wish to use Google's geolocaton API
 # (needed for use with saved maps with Google Maps)
 #ac_add_options --with-google-location-service-api-keyfile=$PWD/google-key
-
-# Uncomment this line if you have installed startup-notification:
-ac_add_options --enable-startup-notification
 
 # Uncomment the following option if you have not installed PulseAudio
 #ac_add_options --disable-pulseaudio
@@ -115,7 +107,6 @@ ac_add_options --enable-system-pixman
 
 # From firefox-62 --with-pthreads is not recognized
 
-ac_add_options --with-system-bz2
 ac_add_options --with-system-jpeg
 ac_add_options --with-system-png
 ac_add_options --with-system-zlib
