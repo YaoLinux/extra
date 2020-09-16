@@ -5,7 +5,7 @@ url="www.icewm.org"
 description="IceWM is a window manager with the goals of speed, simplicity"
 
 name=icewm
-version=1.6.4
+version=1.8.2
 
 source=(https://github.com/ice-wm/icewm/releases/download/$version/icewm-$version.tar.lz)
  
