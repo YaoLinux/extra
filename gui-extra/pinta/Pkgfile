@@ -6,7 +6,7 @@ maintainer="rems"
 packager="Yaolinux Team"
  
 name=pinta
-version=1.6
+version=1.7
 
 source=(https://github.com/PintaProject/Pinta/releases/download/$version/$name-$version.tar.gz)
 
