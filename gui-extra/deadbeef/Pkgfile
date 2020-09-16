@@ -6,7 +6,7 @@ maintainer="rems"
 packager="Yaolinux Team"
 
 name=deadbeef
-version=1.8.2
+version=1.8.4
 
 PKGMK_KEEP_SOURCES="no"
 
