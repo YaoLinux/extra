@@ -6,7 +6,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=cherrytree 
-version=0.39.0
+version=0.39.4
 run=( python2-gtksourceview2 dbus-python p7zip python2 python2-gtk)
 
 source=(https://www.giuspen.com/software/$name-$version.tar.xz)
