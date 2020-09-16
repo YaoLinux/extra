@@ -5,7 +5,7 @@ packager="Yaolinux Team"
 url="https://www.qualeed.com/en/qbackup/"
 
 name=qbackup
-version=1.12.1.0
+version=1.12.2.0
 
 run=(openjdk)
 
