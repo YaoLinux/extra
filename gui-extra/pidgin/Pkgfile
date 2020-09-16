@@ -7,30 +7,22 @@ packager="Yaolinux Team"
 run=(desktop-file-utils)
 
 name=pidgin
-version=2.13.0
-release=2
+version=2.14.1
 
 source=(http://downloads.sourceforge.net/$name/$name-$version.tar.bz2)
 
 build() {
 cd $name-$version
+
 ./configure --prefix=/usr \
---sysconfdir=/etc \
---with-gstreamer=1.0 \
---disable-gevolution \
---disable-meanwhile \
---disable-avahi \
---disable-mono \
---disable-tk \
---disable-cap \
---disable-gtkspell  \
---disable-vv \
---disable-nm \
---disable-tcl \
---disable-schemas-install \
---enable-cyrus-sasl \
---enable-gnutls=yes
- 
+            --sysconfdir=/etc \
+            --disable-gstreamer  \
+            --disable-avahi      \
+            --disable-gtkspell   \
+            --disable-meanwhile  \
+            --disable-idn        \
+            --disable-vv
+
 make
 make DESTDIR=$PKG install
 rm -rf $PKG/{etc,usr/lib/perl5}
