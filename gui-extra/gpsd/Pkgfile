@@ -7,22 +7,21 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=gpsd
-version=3.20
-release=2
+version=3.21
 
-source=(https://download.savannah.gnu.org/releases/$name/$name-$version.tar.gz
-        fix-python-libdir.patch)
+source=(https://download.savannah.gnu.org/releases/$name/$name-$version.tar.gz)
 
 build() {
   cd $name-$version
-  
-  patch -p1 -i ../fix-python-libdir.patch # Fix python install dir
 
   export LINKFLAGS="${LDFLAGS}"
   
+  _pythonpath=$(python3 -c "from sysconfig import get_path; print(get_path('platlib'))")
+
   scons prefix=/usr \
         systemd=yes \
-        libQgpsmm=no \
+        qt_versioned=5 \
+        python_libdir=$_pythonpath \
         gpsd_group=uucp \
         sbindir=/usr/bin
   
