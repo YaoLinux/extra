@@ -2,10 +2,12 @@ makedepends=(gstreamer-plugins-good gstreamer-plugins-bad gstreamer-plugins-ugly
 
 url="http://www.kohaupt-online.de/hp/"
 description="An easy to use screencast creator"
+
 packager="Yaolinux Team"
 maintainer="rems"
+
 name=vokoscreen
-version=3.0.2
+version=3.0.6
 
 PKGMK_KEEP_SOURCES="no"
 
