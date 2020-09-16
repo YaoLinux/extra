@@ -1,4 +1,4 @@
-makedepends=(glib gtk2 python xorg-libsm gnome-icon-theme hicolor-icon-theme desktop-file-utils)
+makedepends=(glib qtbase xorg-libsm gnome-icon-theme hicolor-icon-theme desktop-file-utils)
 
 description="Lightweight, advanced audio player focused simplicity and audio quality"
 url="http://audacious-media-player.org"
@@ -6,7 +6,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=audacious
-version=3.10.1
+version=4.0.5
 
 source=(https://distfiles.audacious-media-player.org/$name-$version.tar.bz2)
 
@@ -15,7 +15,8 @@ build() {
 	cd $name-$version
 	
 	./configure --prefix=/usr \
-	--with-buildstamp="NuTyX Linux"
+                    --with-buildstamp="Yao Linux"
+
 	make
 	make DESTDIR=$PKG install
 }
