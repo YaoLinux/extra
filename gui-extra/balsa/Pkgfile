@@ -1,4 +1,4 @@
-makedepends=(aspell enchant gmime libesmtp rarian pcre gtksourceview libnotify kerberos openldap openssl sqlite gpgme libsecret)
+makedepends=(aspell enchant gmime3 libesmtp rarian pcre gtksourceview libnotify kerberos openldap openssl sqlite gpgme libsecret libical)
 
 description="The Balsa package contains a GNOME based mail client."
 url="https://pawsa.fedorapeople.org/balsa/"
@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=balsa
-version=2.5.9
+version=2.6.1
 
 source=(https://pawsa.fedorapeople.org/balsa/$name-$version.tar.bz2)
  
