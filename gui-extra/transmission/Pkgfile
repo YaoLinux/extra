@@ -6,7 +6,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=transmission
-version=2.94
+version=3.00
 
 source=(https://github.com/transmission/transmission-releases/raw/master/transmission-${version}.tar.xz)
 
