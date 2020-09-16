@@ -6,7 +6,7 @@ maintainer="rems"
 
 description="MailUserAgent, useful for reading, writing, replying to, saving, and deleting your email."
 name=mutt
-version=1.13.4
+version=1.14.7
 
 source=(ftp://ftp.mutt.org/pub/mutt/$name-$version.tar.gz)
  
@@ -14,7 +14,9 @@ build() {
 
 cd $name-$version
 
-cp -v doc/manual.txt{,.shipped} 
+sed -i -e 's/ -with_backspaces//' -e 's/elinks/links/' \
+       -e 's/-no-numbering -no-references//' doc/Makefile.in
+ 
 ./configure --prefix=/usr     \
             --sysconfdir=/etc \
             --with-docdir=/usr/share/doc/mutt-$version \
@@ -27,9 +29,7 @@ cp -v doc/manual.txt{,.shipped}
             --with-ssl        \
             --without-bdb     \
             --without-tokyocabinet 
+
 make 
-test -s doc/manual.txt || mv -v doc/manual.txt{.shipped,}
-
 make DESTDIR=$PKG install
-
 }
