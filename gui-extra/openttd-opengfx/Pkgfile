@@ -8,9 +8,9 @@ packager="Yaolinux Team"
 
 
 name=openttd-opengfx
-version=0.5.5
+version=0.6.0
 release=1
-source=(https://bundles.openttdcoop.org/opengfx/releases/${version}/opengfx-${version}.zip)
+source=(https://cdn.openttd.org/opengfx-releases/${version}/opengfx-${version}-all.zip)
 
 build() {
     cd ${SRC}
