@@ -8,14 +8,17 @@ packager="Yaolinux Team"
 run=(python-gobject python-xdg dejavu-ttf shared-mime-info)
 
 name=zim
-version=0.72.1
+version=0.73.2
 
 source=(https://www.zim-wiki.org/downloads/${name}-${version}.tar.gz)
 
 build() {
     cd $name-$version
+
+    mkdir -pv /run/user/0
 		
-    python3 setup.py install --prefix=/usr --root=$PKG --optimize=1
+    python3 setup.py build
+    python3 setup.py install --prefix=/usr --root=$PKG --skip-build
     
     install -dm755 "$PKG/usr/share/icons/"
     cp -rv xdg/hicolor/ "$PKG/usr/share/icons/"
