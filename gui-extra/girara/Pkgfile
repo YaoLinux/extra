@@ -4,7 +4,7 @@ description="User interface library focused on simplicity and minimalism"
 packager="Yaolinux Team"
 url="http://pwmt.org/projects/girara"
 name=girara
-version=0.3.4
+version=0.3.5
 
 source=("https://github.com/pwmt/${name}/archive/${version}.tar.gz")
 
