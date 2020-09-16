@@ -1,4 +1,4 @@
-makedepends=(giblib autoconf-archive xorg-libxfixes xorg-libxcursor)
+makedepends=(giblib autoconf-archive xorg-libxfixes xorg-libxcursor xorg-libxcomposite)
 
 description="A simple command-line screenshot utility for X"
 url="http://scrot.sourcearchive.com/"
@@ -6,7 +6,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=scrot
-version=1.2
+version=1.4
 
 source=(https://github.com/resurrecting-open-source-projects/scrot/archive/${version}/${name}-${version}.tar.gz)  
 
