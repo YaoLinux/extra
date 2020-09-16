@@ -1,26 +1,24 @@
-makedepends=(gsettings-desktop-schemas keybinder3 libnotify python2-cairo dbus-python python2-psutil python2-gobject vte3 xdg-utils)
+makedepends=(gsettings-desktop-schemas keybinder3 libnotify python-cairo dbus-python python-psutil python-gobject vte3 xdg-utils)
 
 description="Terminal emulator that supports tabs and grids"
 url="https://gnometerminator.blogspot.com/p/introduction.html"
+
 maintainer="rems"
 packager="Yaolinux Team"
-run=(python2-cairo dbus-python python2-psutil python2-gobject keybinder3 vte3 xdg-utils gsettings-desktop-schemas) 
-name=terminator
-version=1.91
-release=2
 
-source=(https://launchpad.net/terminator/gtk3/${version}/+download/${name}-${version}.tar.gz)
+run=(python-cairo dbus-python python-psutil python-gobject keybinder3 vte3 xdg-utils gsettings-desktop-schemas) 
+
+name=terminator
+version=1.92
+
+source=(https://github.com/gnome-terminator/terminator/releases/download/v${version}/${name}-${version}.tar.gz)
 
 build() {
 
 cd $name-$version
 
-# python2 fix
-    for file in terminatorlib/{,plugins/}*.py; do
-        sed -i 's_#!/usr/bin/python_#!/usr/bin/python2_' $file
-        sed -i 's_#!/usr/bin/env python_#!/usr/bin/env python2_' $file
-    done
-    python2 setup.py build
-     python2 setup.py install --skip-build --root="${PKG}" --optimize=1
-     rm -f "${PKG}/usr/share/icons/hicolor/icon-theme.cache"
+    python3 setup.py build
+    python3 setup.py install --skip-build --root="${PKG}" --optimize=1
+
+    rm -f "${PKG}/usr/share/icons/hicolor/icon-theme.cache"
 }
