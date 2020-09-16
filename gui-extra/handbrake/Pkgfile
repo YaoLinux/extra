@@ -7,15 +7,20 @@ maintainer="rems"
 packager="Yaolinux Team"
  
 name=handbrake
-version=1.3.1
+version=1.3.3
 
-source=(https://download.handbrake.fr/releases/$version/HandBrake-$version-source.tar.bz2)
+source=(https://github.com/HandBrake/HandBrake/releases/download/$version/HandBrake-$version-source.tar.bz2
+        https://github.com/HandBrake/HandBrake/commit/d3eb4a11ac.patch)
 
 unset MAKEFLAGS
 
 build() {
 
+mv d3eb4a11ac.patch handbrake-fix-close-button-in-about-dialog.patch
+
 cd HandBrake-$version
+
+patch -Np1 -i ../handbrake-fix-close-button-in-about-dialog.patch
 
 ./configure --prefix=/usr \
             --enable-qsv
