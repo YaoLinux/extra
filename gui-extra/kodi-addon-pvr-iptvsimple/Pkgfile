@@ -6,7 +6,7 @@ maintainer="rems"
 packager="Yaolinux Team"
 
 name=kodi-addon-pvr-iptvsimple
-version=3.5.7
+version=3.9.8
 kodiver=18.0
 koditarget=Leia
 
