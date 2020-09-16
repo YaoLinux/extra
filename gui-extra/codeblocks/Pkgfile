@@ -1,17 +1,18 @@
 makedepends=(zip boost desktop-file-utils gamin gtk-update-icon-cache hicolor-icon-theme hunspell shared-mime-info wxgtk)
 
-
 description="a cross-platform Integrated Development Environment (IDE)."
 url="http://www.codeblocks.org/"
-maintainer="The Code::Blocks Team"
+
+maintainer="rems"
 packager="Yaolinux Team"
+
 maintainer="rems"
 
 name=codeblocks
-version=17.12
-release=2
+version=20.03
 
-source=(https://downloads.sourceforge.net/codeblocks/${name}_$version.tar.xz)
+source=(https://downloads.sourceforge.net/codeblocks/$name-$version.tar.xz)
+
 build () {
 cd $name-*
 
