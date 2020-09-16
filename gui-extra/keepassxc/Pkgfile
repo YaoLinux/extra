@@ -1,4 +1,4 @@
-makedepends=(xorg-libxtst qttools qtsvg qtx11extras shared-mime-info libgcrypt hicolor-icon-theme libsodium yubikey-personalization argon2 qrencode)
+makedepends=(xorg-libxtst qttools qtsvg qtx11extras asciidoctor shared-mime-info libgcrypt hicolor-icon-theme libsodium yubikey-personalization argon2 qrencode)
 
 description="Password manager"
 url="http://www.keepassx.org"
@@ -9,7 +9,7 @@ maintainer="rems"
 run=(shared-mime-info)
 
 name=keepassxc
-version=2.5.3
+version=2.6.1
 
 source=(https://github.com/keepassxreboot/keepassxc/releases/download/$version/keepassxc-$version-src.tar.xz)
 
@@ -21,6 +21,8 @@ cmake ../$name-$version \
 		-DCMAKE_BUILD_TYPE=Release \
 		-DCMAKE_INSTALL_PREFIX=/usr \
 		-DCMAKE_INSTALL_LIBDIR=lib \
+                -DWITH_XC_DOCS=OFF \
+                -DWITH_TESTS=OFF \
 		-DWITH_XC_ALL=ON
 
 make
