@@ -1,12 +1,16 @@
 makedepends=(mono-addins gtksharp2 intltool)
 
+run=(mono mono-addins gtksharp2)
+
 description="Drawing/editing program in C sharp"
 url="https://pinta-project.com/"
+
 maintainer="rems"
 packager="Yaolinux Team"
  
 name=pinta
 version=1.7
+release=2
 
 source=(https://github.com/PintaProject/Pinta/releases/download/$version/$name-$version.tar.gz)
 
@@ -19,7 +23,11 @@ cd $name-$version
 
 build() {
 cd $name-$version
-./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var
+
+./configure --prefix=/usr \
+            --sysconfdir=/etc \
+            --localstatedir=/var
+
 make
 make DESTDIR=$PKG install
 }
