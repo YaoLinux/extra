@@ -6,13 +6,16 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=owncloud-cli
-version=2.5.4.11654
+version=2.6.3.14058
 
 _name=owncloudclient
 
-source=(https://download.owncloud.com/desktop/stable/${_name}-$version.tar.xz)
+source=(https://download.owncloud.com/desktop/stable/${_name}-$version.tar.xz
+        owncloud-client-qt-5.15.patch)
 
 build() {
+
+patch -d $_name-$version -p1 -i ../owncloud-client-qt-5.15.patch # Fix build with Qt 5.15
 
 mkdir build
 cd    build
