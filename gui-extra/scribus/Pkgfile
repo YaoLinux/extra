@@ -8,15 +8,20 @@ maintainer="rems"
 
 name=scribus
 version=1.5.5
-release=2
+release=3
 
 run=(shared-mime-info)
 
-source=(http://rems.techozor.fr/sources/development/scribus-1.5.5.tar.xz)
+source=(http://rems.6admin.net/sources/development/scribus-1.5.5.tar.xz
+        https://github.com/scribusproject/scribus/commit/17d6a983.patch)
 
 build() {
 
+mv -v 17d6a983.patch scribus-qt-5.15.patch
+
 	cd $name-$version
+
+patch -p1 -i ../scribus-qt-5.15.patch # Fix build with Qt 5.15
 
 # Fix python name
     sed -e 's|#!/usr/bin/python|#!/usr/bin/python2|' \
