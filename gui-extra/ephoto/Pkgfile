@@ -11,7 +11,7 @@ set=(elementary)
 name=ephoto
 
 version=1.5
-release=5
+release=6
 
 source=(http://download.enlightenment.org/rel/apps/$name/$name-$version.tar.xz)
 
