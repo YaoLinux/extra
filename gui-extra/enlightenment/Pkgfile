@@ -11,7 +11,7 @@ run=(efl)
 set=(elementary)
 
 name=enlightenment
-version=0.24.0
+version=0.24.2
 
 source=(https://download.enlightenment.org/rel/apps/enlightenment/$name-$version.tar.xz)
 
