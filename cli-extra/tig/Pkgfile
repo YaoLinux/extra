@@ -7,7 +7,7 @@ contributors="tnut, greg"
 packager="Yaolinux Team"
 
 name=tig
-version=2.5.0
+version=2.5.1
 
 source=(https://github.com/jonas/$name/releases/download/$name-$version/$name-$version.tar.gz)
 
