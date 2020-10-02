@@ -7,7 +7,7 @@ maintainer="rems"
 packager="Yaolinux Team"
 
 name=varnish
-version=6.3.1
+version=6.5.1
 release=2
 
 source=(https://varnish-cache.org/_downloads/$name-$version.tgz
