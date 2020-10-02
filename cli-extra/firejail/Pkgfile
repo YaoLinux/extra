@@ -5,7 +5,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=firejail
-version=0.9.62
+version=0.9.62.4
 
 source=(https://sourceforge.net/projects/firejail/files/$name/$name-$version.tar.xz)
 
