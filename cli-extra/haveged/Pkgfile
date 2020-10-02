@@ -5,8 +5,8 @@ maintainer="rems"
 packager="Yaolinux Team"
 
 name=haveged
-version=1.9.8
-yaolinux_version=1.0-RC1
+version=1.9.13
+yaolinux_version=1.0-RC2
 
 PKGMK_KEEP_SOURCES="no"
 
