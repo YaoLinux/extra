@@ -10,9 +10,9 @@ set=(elementary)
 
 name=epour
 version=0.7.0
-release=4
+release=7
 
-run="libtorrent-rasterbar"
+run=(libtorrent-rasterbar)
 
 source="http://download.enlightenment.org/rel/apps/$name/$name-$version.tar.xz"
 
