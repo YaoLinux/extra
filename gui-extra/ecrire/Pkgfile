@@ -1,0 +1,27 @@
+description="Simple text editor based on EFL"
+url="http://www.enlightenment.org"
+
+packager="Yaolinux Team"
+maintainer="Dania"
+
+set=(elementary)
+
+makedepends=(cmake efl git)
+
+name=ecrire
+version=0.1.1-git
+
+prepare() {
+git clone https://git.enlightenment.org/apps/ecrire.git $name-$version
+}
+
+build() {
+  cd $name-$version
+
+  export CFLAGS="$CFLAGS -fvisibility=hidden"
+
+meson build --prefix=/usr
+
+ninja -C build
+DESTDIR=$PKG ninja -C build install
+}
