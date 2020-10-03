@@ -6,7 +6,7 @@ maintainer="rems"
 url="http://scintilla.org/"
 
 name=scite
-version=4.4.3
+version=4.4.5
 release=1
 
 source=(https://www.scintilla.org/${name}${version//./}.tgz)
