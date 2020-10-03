@@ -6,7 +6,7 @@ maintainer="rems"
 packager="Yaolinux Team"
 
 name=claws-mail
-version=3.17.6
+version=3.17.7
 
 source=(${url}/download.php?file=releases/$name-$version.tar.xz)
 
