@@ -1,27 +1,25 @@
-makedepends=(qtsvg hicolor-icon-theme make qttools)
+makedepends=(qtsvg hicolor-icon-theme make qttools cmake)
 
 description="Powerful yet simple to use screenshot software"
 url="https://github.com/lupoDharkael/flameshot"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=flameshot
-version=0.6.0
-release=1
+version=0.8.3
 
-source=(https://github.com/lupoDharkael/$name/archive/v$version.tar.gz 
-		https://github.com/lupoDharkael/$name/commit/415b059fb248eec4b4ee3be85a1594ce99bfce67.patch)
+source=(https://github.com/lupoDharkael/$name/archive/v$version.tar.gz)
 
 build() {
-  cd ${name}-${version}
-  patch -Np1 -i ../415b059fb248eec4b4ee3be85a1594ce99bfce67.patch
-  
-  sed -i "s|TAG_VERSION = .*|TAG_VERSION = v${version}|" flameshot.pro 
-  
-  qmake CONFIG+=packaging BASEDIR="${PKG}"
-  
+  mkdir -pv build && cd build
+
+  cmake ../$name-$version \
+        -DCMAKE_INSTALL_PREFIX=/usr
   make
   
-  make INSTALL_ROOT="${PKG}" install
+  make DESTDIR="${PKG}" install
 
+  # zsh _flameshot completion is provided by zsh-completions so exclude from packaging
+  rm -rf ${PKG}/usr/share/zsh/
 }
