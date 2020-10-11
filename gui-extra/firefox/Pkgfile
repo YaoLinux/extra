@@ -9,7 +9,7 @@ maintainer="rems"
 run=(shared-mime-info icu libevent pulseaudio gconf sqlite libvpx nss alsa-lib gtk2 gtk3 zip unzip gstreamer gstreamer-plugins-base gstreamer-plugins-good gstreamer-plugins-libav)
 
 name=firefox
-version=80.0.1
+version=81.0.1
 
 source=(https://archive.mozilla.org/pub/firefox/releases/$version/source/$name-$version.source.tar.xz
         firefox.desktop)
@@ -127,6 +127,7 @@ sed -e 's/checkImpl/checkFFImpl/g' -i js/src/vm/JSContext*.h
 export CC=clang CXX=clang++ AR=llvm-ar NM=llvm-nm RANLIB=llvm-ranlib
 
 export MOZBUILD_STATE_PATH=${PWD}/mozbuild
+export MACH_USE_SYSTEM_PYTHON=1
 
 SHELL=/bin/sh ./mach build
 SHELL=/bin/sh ./mach buildsymbols
