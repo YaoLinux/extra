@@ -1,4 +1,4 @@
-makedepends=(jemalloc grep shadow)
+makedepends=(jemalloc grep shadow systemd)
 
 description="Advanced key-value store"
 url="http://redis.io/"
@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=redis
-version=6.0.8
+version=6.0.9
 release=2
 
 source=(http://download.redis.io/releases/redis-$version.tar.gz
