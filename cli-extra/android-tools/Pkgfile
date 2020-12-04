@@ -6,38 +6,24 @@ packager="Yaolinux Team"
 
 name=android-tools
 version=29.0.6
-release=1
 
 tag=platform-tools-$version
 
-boringssl_commit=$(curl https://android.googlesource.com/platform/external/boringssl/+/refs/tags/$tag/BORINGSSL_REVISION?format=TEXT | base64 -d)
-
 makedepends=(pcre2 libusb protobuf python2 git llvm gtest ruby cmake ninja vim)
 
-source=(generate_build.rb deployagent.jar fix_build_core.patch bash_completion.fastboot)
+source=(http://download.yaolinux.org/yaolinux/files/$name-$version.tar.xz
+	generate_build.rb
+        deployagent.jar
+        fix_build_core.patch
+        boringssl-disable-thirdpartydeps.patch
+        bash_completion.fastboot)
 
 prepare() {
 
-for git in frameworks/base frameworks/native system/core system/extras system/tools/mkbootimg external/selinux external/f2fs-tools external/e2fsprogs external/avb
-	do
-		git clone https://android.googlesource.com/platform/$git
-		pushd ${git##*/}
-		git checkout $tag
-		popd
-done
+PLATFORM_TOOLS_VERSION="$version-$release" LDFLAGS='-Wl,-z,relro,-z,now' ./generate_build.rb > $name-$version/build.ninja
 
-git clone https://boringssl.googlesource.com/boringssl
-
-cd boringssl
-
-git checkout $boringssl_commit
-
-cd ..
-
-PLATFORM_TOOLS_VERSION="$version-$release" LDFLAGS='-Wl,-z,relro,-z,now' ./generate_build.rb > build.ninja
-
-cd core
- patch -p1 < ../fix_build_core.patch
+cd $name-$version/core
+ patch -p1 < ../../fix_build_core.patch
 
 cd ../avb
 
@@ -47,20 +33,28 @@ cd ../mkbootimg
 
 sed -i 's|/usr/bin/env python$|/usr/bin/env python2|g' unpack_bootimg.py
 
-mkdir -p ../boringssl/build && cd ../boringssl/build && cmake -GNinja ..; ninja crypto/libcrypto.a
+cd ../boringssl/
+
+patch -p1 < ../../boringssl-disable-thirdpartydeps.patch
+
+mkdir -pv build && cd build && cmake -GNinja ../src; ninja crypto/libcrypto.a
 
 }
 
 build() {
+cd $name-$version
+
+mv ../deployagent.jar .
 
 ninja
 }
 
 package() {
+cd $name-$version
 
 install -m755 -d "$PKG"/usr/bin
 install -m755 -t "$PKG"/usr/bin fastboot adb mke2fs.android e2fsdroid ext2simg avb/avbtool
 install -Dm 755 mkbootimg/mkbootimg.py "$PKG"/usr/bin/mkbootimg
 install -Dm 755 mkbootimg/unpack_bootimg.py "$PKG"/usr/bin/unpack_bootimg
-install -Dm 644 bash_completion.fastboot "$PKG"/usr/share/bash-completion/completions/fastboot
+install -Dm 644 ../bash_completion.fastboot "$PKG"/usr/share/bash-completion/completions/fastboot
 }
