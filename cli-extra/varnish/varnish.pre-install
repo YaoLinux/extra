@@ -1,0 +1,9 @@
+if [ -z "`grep '^varnish:' etc/group`" ]
+then
+  usr/sbin/groupadd -g 54 varnish
+fi
+
+if [ -z "$(grep '^varnish:' etc/passwd)" ]
+then
+  usr/sbin/useradd -g 54 -u 54 -M -s /bin/false varnish
+fi

@@ -10,22 +10,47 @@ name=varnish
 version=6.5.1
 release=2
 
-source=(https://varnish-cache.org/_downloads/$name-$version.tgz
-		varnish.service)
+source=(https://varnish-cache.org/_downloads/$name-$version.tgz)
+
+prepare() {
+GIT_SSL_NO_VERIFY=true git clone https://github.com/varnishcache/pkg-varnish-cache.git
+
+cd pkg-varnish-cache
+git checkout 711b56b
+}
 
 build(){
 
     cd $name-$version
-    
-    # https://github.com/varnish/Varnish-Cache/pull/88
-    [[ $PKGMK_ARCH == i686 ]] && CFLAGS+=' -ffloat-store -fexcess-precision=standard'
+
+    # Remove -Werror bug #528354 from gentoo
+	sed -i -e 's/-Werror\([^=]\)/\1/g' configure.ac
+
+    # Upstream doesn't put varnish.m4 in the m4/ directory
+    # We link because the Makefiles look for the file in
+    # the original location
+	ln -sf ../varnish.m4 m4/varnish.m4
+
+    ./autogen.sh
 
     ./configure --prefix=/usr \
                 --sysconfdir=/etc \
                 --localstatedir=/var/lib
+
     make
     make DESTDIR=$PKG install
 
-    # install the varnish init script
-    install -Dm755 $SRC/$name.service $PKG/etc/rc.d/init.d/$name
+
+    # config
+    install -Dm644 "etc/example.vcl" "$PKG/etc/varnish/default.vcl"
+    install -Dm644 "etc/builtin.vcl" "$PKG/usr/share/doc/varnish/builtin.vcl"
+
+    # license
+    install -Dm644 "LICENSE" "$PKG/usr/share/licenses/$name-$version/LICENSE"
+
+    cd ..
+    install -Dm644 "pkg-varnish-cache/systemd/varnish.service" "$PKG/lib/systemd/system/varnish.service"
+    install -Dm644 "pkg-varnish-cache/systemd/varnishncsa.service" "$PKG/lib/systemd/system/varnishncsa.service"
+    install -Dm755 "pkg-varnish-cache/systemd/varnishreload" "$PKG/usr/bin/varnishreload"
+    install -Dm755 "pkg-varnish-cache/systemd/varnish.logrotate" "$PKG/etc/logrotate.d/varnish"
 }
