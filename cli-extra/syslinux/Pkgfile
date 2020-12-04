@@ -17,7 +17,8 @@ splash_image_version="11.0"
 source=(http://downloads.tuxfamily.org/nutyx/files/splash-${splash_image_version}.png
         http://www.kernel.org/pub/linux/utils/boot/syslinux/$name-$version.tar.xz
         0012-ldlinux-Fix-return-pointer-to-local-data.patch
-        0013-extlinux-pull-in-sys_sysmacros.h-for-major_minor_makedev.patch)
+        0013-extlinux-pull-in-sys_sysmacros.h-for-major_minor_makedev.patch
+        0019-gcc-10-compatibility.patch)
 
 unset MAKEFLAGS
 
@@ -26,6 +27,7 @@ build() {
 	cd $name-$version
 patch -p1 < ../0012-ldlinux-Fix-return-pointer-to-local-data.patch
 patch -p1 < ../0013-extlinux-pull-in-sys_sysmacros.h-for-major_minor_makedev.patch
+patch -p1 < ../0019-gcc-10-compatibility.patch
 
 sed 's|> /dev/null 2>&1||' -i efi/check-gnu-efi.sh
 sed -i "s|win32/syslinux.exe||g" Makefile
