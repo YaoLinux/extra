@@ -10,12 +10,7 @@ name=dracut
 version=050
 release=3
 
-source=()
-
-prepare() {
-
-git clone https://git.kernel.org/pub/scm/boot/dracut/dracut.git $name-$version
-}
+source=(https://mirrors.edge.kernel.org/pub/linux/utils/boot/dracut/dracut-$version.tar.gz)
 
 build() {
 
