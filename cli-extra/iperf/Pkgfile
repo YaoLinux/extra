@@ -5,10 +5,9 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name="iperf"
-version="3.7"
-release=2
+version="3.9"
 
-source=(http://downloads.es.net/pub/iperf/iperf-${version}.tar.gz)
+source=(https://downloads.es.net/public/iperf/iperf-$version.tar.gz)
 
 makedepends=(openssl)
 
