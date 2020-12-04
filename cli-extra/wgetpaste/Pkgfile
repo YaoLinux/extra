@@ -7,7 +7,7 @@ maintainer="rems"
 makedepends=(wget)
 
 name=wgetpaste
-version=2.29
+version=2.30
 
 source=(http://wgetpaste.zlin.dk/$name-$version.tar.bz2
 		http://wgetpaste.zlin.dk/$name.example)
