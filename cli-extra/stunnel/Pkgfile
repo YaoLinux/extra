@@ -7,7 +7,7 @@ maintainer="rems"
 packager="Yaolinux Team"
 
 name=stunnel
-version=5.56
+version=5.57
 
 source=(ftp://ftp.stunnel.org/stunnel/archive/5.x/$name-$version.tar.gz
         stunnel.conf)
