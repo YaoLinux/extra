@@ -6,7 +6,7 @@ maintainer="rems"
 
 description="MailUserAgent, useful for reading, writing, replying to, saving, and deleting your email."
 name=mutt
-version=1.14.7
+version=2.0.3
 
 source=(ftp://ftp.mutt.org/pub/mutt/$name-$version.tar.gz)
  
