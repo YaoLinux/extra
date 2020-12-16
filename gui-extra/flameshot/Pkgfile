@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=flameshot
-version=0.8.3
+version=0.8.5
 
 source=(https://github.com/lupoDharkael/$name/archive/v$version.tar.gz)
 
