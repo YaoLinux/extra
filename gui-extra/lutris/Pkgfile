@@ -5,7 +5,7 @@ packager="Yaolinux Team"
 url="https://lutris.net"
 
 name=lutris
-version=0.5.7.1
+version=0.5.8.1
 
 source=($url/releases/${name}_$version.tar.xz)
 
