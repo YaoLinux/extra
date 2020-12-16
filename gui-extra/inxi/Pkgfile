@@ -8,7 +8,7 @@ maintainer="rems"
 run=(gawk pciutils usbutils xorg-xdpyinfo xorg-xprop xorg-xrandr lm-sensors)
 
 name=inxi
-version=3.1.06
+version=3.1.09
 
 source=(https://github.com/smxi/inxi/archive/$version-1.tar.gz)
 
