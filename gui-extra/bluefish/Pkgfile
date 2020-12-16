@@ -6,7 +6,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=bluefish
-version=2.2.11
+version=2.2.12
 release=1
 
 source=(http://www.bennewitz.com/bluefish/stable/source/$name-$version.tar.bz2)
