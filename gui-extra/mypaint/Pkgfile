@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=mypaint
-version=1.2.1
+version=2.0.0
 release=2
 
 run=(python2-cairo python-numpy python-gobject)
