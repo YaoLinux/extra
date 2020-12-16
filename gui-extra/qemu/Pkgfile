@@ -8,7 +8,7 @@ packager="Yaolinux Team"
 
 description="Processor emulator using dynamic translation to achieve good emulation speed" 
 name=qemu
-version=5.1.0
+version=5.2.0
 
 source=(https://download.qemu.org/qemu-$version.tar.xz)
 
