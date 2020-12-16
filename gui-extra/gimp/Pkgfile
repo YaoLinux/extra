@@ -7,7 +7,7 @@ maintainer="rems"
 packager="Yaolinux Team"
 
 name=gimp
-version=2.10.20
+version=2.10.22
 
 run=(python2-gtk)
 
