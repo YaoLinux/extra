@@ -6,7 +6,7 @@ maintainer="rems"
 packager="Yaolinux Team"
  
 name=virt-viewer
-version=8.0
+version=9.0
 
 source=(https://virt-manager.org/download/sources/virt-viewer/virt-viewer-$version.tar.gz)
 
