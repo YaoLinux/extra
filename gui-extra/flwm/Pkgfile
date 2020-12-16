@@ -6,7 +6,7 @@ maintainer="rems"
 packager="Yaolinux Team"
 
 name=flwm
-version=git
+version=1.16
 release=2
 
 source=(flwm.desktop)
