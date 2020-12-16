@@ -1,4 +1,4 @@
-makedepends=(shared-mime-info goffice libglade gconf desktop-file-utils)
+makedepends=(shared-mime-info goffice libglade desktop-file-utils)
 
 description="The Gnumeric package is a spreadsheet program used to manipulate and analyze numeric data."
 url="http://www.gnumeric.org/"
