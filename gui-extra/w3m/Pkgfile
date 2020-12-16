@@ -5,7 +5,7 @@ url="https://salsa.debian.org/debian/w3m"
 packager="Yaolinux Team"
 
 name=w3m
-version=0.5.3.git20190105
+version=0.5.3.git20200507
 release=1
 
 source=()
