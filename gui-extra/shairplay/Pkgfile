@@ -6,7 +6,7 @@ maintainer="rems"
 packager="Yaolinux Team"
 
 name=shairplay
-version=20160101
+version=20180824.096b61a
 release=1
 
 PKGMK_KEEP_SOURCES="no"
