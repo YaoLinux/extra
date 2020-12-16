@@ -6,7 +6,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=darktable
-version=2.6.3
+version=3.2.1
 
 source=(https://github.com/darktable-org/darktable/releases/download/release-${version}/darktable-${version/rc/.rc}.tar.xz)
 
