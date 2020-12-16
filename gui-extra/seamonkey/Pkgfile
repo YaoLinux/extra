@@ -1,4 +1,4 @@
-makedepends=(autoconf2-13 gtk2 gtk3 unzip yasm zip icu llvm libevent libvpx nspr nss pulseaudio sqlite dbus-glib gconf gstreamer-plugins-base startup-notification)
+makedepends=(autoconf2-13 gtk2 gtk3 unzip yasm zip icu llvm libevent libvpx nspr nss pulseaudio sqlite dbus-glib gstreamer-plugins-base startup-notification)
 
 description="Browser suite, the Open Source sibling of Netscape"
 url="https://www.seamonkey-project.org/"
@@ -6,7 +6,7 @@ url="https://www.seamonkey-project.org/"
 packager="Yaolinux Team"
 
 name=seamonkey
-version=2.49.5
+version=2.53.5
 release=2
 
 source=(https://archive.mozilla.org/pub/mozilla.org/seamonkey/releases/$version/source/seamonkey-$version.source.tar.xz)
