@@ -7,7 +7,7 @@ maintainer="rems"
 
 name=mpv
 _waf_version=2.0.9
-version=0.32.0
+version=0.33.0
 release="10"
 
 PKGMK_KEEP_SOURCES="no"
