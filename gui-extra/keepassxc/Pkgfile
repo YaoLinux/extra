@@ -9,7 +9,7 @@ maintainer="rems"
 run=(shared-mime-info)
 
 name=keepassxc
-version=2.6.1
+version=2.6.2
 
 source=(https://github.com/keepassxreboot/keepassxc/releases/download/$version/keepassxc-$version-src.tar.xz)
 
