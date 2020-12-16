@@ -6,7 +6,7 @@ url="http://sourceforge.net/projects/yad-dialog"
 packager="Yaolinux Team"
 
 name=yad
-version=7.2
+version=7.3
 
 source=(https://github.com/v1cont/yad/releases/download/v${version}/${name}-${version}.tar.xz)
 
