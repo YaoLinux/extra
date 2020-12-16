@@ -1,4 +1,4 @@
-makedepends=(gsettings-desktop-schemas desktop-file-utils gtk-update-icon-cache gconf gtk3 guile libcanberra librsvg yelp-tools)
+makedepends=(gsettings-desktop-schemas desktop-file-utils gtk-update-icon-cache gtk3 guile libcanberra librsvg yelp-tools)
 
 description="A gnome card patience game" 
 url="https://www.gnome.org/"
