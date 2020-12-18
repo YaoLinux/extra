@@ -6,7 +6,7 @@ url="http://www.mozilla.com/firefox/"
 packager="Yaolinux Team"
 maintainer="rems"
 
-run=(shared-mime-info icu libevent pulseaudio gconf sqlite libvpx nss alsa-lib gtk2 gtk3 zip unzip gstreamer gstreamer-plugins-base gstreamer-plugins-good gstreamer-plugins-libav)
+run=(shared-mime-info icu libevent pulseaudio sqlite libvpx nss alsa-lib gtk2 gtk3 zip unzip gstreamer gstreamer-plugins-base gstreamer-plugins-good gstreamer-plugins-libav)
 
 name=firefox
 version=84.0
