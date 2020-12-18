@@ -1,4 +1,4 @@
-makedepends=(xorg-server xorg-libxpm librsvg xorg-fontconfig gdk-pixbuf fribidi)
+makedepends=(xorg-server xorg-libxpm librsvg xorg-fontconfig gdk-pixbuf-xlib fribidi)
 
 packager="Yaolinux Team"
 url="www.icewm.org"
