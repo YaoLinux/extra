@@ -1,4 +1,4 @@
-makedepends=(alsa-lib xorg-libx11 libftdi libusb-compat help2man alsa-lib xorg-libx11 libxslt python)
+makedepends=(alsa-lib xorg-libx11 libftdi libusb-compat help2man alsa-lib xorg-libx11 libxslt)
 
 description="Linux Infrared Remote Control utilities"
 url="http://www.lirc.org/"
@@ -9,7 +9,8 @@ name=lirc
 version=0.10.1
 release=1
 
-source=(https://prdownloads.sourceforge.net/${name}/${name}-${_version}.tar.bz2
+source=(https://pilotfiber.dl.sourceforge.net/project/lirc/LIRC/$version/lirc-$version.tar.gz
+        lirc-0.10-build-fix.patch
 	lirc.logrotate
 	lirc.tmpfiles)
 
@@ -17,9 +18,19 @@ source=(https://prdownloads.sourceforge.net/${name}/${name}-${_version}.tar.bz2
 
 build() {
 
-	cd $SRC/$name-$version
+	cd $name-$version
 
-  HAVE_UINPUT=1 ./configure --prefix=/usr --sbindir=/usr/bin --sysconfdir=/etc --localstatedir=/var
+  patch -Np1 -i ../lirc-0.10-build-fix.patch
+
+  autoreconf -fiv
+  automake -ac
+
+  HAVE_UINPUT=1 \
+  ./configure --prefix=/usr \
+              --sbindir=/usr/bin \
+              --sysconfdir=/etc \
+              --localstatedir=/var
+
   sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
   make
 
@@ -27,10 +38,10 @@ build() {
 
 package() {
 
-	cd $SRC/$name-$version
+	cd $name-$version
 	make DESTDIR=$PKG -j1 install
 
-  install -Dm644 $SRC/lirc.tmpfiles $PKG/usr/lib/tmpfiles.d/lirc.conf
-  install -Dm644 $SRC/lirc.logrotate $PKG/etc/logrotate.d/lirc
+  install -Dm644 ../lirc.tmpfiles $PKG/usr/lib/tmpfiles.d/lirc.conf
+  install -Dm644 ../lirc.logrotate $PKG/etc/logrotate.d/lirc
 
 }
