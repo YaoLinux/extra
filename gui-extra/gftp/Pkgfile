@@ -1,27 +1,21 @@
-makedepends=(gtk2 xorg-libxcursor xorg-libxdamage xorg-libxrandr xorg-libxinerama )
+makedepends=(gtk2 xorg-libxcursor xorg-libxdamage xorg-libxrandr xorg-libxinerama openssh)
 
 description="A multithreaded ftp client for X Windows"
 url="http://gftp.seul.org/"
+
 maintainer="rems"
 packager="Yaolinux Team"
 
 name=gftp
-version=2.0.19
-release=3
+version=2.7.0b
 
-source=(https://www.gftp.org/$name-$version.tar.bz2
-        https://src.fedoraproject.org/rpms/gftp/raw/master/f/gftp-stropts.patch
-        https://sources.debian.org/data/main/g/gftp/2.0.19-5/debian/patches/fix-configure.in.patch)
+source=(https://github.com/masneyb/gftp/releases/download/$version/gftp-$version.tar.xz)
 
 build() {
 
 cd $name-$version
-   
-   patch -Np1 -i ../gftp-stropts.patch
-   patch -Np1 -i ../fix-configure.in.patch
-   
-   ./configure --prefix=/usr \
-               --disable-gtkport
+      
+   ./configure --prefix=/usr
                
    make
    make DESTDIR=$PKG install
