@@ -1,4 +1,4 @@
-makedepends=(gtk3 )
+makedepends=(gtk3 intltool)
 
 description="GTK+ based scientific calculator"
 url="http://galculator.sourceforge.net/"
@@ -9,18 +9,12 @@ name=galculator
 version=2.1.4
 release=1
 
-source=(http://galculator.mnim.org/downloads/$name-$version.tar.bz2)
+source=(http://galculator.mnim.org/downloads/$name-$version.tar.bz2
+        0001-Fix-multiple-definition-of-prefs-compile-error-with-.patch)
 
-build() {
+prepare() {
 
 cd $name-$version
 
-  [ -d gtk3 ] || mkdir gtk3
-  cd gtk3
-  ../configure \
-    --prefix=/usr
-  make
-  
-  make DESTDIR=$PKG install
-
+patch -Np1 -i ../*.patch
 }
