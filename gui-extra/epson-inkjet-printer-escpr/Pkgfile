@@ -6,9 +6,9 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=epson-inkjet-printer-escpr
-version=1.7.5
+version=1.7.8
 
-source=(https://download3.ebz.epson.net/dsc/f/03/00/10/29/40/898523640509d296a9988eee753a7299f518ceb0/epson-inkjet-printer-escpr-$version-1lsb3.2.tar.gz
+source=(https://download3.ebz.epson.net/dsc/f/03/00/12/04/32/1a455ef8618def65700ca4e446311c2fb43cd839/epson-inkjet-printer-escpr-$version-1lsb3.2.tar.gz
         bug_x86_64.patch)
 
 build() {
