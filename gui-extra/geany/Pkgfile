@@ -1,4 +1,4 @@
-makedepends=(gtk2 hicolor-icon-theme desktop-file-utils)
+makedepends=(gtk3 hicolor-icon-theme desktop-file-utils)
 
 description="Fast and lightweight IDE"
 url="http://www.geany.org"
@@ -12,7 +12,9 @@ source=(https://download.geany.org/$name-${version/.0}.tar.bz2)
 
 build() {
 cd $name-$version
+
 ./configure --prefix=/usr
+
 make
 make DESTDIR=$PKG install
 }
