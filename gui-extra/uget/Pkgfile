@@ -10,8 +10,14 @@ version=2.2.3
 
 source=(https://downloads.sourceforge.net/urlget/$name-$version-1.tar.gz)
 build() {
+CFLAGS+=' -fcommon'
+
 	cd $name-$version
-	./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var
+
+	./configure --prefix=/usr \
+                    --sysconfdir=/etc \
+                    --localstatedir=/var
+
 	make
 	make DESTDIR=$PKG install
 }
