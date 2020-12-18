@@ -1,4 +1,4 @@
-makedepends=(gtk3 json-c python2 python2-cairo python-gobject python-numpy scons swig)
+makedepends=(gtk3 libmypaint mypaint-brushes python-cairo python-gobject python-numpy)
 
 description="A fast and easy painting application for digital painters, with brush dynamics"
 url="http://mypaint.intilinux.com/"
@@ -8,49 +8,17 @@ maintainer="rems"
 
 name=mypaint
 version=2.0.0
-release=2
 
 run=(python2-cairo python-numpy python-gobject)
 
 source=(https://github.com/mypaint/$name/releases/download/v$version/$name-$version.tar.xz
-        https://github.com/mypaint/mypaint/commit/e05fc17118b6dc20adfe0652756df023528a7fc0.patch
-        0001-Fix-AppStream-metadata-validation.patch
-        fix-wayland.patch
-        scons-python3.patch)
+	mypaint-fix-build.patch)
 
-build () { 
+build=python3
+
+prepare () { 
 
 cd $name-$version
 
-# Fix run under wayland
-# https://github.com/mypaint/mypaint/issues/791
-  patch -Np1 -i ../fix-wayland.patch
-
-# Fix AppStream metadata validation
-# https://github.com/mypaint/mypaint/pull/955
-  patch -Np1 -i ../0001-Fix-AppStream-metadata-validation.patch
-  
-# FS#63288 -> https://github.com/mypaint/mypaint/issues/1030
-  patch -p1 -i ../e05fc17118b6dc20adfe0652756df023528a7fc0.patch
-  sed -i 's|ui_dir = os.path.dirname(os.path.abspath(__file__))|ui_dir = "/usr/share/mypaint/gui"|' gui/brusheditor.py
-
-# Don't use legacy path for AppStream metainfo file
-  sed -i 's|/share/appdata|/share/metainfo|' SConscript
-
-  patch -p1 -i ../scons-python3.patch
-
-scons python_binary=python2 python_config=python2-config
-scons prefix=$PKG/usr install python_binary=python2 python_config=python2-config
-
-# This is kind of ugly but removes traces of the build root.
-  while read -rd '' _file; do
-    _destdir="$(dirname "${_file#${PKG}}")"
-    python2 -m compileall -d "${_destdir}" "${_file}"
-    python2 -O -m compileall -d "${_destdir}" "${_file}"
-  done < <(find "${PKG}"/usr/lib/ -name '*.py' -print0)
-
-  # Remove conflicting files with the libmypaint package
-  rm -rv "$PKG"/usr/include/ "$pkgdir"/usr/lib/pkgconfig/
-  rm -v "$PKG"/usr/lib/libmypaint.a
-  rm -rv "$PKG"/usr/share/locale/*/LC_MESSAGES/libmypaint.mo
+patch -Np1 -i ../mypaint-fix-build.patch
 }
