@@ -26,6 +26,8 @@ prepare(){
 build() {
   cd ${name}-${version}
 
+  export CFLAGS="$CFLAGS -w -Wl,--allow-multiple-definition"
+
   ./configure --prefix=/usr \
               --libdir=/usr/lib \
               --enable-external-ffmpeg
