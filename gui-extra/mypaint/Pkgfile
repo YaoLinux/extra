@@ -8,8 +8,9 @@ maintainer="rems"
 
 name=mypaint
 version=2.0.0
+_name=mypaint
 
-run=(python2-cairo python-numpy python-gobject)
+run=(python-cairo python-numpy python-gobject)
 
 source=(https://github.com/mypaint/$name/releases/download/v$version/$name-$version.tar.xz
 	mypaint-fix-build.patch)
