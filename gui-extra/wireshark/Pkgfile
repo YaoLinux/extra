@@ -1,16 +1,17 @@
-makedepends=(shared-mime-info qtsvg qttools qtmultimedia libssh libgcrypt glib gnutls libxml2 libpcap pcre hicolor-icon-theme)
+makedepends=(shared-mime-info qtsvg qttools qtmultimedia libssh libgcrypt glib gnutls libxml2 libpcap pcre hicolor-icon-theme c-ares)
 
 description="Network Sniffer with nice GTK3 UI"
 url="http://www.wireshark.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=wireshark
-version=3.4.1
+version=3.4.2
 
 run=(shared-mime-info)
 
-source=(https://1.eu.dl.wireshark.org/src/wireshark-$version.tar.xz)
+source=(https://www.wireshark.org/download/src/wireshark-${version}.tar.xz)
 
 build() {
   mkdir build && cd build
