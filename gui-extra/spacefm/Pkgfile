@@ -2,9 +2,9 @@ makedepends=( gtk3 startup-notification udisks2 wget dbus shared-mime-info deskt
 
 description="Multi-panel tabbed file manager"
 url="http://ignorantguru.github.com/spacefm/"
+
 maintainer="Maximilian Dietrich, dxm at openmailbox dot org"
 packager="Yaolinux Team"
-
 
 name=spacefm
 version=1.0.6
@@ -12,16 +12,20 @@ version=1.0.6
 run=(shared-mime-info)
 
 source=(https://github.com/IgnorantGuru/$name/archive/$version.tar.gz
-        0001-glibc-2.28-compatibility.patch)
+        0001-glibc-2.28-compatibility.patch
+	0002-spacefm-Fix-GCC-10-build.patch)
 
 build () {
     cd $name-$version
-patch -Np1 -i ../0001-glibc-2.28-compatibility.patch
+for i in ../*.patch; do
+	patch -Np1 -i $i
+done
+
     ./configure --prefix=/usr \
-	    --mandir=/usr/man \
-	    --disable-pixmaps \
-	    --with-gtk3
+                --mandir=/usr/man \
+                --disable-pixmaps \
+                --with-gtk3
+
     make
-    make DESTDIR=$PKG \
-        install
+    make DESTDIR=$PKG install
 }
