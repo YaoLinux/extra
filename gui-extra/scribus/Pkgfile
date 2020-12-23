@@ -8,27 +8,14 @@ maintainer="rems"
 
 name=scribus
 version=1.5.6.1
-release=3
 
 run=(shared-mime-info)
 
-source=(http://rems.6admin.net/sources/development/scribus-1.5.5.tar.xz
-        https://github.com/scribusproject/scribus/commit/17d6a983.patch)
+source=(https://downloads.sourceforge.net/${name}/${name}-${version}.tar.xz)
 
 build() {
 
-mv -v 17d6a983.patch scribus-qt-5.15.patch
-
-	cd $name-$version
-
-patch -p1 -i ../scribus-qt-5.15.patch # Fix build with Qt 5.15
-
-# Fix python name
-    sed -e 's|#!/usr/bin/python|#!/usr/bin/python2|' \
-        -e 's|#!/usr/bin/env python|#!/usr/bin/env python2|' \
-        -i scribus/plugins/scriptplugin/{samples,scripts}/*
-
-	mkdir ../build && cd ../build
+	mkdir build && cd build
 
         cmake ../$name-$version \
 	      -DCMAKE_INSTALL_PREFIX=/usr \
@@ -37,4 +24,13 @@ patch -p1 -i ../scribus-qt-5.15.patch # Fix build with Qt 5.15
 
         make
 	make DESTDIR=$PKG install
+
+	cd ../$name-$version
+
+install -Dm644 scribus.desktop -t "${PKG}"/usr/share/applications
+
+    for i in 16x16 32x32 128x128 256x256 512x512 1024x1024
+    do
+        install -Dm644 resources/iconsets/artwork/icon_${i}.png "${PKG}"/usr/share/icons/hicolor/${i}/apps/scribus.png
+    done
 }
