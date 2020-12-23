@@ -1,4 +1,4 @@
-makedepends=(qtdeclarative )
+makedepends=(qtdeclarative)
 
 description="QML port of qtermwidget"
 url="https://github.com/Swordfish90/qmltermwidget"
@@ -11,13 +11,17 @@ name=qmltermwidget
 version=0.2.0
 release=2
 
-source=(https://github.com/Swordfish90/qmltermwidget/archive/$version.tar.gz)
+source=(https://github.com/Swordfish90/qmltermwidget/archive/$version.tar.gz
+	qtw-0.2.0--fix-missing-includes.patch)
 
 build() {
 
-    cd $SRC/$name-$version
+    cd $name-$version
 
-    qmake && make
+    patch -Np1 -i ../qtw-0.2.0--fix-missing-includes.patch
 
+    qmake
+
+    make
     make INSTALL_ROOT=$PKG install
 }
