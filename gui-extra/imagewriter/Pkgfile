@@ -6,26 +6,26 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=imagewriter
-version=20150521
+version=1.10.1432200249.1d253d9
+_release=2.1
 
-source=()
+source=(http://download.opensuse.org/tumbleweed/repo/src-oss/src/$name-$version-${_release}.src.rpm)
 
 prepare() {
-git clone https://github.com/openSUSE/$name $name
-	if [ -e /usr/bin/kdesu ]
-	  then sed 's/\/usr\/bin\/xdg-su -c \/usr\/bin\//kdesu /' -i $name/$name.desktop
-	  else sed 's/\/usr\/bin\/xdg-su -c \/usr\/bin\//xdg-su -s /' -i $name/$name.desktop
-	fi
+
+	tar xf $name-$version.tar.xz
+	find $name-$version/ -name '*.cpp' -exec sed -i -e '/sysctl.h/d' {} \;
+	find $name-$version/ -type f -exec sed -i 's/toAscii/toLatin1/g' {} \;
 }
 
 build() {
-	cd $name
+	cd $name-$version
 	CFLAGS="$CFLAGS -DKIOSKHACK"
 	qmake PREFIX="$PKG/usr" DEFINES=USEUDISKS2 $name.pro
 	make
 }
 
 package() {
-	cd $name
+	cd $name-$version
 	make DESTDIR=$PKG install
 }
