@@ -1,3 +1,5 @@
+makedepends=(libappimage qtbase qttools extra-cmake-modules)
+
 description="Gui front-end for Appimage packages"
 url="https://www.appimagehub.com"
 
@@ -5,20 +7,10 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name="appimage-launcher"
-version="2.0.3"
-_version="4f7bc8e"
-release=2
+version="2.2.0"
+_version="0f91801"
 
 source=(https://github.com/TheAssassin/AppImageLauncher/releases/download/v$version/appimagelauncher-"${_version}".source.tar.xz)
-
-makedepends=(libappimage qtbase qttools extra-cmake-modules)
-
-prepare() {
-
-cd appimagelauncher-"${_version}".source
-
-sed -e 's@set(Boost_USE_STATIC_LIBS ON)@set(Boost_USE_STATIC_LIBS OFF)@' -i src/fusefs/CMakeLists.txt
-}
 
 build() {
 
@@ -27,7 +19,6 @@ mkdir build && cd build
 cmake -DCMAKE_INSTALL_PREFIX=/usr \
       -DCMAKE_INSTALL_LIBDIR=lib \
       -DUSE_SYSTEM_LIBAPPIMAGE=ON \
-      -DBoost_USE_STATIC_LIBS=OFF \
        ../appimagelauncher-"${_version}".source
 
 make
