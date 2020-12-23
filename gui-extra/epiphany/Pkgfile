@@ -1,4 +1,4 @@
-makedepends=(icu lsb-release libwnck avahi gcr iso-codes libgnome-keyring libnotify json-glib webkitgtk nss gnome-desktop libdazzle gsettings-desktop-schemas desktop-file-utils gtk-update-icon-cache libhandy)
+makedepends=(icu lsb-release libwnck avahi gcr iso-codes libgnome-keyring libnotify json-glib webkitgtk nss gnome-desktop libdazzle gsettings-desktop-schemas desktop-file-utils gtk-update-icon-cache libhandy libportal)
 
 description="A GNOME web browser based on the WebKit rendering engine."
 url="http://www.gnome.org/"
