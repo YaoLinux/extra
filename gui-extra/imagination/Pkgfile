@@ -1,4 +1,4 @@
-makedepends=(sox ffmpeg gtk2 intltool docbook-xsl)
+makedepends=(sox ffmpeg gtk3 intltool docbook-xsl)
 
 description="Imagination is a lightweight and simple DVD slideshow maker in GTK+2."
 url="http://imagination.sourceforge.net/"
