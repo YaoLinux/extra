@@ -9,6 +9,8 @@ maintainer="rems"
 name=cairo-dock
 version=3.4.1
 
+PKGMK_KEEP_SOURCES="no"
+
 source=(https://github.com/Cairo-Dock/cairo-dock-core/archive/${version}.tar.gz)
 
 build() {
