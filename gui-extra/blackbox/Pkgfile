@@ -9,7 +9,7 @@ maintainer="rems"
 name=blackbox
 version=0.76
 
-PKGMK_KEEP_SOURCE="no"
+PKGMK_KEEP_SOURCEs="no"
 
 source=(https://github.com/bbidulock/blackboxwm/archive/$version.tar.gz)
 
