@@ -11,6 +11,8 @@ version=1.0.1
 
 run=(gawk)
 
+PKGMK_KEEP_SOURCES="no"
+
 source=(https://github.com/denilsonsa/prettyping/archive/v$version.tar.gz)
 
 build(){
