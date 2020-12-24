@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 name=nextcloud-cli
 version=3.0.1
 
-PKGMK_KEEP_SOURCE="no"
+PKGMK_KEEP_SOURCES="no"
 
 source=(https://github.com/nextcloud/desktop/archive/v$version.tar.gz)
 
