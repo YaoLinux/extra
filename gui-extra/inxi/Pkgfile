@@ -2,6 +2,7 @@ makedepends=(coreutils gawk grep pciutils procps-ng sed file iproute2 kmod sudo 
 
 description="script to get system information"
 url="http://inxi.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -9,6 +10,8 @@ run=(gawk pciutils usbutils xorg-xdpyinfo xorg-xprop xorg-xrandr lm-sensors)
 
 name=inxi
 version=3.1.09
+
+PKGMK_KEEP_SOURCES="no"
 
 source=(https://github.com/smxi/inxi/archive/$version-1.tar.gz)
 
