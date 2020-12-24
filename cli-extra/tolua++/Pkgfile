@@ -9,6 +9,8 @@ maintainer="rems"
 name=tolua++
 version=1.0.93
 
+PKGMK_KEEP_SOURCES="no"
+
 source=(https://github.com/LuaDist/toluapp/archive/$version.tar.gz)
        
 build() {
