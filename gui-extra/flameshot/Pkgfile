@@ -9,6 +9,8 @@ maintainer="rems"
 name=flameshot
 version=0.8.5
 
+PKGMK_KEEP_SOURCES='no'
+
 source=(https://github.com/lupoDharkael/$name/archive/v$version.tar.gz)
 
 build() {
