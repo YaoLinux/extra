@@ -6,7 +6,8 @@ packager="Yaolinux Team"
 
 name=volumeicon
 version=0.5.1
-release=1
+
+PKGMK_KEEP_SOURCES="no"
 
 source=(https://github.com/Maato/volumeicon/archive/$version.tar.gz)
 
