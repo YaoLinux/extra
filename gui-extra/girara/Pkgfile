@@ -1,10 +1,15 @@
 makedepends=(glib gtk3 meson)
 
 description="User interface library focused on simplicity and minimalism"
-packager="Yaolinux Team"
 url="http://pwmt.org/projects/girara"
+
+packager="Yaolinux Team"
+maintainer="rems"
+
 name=girara
 version=0.3.5
+
+PKGMK_KEEP_SOURCES="no"
 
 source=("https://github.com/pwmt/${name}/archive/${version}.tar.gz")
 
