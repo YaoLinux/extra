@@ -5,7 +5,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name="chromium"
-version="86.0.4240.75"
+version="88.0.4324.66"
 
 _launcher_ver="6"
 
@@ -37,11 +37,11 @@ fetch --nohooks chromium
 
 cd src
 
-gclient runhooks
-
 git checkout $version
 
 gclient sync
+
+gclient runhooks
 
 export CC=clang
 export CXX=clang++
@@ -55,6 +55,7 @@ _args=(
 'enable_nacl=false'
 'treat_warnings_as_errors=false'
 'fatal_linker_warnings=false'
+'chrome_pgo_phase=0'
 )
 
 gn gen out/Release --args="${_args[*]}" --script-executable=/usr/bin/python2
