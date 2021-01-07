@@ -1,0 +1,35 @@
+makedepends=(glib libsoup gpgme polkit fuse2 libostree json-glib appstream-glib libseccomp python-pyparsing)
+
+description='Next generation technology for building and distributing desktop applications'
+url='https://flatpak.org/'
+
+packager="Yaolinux team"
+maintainer="rems"
+contributor="Tnut"
+
+run=(bubblewrap gnupg)
+
+version=1.9.3
+source=(https://dl.flathub.org/repo/flathub.flatpakrepo
+        https://github.com/flatpak/flatpak/releases/download/$version/flatpak-$version.tar.xz)
+
+build() {
+
+cd $name-$version
+
+./configure --prefix=/usr \
+            --sysconfdir=/etc \
+            --localstatedir=/var \
+            --with-system-bubblewrap
+
+sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+
+make
+make DESTDIR=$PKG install
+}
+
+package() {
+
+install -Dm644 flathub.flatpakrepo \
+               $PKG/etc/flatpak/remotes.d/flathub.flatpakrepo
+}
