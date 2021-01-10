@@ -7,9 +7,9 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=terminus-font
-version=4.48
+version=4.49.1
 
-source=(http://downloads.sourceforge.net/project/$name/$name-$version/$name-$version.tar.gz)
+source=(https://downloads.sourceforge.net/project/terminus-font/terminus-font-${version%.1}/terminus-font-$version.tar.gz)
 
 prepare() {
   chmod +x $name-$version/configure
