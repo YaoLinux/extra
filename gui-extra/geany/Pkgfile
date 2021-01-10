@@ -6,7 +6,7 @@ maintainer="rems"
 packager="Yaolinux Team"
 
 name=geany
-version=1.37
+version=1.37.1
 
 source=(https://download.geany.org/$name-${version/.0}.tar.bz2)
 
