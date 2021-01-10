@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=gpsd
-version=3.21
+version=3.22
 
 source=(https://download.savannah.gnu.org/releases/$name/$name-$version.tar.gz)
 
@@ -21,7 +21,7 @@ build() {
   scons prefix=/usr \
         systemd=yes \
         qt_versioned=5 \
-        python_libdir=$_pythonpath \
+        python_libdir=${_pythonpath} \
         gpsd_group=uucp \
         sbindir=/usr/bin
   
@@ -49,10 +49,7 @@ DEVICES=""
 USBAUTO="true"
 EOF
 
-  # Fix path in systemd files
-  sed -i 's|local/sbin|bin|' systemd/{gpsd.service,gpsdctl@.service}
-
-  install -Dm644 gpsd.rules $PKG/lib/udev/rules.d/25-gpsd-usb.rules
+  install -Dm644 $name-$version/gpsd.rules $PKG/lib/udev/rules.d/25-gpsd-usb.rules
 
   install -Dm755 gpsd.hotplug $PKG/lib/udev/gpsd.hotplug
 
@@ -65,7 +62,7 @@ EOF
   install -Dm644 packaging/X11/gpsd-logo.png \
     $PKG/usr/share/gpsd/gpsd-logo.png
 
-  install -Dm644 systemd/gpsd.service "${PKG}"/lib/systemd/system/gpsd.service
-  install -Dm644 systemd/gpsd.socket "${PKG}"/lib/systemd/system/gpsd.socket
-  install -Dm644 systemd/gpsdctl@.service "${PKG}"/lib/systemd/system/gpsdctl@.service
+  install -Dm644 $name-$version/systemd/gpsd.service "${PKG}"/lib/systemd/system/gpsd.service
+  install -Dm644 $name-$version/systemd/gpsd.socket "${PKG}"/lib/systemd/system/gpsd.socket
+  install -Dm644 $name-$version/systemd/gpsdctl@.service "${PKG}"/lib/systemd/system/gpsdctl@.service
 }
