@@ -6,7 +6,7 @@ packager="Yaolinux Team"
 contributor="tnut"
 
 name=stellarium
-version=0.20.3
+version=0.20.4
 
 source=(https://github.com/Stellarium/stellarium/releases/download/v"$version"/$name-$version.tar.gz)
 
