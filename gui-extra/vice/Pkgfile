@@ -1,4 +1,4 @@
-makedepends=(pulseaudio giflib libjpeg-turbo2 libpng xorg-bdftopcf xorg-mkfontscale libpcap xorg-libxaw ffmpeg xa pulseaudio sdl2 glew)
+makedepends=(pulseaudio giflib libjpeg-turbo2 libpng xorg-bdftopcf xorg-mkfontscale libpcap xorg-libxaw ffmpeg xa pulseaudio sdl2-image glew dos2unix)
 
 description="The Versatile Commodore 8-bit Emulator"
 url="http://vice-emu.sourceforge.net/"
@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=vice
-version=3.4
+version=3.5
 
 source=(https://downloads.sourceforge.net/project/vice-emu/releases/${name}-${version}.tar.gz
         disable-fc-cache.patch)
@@ -30,7 +30,8 @@ build() {
 
   ./configure --prefix=/usr \
               --libdir=/usr/lib \
-              --enable-external-ffmpeg
+              --enable-external-ffmpeg \
+              --disable-pdf-docs
   
   make
 }
@@ -39,5 +40,5 @@ package() {
   cd ${name}-${version}
 
   make DESTDIR="${PKG}" realdocdir="/usr/share/doc/vice" install -j1
-  ln -s /usr/share/doc/vice "${PKG}/usr/lib/vice/doc"
+#  ln -s /usr/share/doc/vice "${PKG}/usr/lib/vice/doc"
 }
