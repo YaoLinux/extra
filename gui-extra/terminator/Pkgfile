@@ -9,7 +9,7 @@ packager="Yaolinux Team"
 run=(python-cairo dbus-python python-psutil python-gobject keybinder3 vte3 xdg-utils gsettings-desktop-schemas) 
 
 name=terminator
-version=1.92
+version=2.0.1
 
 source=(https://github.com/gnome-terminator/terminator/releases/download/v${version}/${name}-${version}.tar.gz)
 
