@@ -8,7 +8,7 @@ maintainer="rems"
 run=(gtk-update-icon-cache)
 
 name=obs-studio
-version=26.0.2
+version=26.1.0
 release=3
 
 PKGMK_KEEP_SOURCES="no"
