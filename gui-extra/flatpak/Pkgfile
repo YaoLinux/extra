@@ -7,9 +7,11 @@ packager="Yaolinux team"
 maintainer="rems"
 contributor="Tnut"
 
-run=(bubblewrap gnupg)
+run=(bubblewrap gnupg gnutls glib-networking)
 
 version=1.9.3
+release=3
+
 source=(https://dl.flathub.org/repo/flathub.flatpakrepo
         https://github.com/flatpak/flatpak/releases/download/$version/flatpak-$version.tar.xz)
 
