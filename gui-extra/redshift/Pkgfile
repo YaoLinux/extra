@@ -1,4 +1,4 @@
-makedepends=(intltool python2 geoclue2 xorg-libdrm libxcb xorg-libxxf86vm python2-gobject librsvg python2-xdg gtk3)
+makedepends=(intltool geoclue2 xorg-libdrm libxcb xorg-libxxf86vm python-gobject librsvg python-xdg gtk3)
 
 packager="Yaolinux Team"
 maintainer="rems"
@@ -8,8 +8,9 @@ url="http://jonls.dk/redshift/"
 
 name=redshift
 version=1.12
+release=2
 
-run=(geoclue2)
+run=(geoclue2 python-gobject python-xdg)
 
 source=(https://github.com/jonls/redshift/releases/download/v$version/$name-$version.tar.xz)
 
