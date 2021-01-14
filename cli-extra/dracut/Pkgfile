@@ -7,8 +7,7 @@ maintainer="rems"
 packager="Yaolinux Team"
 
 name=dracut
-version=050
-release=3
+version=051
 
 source=(https://mirrors.edge.kernel.org/pub/linux/utils/boot/dracut/dracut-$version.tar.gz)
 
