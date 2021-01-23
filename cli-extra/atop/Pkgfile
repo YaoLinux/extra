@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=atop
-version=2.5.0
+version=2.6.0
 
 source=(https://www.atoptool.nl/download/atop-${version/_/-}.tar.gz)
 
