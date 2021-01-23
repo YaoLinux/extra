@@ -8,7 +8,7 @@ packager="Yaolinux Team"
 
 
 name=unbound
-version=1.12.0
+version=1.13.0
 
 source=(${url}/downloads/$name-$version.tar.gz)
 
