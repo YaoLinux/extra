@@ -7,8 +7,8 @@ maintainer="rems"
 packager="Yaolinux Team"
  
 name=spice-gtk
-version=0.38
+version=0.39
 
-source=(https://gitlab.freedesktop.org/spice/spice-gtk/uploads/d09bd4bfb9619e9720c92622c2220b7e/$name-$version.tar.xz)
+source=(https://www.spice-space.org/download/gtk/$name-$version.tar.xz)
 
 build=meson
