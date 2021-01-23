@@ -7,7 +7,7 @@ maintainer="rems"
 packager="Yaolinux Team"
 
 name=nftables
-version=0.9.7
+version=0.9.8
 
 source=($url/files/nftables-$version.tar.bz2
         nftables.conf
