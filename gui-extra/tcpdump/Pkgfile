@@ -6,8 +6,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=tcpdump
-version=4.9.3
-release=2
+version=4.99.0
 
 source=(http://www.tcpdump.org/release/${name}-${version}.tar.gz)
 
