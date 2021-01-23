@@ -3,7 +3,7 @@ makedepends=(python python-cairo dbus-python python-gobject python-cups python-c
 description="A CUPS printer configuration tool and status applet"
 url="https://github.com/zdohnal/system-config-printer"
 name=system-config-printer
-version=1.5.14
+version=1.5.15
 
 run=(dbus-python python-gobject python-cairo python-cups python-curl python-smbc desktop-file-utils)
 
