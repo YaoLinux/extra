@@ -9,7 +9,7 @@ maintainer="Dania"
 set=(elementary)
 
 name=evisum
-version=0.5.8
+version=0.5.9
 
 source=(http://download.enlightenment.org/rel/apps/$name/$name-$version.tar.xz)
 
