@@ -7,9 +7,9 @@ packager="Yaolinux Team"
 
 name=hplip
 version=3.20.11
-release=1
+release=2
 
-run=(dbus-python python2-qt openssl python-reportlab python2-gobject)
+run=(dbus-python python2-qt openssl python-reportlab python2-gobject ghostscript cups-filters)
 
 source=(http://downloads.sourceforge.net/$name/$name-$version.tar.gz
        disable_upgrade.patch
@@ -70,17 +70,4 @@ build() {
 
         # remove HAL .fdi file because HAL is no longer used
         rm -vrf $PKG/usr/share/hal
-
-# Obsolet libs
-
-rm $PKG/usr/lib/python2.7/site-packages/hpmudext.la
-rm $PKG/usr/lib/python2.7/site-packages/pcardext.la
-rm $PKG/usr/lib/python2.7/site-packages/cupsext.la
-rm $PKG/usr/lib/python2.7/site-packages/scanext.la
-rm $PKG/usr/lib/libhpdiscovery.la
-rm $PKG/usr/lib/sane/libsane-hpaio.la
-rm $PKG/usr/lib/libhpmud.la
-rm $PKG/usr/lib/libhpipp.la
-rm $PKG/usr/lib/libhpip.la
-
 }
