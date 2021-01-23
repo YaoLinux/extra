@@ -6,7 +6,7 @@ url="https://busybox.net/about.html"
 packager="Yaolinux Team"
 
 name=busybox
-version=1.31.1
+version=1.32.1
 
 source=($name.config
         https://busybox.net/downloads/busybox-$version.tar.bz2)
