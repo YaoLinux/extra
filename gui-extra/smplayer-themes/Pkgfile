@@ -8,7 +8,7 @@ maintainer="rems"
 run=(optipng)
 
 name=smplayer-themes
-version=18.6.0
+version=20.11.0
 release=1
 
 
