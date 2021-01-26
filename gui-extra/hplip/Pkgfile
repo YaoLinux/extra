@@ -1,15 +1,16 @@
-makedepends=(avahi python2 ghostscript foomatic-db foomatic-db-engine usbutils sane cups cups-filters cups-pk-helper libusb net-snmp dbus-python python2-qt openssl python-reportlab python2-gobject polkit)
+makedepends=(avahi ghostscript foomatic-db foomatic-db-engine usbutils sane cups cups-filters cups-pk-helper libusb net-snmp dbus-python python-qt openssl python-reportlab python-gobject polkit)
 
 description="Drivers for HP DeskJet, OfficeJet, Photosmart, Business Inkjet and some LaserJet"
 url="http://hplipopensource.com"
+
 maintainer="rems"
 packager="Yaolinux Team"
 
 name=hplip
 version=3.20.11
-release=2
+release=4
 
-run=(dbus-python python2-qt openssl python-reportlab python2-gobject ghostscript cups-filters)
+run=(dbus-python python-qt openssl python-reportlab python-gobject ghostscript cups-filters)
 
 source=(http://downloads.sourceforge.net/$name/$name-$version.tar.gz
        disable_upgrade.patch
@@ -17,6 +18,8 @@ source=(http://downloads.sourceforge.net/$name/$name-$version.tar.gz
        0022-Add-include-cups-ppd.h-in-various-places-as-CUPS-2.2.patch
        0023-Fix-handling-of-unicode-filenames-in-sixext.py.patch
        0025-Remove-all-ImageProcessor-functionality-which-is-clo.patch
+       hplip-configure-python.patch
+       python3.diff
        hplip-colorlaserjet-mfp-m278-m281.patch)
 
 prepare() {
@@ -29,6 +32,9 @@ prepare() {
 	patch -Np1 -i ../0023-Fix-handling-of-unicode-filenames-in-sixext.py.patch
 	# remove binary blob libImageProcessor and all linking - FS#59681
 	patch -Np1 -i ../0025-Remove-all-ImageProcessor-functionality-which-is-clo.patch
+        # Ensure that is python3 used
+        patch -Np1 -i ../python3.diff
+        patch -Np1 -i ../hplip-configure-python.patch
 
 }
 build() {
@@ -38,7 +44,7 @@ build() {
         export AUTOMAKE='automake --foreign'
         autoreconf -fiv
 
-        PYTHON=python2 ./configure --prefix=/usr \
+        PYTHON=python3 ./configure --prefix=/usr \
                 --enable-qt5  \
 		--disable-qt4 \
                 --disable-foomatic-rip-hplip-install \
