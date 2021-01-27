@@ -9,7 +9,7 @@ maintainer="rems"
 run=(shared-mime-info icu libevent pulseaudio sqlite libvpx nss alsa-lib gtk2 gtk3 zip unzip gstreamer gstreamer-plugins-base gstreamer-plugins-good gstreamer-plugins-libav)
 
 name=firefox
-version=84.0
+version=85.0
 
 source=(https://archive.mozilla.org/pub/firefox/releases/$version/source/$name-$version.source.tar.xz
         firefox.desktop)
