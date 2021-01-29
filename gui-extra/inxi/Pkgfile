@@ -9,14 +9,14 @@ maintainer="rems"
 run=(gawk pciutils usbutils xorg-xdpyinfo xorg-xprop xorg-xrandr lm-sensors)
 
 name=inxi
-version=3.2.01
+version=3.2.02
 
 PKGMK_KEEP_SOURCES="no"
 
-source=(https://github.com/smxi/inxi/archive/$version-1.tar.gz)
+source=(https://github.com/smxi/inxi/archive/$version-2.tar.gz)
 
 build() {
-cd $name-$version-1  
+cd $name-$version-2
   install -D -m755 inxi $PKG/usr/bin/inxi
   install -D -m755 inxi.1 $PKG/usr/share/man/man1/inxi.1
   
