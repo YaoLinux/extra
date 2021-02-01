@@ -4,7 +4,7 @@
 
 You can get a readonly copy via the command:
 
-    # git clone http://git.nutyx.org/extra
+    # git clone https://github.com/YaoLinux/extra.git
 
 If you want to participate, please send me your motivation and your public key.
 
