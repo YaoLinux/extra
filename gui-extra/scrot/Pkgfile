@@ -6,7 +6,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=scrot
-version=1.4
+version=1.5
 
 source=(https://github.com/resurrecting-open-source-projects/scrot/archive/${version}/${name}-${version}.tar.gz)  
 
