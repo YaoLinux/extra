@@ -7,7 +7,7 @@ maintainer="rems"
 packager="Yaolinux Team"
  
 name=remmina
-version=1.4.10
+version=1.4.11
 
 source=(https://gitlab.com/Remmina/Remmina/-/archive/v$version/Remmina-v$version.tar.gz)
 
